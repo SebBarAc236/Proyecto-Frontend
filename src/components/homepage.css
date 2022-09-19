@@ -1,0 +1,49 @@
+body
+{
+    background-color: rgb(49, 12, 117);
+}
+
+footer
+{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://images.unsplash.com/photo-1618386230353-3631c1365be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80");
+    color: aliceblue;
+}
+
+#controller
+{
+    height: 300px;
+    width: 300px;
+}
+
+.bgbutton
+{
+    background-color: blueviolet;
+    color:antiquewhite;
+}
+
+#subpc
+{
+    color:rgb(180, 146, 212);
+}
+
+.header-right a
+{
+    float: right;
+    color: whitesmoke;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header-right a:hover 
+{
+    background-color: rgb(100, 23, 201);
+    color: rgb(0, 0, 0);
+}
