@@ -2,18 +2,7 @@ import "./homepage.css"
 
 const Home = (props) => {
 
-    return <div> 
-        <div className="header-right">
-            <a href="#about">/Perfil</a>
-            <a href="#about">/Carro de compras</a>
-            <a href="#about">/Search</a>
-
-            <a href="#about">Ranking</a>
-            <a href="#about">Reviews</a>
-            <a href="#contact">Soport</a>
-            <a href="#about">About</a>
-            <a class="active" href="#Home">Home</a>
-        </div>
+    return <div>
         <div className="p-5">
             <img id="controller" className="m-3" src="https://cdn-icons-png.flaticon.com/512/2540/2540374.png" alt="Video-game Controller" />
             <h1 id="pc" className="text-white p-1">Build your PC!</h1>
