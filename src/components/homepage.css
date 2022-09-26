@@ -18,6 +18,66 @@ footer
     height: 300px;
     width: 300px;
 }
+.container
+{
+    position: absolute;
+    /*transform: translate(20%, 50%);*/
+    margin-top: 10%;
+    margin-left: 10%;
+}
+/*
+#data
+{
+    transform: translate(30%, 40%);
+    position: absolute;
+}*/
+
+#addCart
+{
+    background-color: indigo;
+    color: white;
+    
+}
+
+#espacio
+{
+    width: 20px; 
+    height: 20px;   
+}
+
+#func
+{
+    float: left;
+    display: flex;
+    
+}
+
+#gato
+{
+    background-image: linear-gradient(rgb(0, 73, 182), rgb(15, 14, 71));
+}
+
+#fond_inv
+{
+    background-color: rgba(75, 75, 175, 0.527);
+    width: 400px;
+    margin-bottom: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sp-bot
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inv
+{
+    margin-top: 20px; 
+}
 
 .bgbutton
 {
@@ -28,6 +88,11 @@ footer
 #subpc
 {
     color:rgb(180, 146, 212);
+}
+
+th, td
+{
+    color: white;
 }
 
 .header-right a
@@ -47,3 +112,4 @@ footer
     background-color: rgb(100, 23, 201);
     color: rgb(0, 0, 0);
 }
+
