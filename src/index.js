@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './components/header_todos';
+import Home from './components/homepage';
 import Header from './components/header_todos';
 import reportWebVitals from './reportWebVitals';
 import InfoProducto from './components/compras/info_producto';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './components/shopping_cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <Header/>
-        <InfoProducto/>
+    <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route path="/" element={ <Home/> } /> 
+          <Route path="/Producto" element={ <InfoProducto/> } /> 
+          <Route path="/Cart" element={ <Cart/> } /> 
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

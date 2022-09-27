@@ -10,12 +10,12 @@ const Home = (props) => {
             <h2 id="subpc" className="p-1">Just what you need</h2>
             <br />
             <span>
-                <span className="bgbutton container rounded border border-success m-1 p-2 border-opacity-10">
+                <button className="bgbutton rounded border border-success m-1 p-2 border-opacity-10">
                     Build for beginners
-                </span> 
-                <span className="bgbutton container rounded border border-success m-1 p-2 border-opacity-10">
+                </button> 
+                <button className="bgbutton rounded border border-success m-1 p-2 border-opacity-10">
                     Advanced building
-                </span>
+                </button>
             </span>
         </div>
         <footer id="foot">

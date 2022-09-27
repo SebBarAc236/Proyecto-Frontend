@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => 
 {
@@ -6,16 +7,17 @@ const Header = () =>
     
     return <div> 
         <div className="header-right">
-            <a href="#about">/Perfil</a>
-            <a href="#about">/Carro de compras</a>
-            <a href="#about">/Search</a>
-            <input id="searchInput" type="text" className="form-control m-2" 
+            <Link to={"/"}><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Perfil" /></Link>
+            <Link to={"/Cart"}><img className="links" src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Cart" /></Link>
+            <img src="https://cdn-icons-png.flaticon.com/512/7018/7018972.png" alt="Search" />
+
+            <input hidden id="searchInput" type="text" className="form-control m-2" 
             value={inputSearch} onChange={(evt) => setInputSearch(evt.target.value)}/>
-            <a href="#about">Ranking</a>
-            <a href="#about">Reviews</a>
-            <a href="#contact">Soport</a>
-            <a href="#about">About</a>
-            <a class="active" href="#Home">Home</a>
+            <a className="letras" href="#about">Ranking</a>
+            <a className="letras" href="#about">Reviews</a>
+            <a className="letras" href="#contact">Soport</a>
+            <a className="letras" href="#about">About</a>
+            <a className="letras" href="#Home">Home</a>
         </div>
     </div>
 }
