@@ -2,8 +2,8 @@ import "../homepage.css"
 const InfoProducto = () => 
 {
     return <div className="container"> 
-        <div id="data" className="p-2 row justify-content-center">
-            <div id="fond_inv" className="col-1 my-4 rounded row">
+        <div id="data" className="row justify-content-center">
+            <div id="fond_inv" className="col-5 my-4 rounded row">
                 <div>
                     <img id="inv" className="rounded img-fluid" src="https://store-images.s-microsoft.com/image/apps.20966.13599037783181022.b05b7adf-6b7a-44ae-9a70-9dc9370ea7e6.4cd88c60-6ff1-4b0f-aed6-8e2efa5629c1" alt="" />
                 </div>
@@ -13,7 +13,7 @@ const InfoProducto = () =>
                     </button>
                 </span>    
             </div>
-            <div className="col-4"></div>
+            <div className="col-5"></div>
             <div id="gato" className="col-4">
                 <h1 className="text-white">NVIDIA GEFORCE GTX 1650 4GB</h1>
                 <b className="text-white">$200</b>
@@ -43,7 +43,6 @@ const InfoProducto = () =>
                     </tbody>
                 </table>
             </div>
-            
         </div>
     </div>
 }

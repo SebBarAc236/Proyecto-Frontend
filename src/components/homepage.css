@@ -20,17 +20,13 @@ footer
 }
 .container
 {
-    position: absolute;
-    /*transform: translate(20%, 50%);*/
-    margin-top: 10%;
-    margin-left: 10%;
+    transform: translate(0%, 15%);   
 }
-/*
+
 #data
 {
-    transform: translate(30%, 40%);
-    position: absolute;
-}*/
+    color: blue;
+}
 
 #addCart
 {
@@ -52,6 +48,11 @@ footer
     
 }
 
+#data
+{
+    padding-right: 0%;
+}
+
 #gato
 {
     background-image: linear-gradient(rgb(0, 73, 182), rgb(15, 14, 71));
@@ -60,9 +61,8 @@ footer
 #fond_inv
 {
     background-color: rgba(75, 75, 175, 0.527);
-    width: 400px;
+    width: 200px;
     margin-bottom: 200px;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -107,9 +107,24 @@ th, td
     border-radius: 4px;
 }
 
+.header-right input
+{
+    float: right;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
 .header-right a:hover 
 {
     background-color: rgb(100, 23, 201);
     color: rgb(0, 0, 0);
 }
 
+#searchInput
+{
+    height: 25px;
+    width: 300px;
+}
