@@ -1,3 +1,6 @@
+import Search from './search1';
+import data_generica from './data_test';
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,11 +16,12 @@ const Header = () =>
 
             <input hidden id="searchInput" type="text" className="form-control m-2" 
             value={inputSearch} onChange={(evt) => setInputSearch(evt.target.value)}/>
+            
             <a className="letras" href="#about">Ranking</a>
             <a className="letras" href="#about">Reviews</a>
-            <a className="letras" href="#contact">Soport</a>
+            <a className="letras" href="#contact">Support</a>
             <a className="letras" href="#about">About</a>
-            <a className="letras" href="#Home">Home</a>
+            <Link to={"/"}><p className="letras">Home</p></Link>
         </div>
     </div>
 }

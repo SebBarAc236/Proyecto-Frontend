@@ -1,0 +1,43 @@
+#all
+{
+    padding-top: 7%;
+}
+
+h3
+{
+    color: white;
+}
+
+.bott
+{
+    background-color: blueviolet;
+}
+
+.shopshop
+{
+    width: 50%;
+    height: 60%;
+}
+
+.go-buy
+{
+    background-color: blueviolet;
+    color:antiquewhite;
+    margin-left: 60%;
+    width: 15%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ima
+{
+    height: 45px;
+    width: 100px;
+}
+
+.items
+{
+    margin-left: 10%;
+}

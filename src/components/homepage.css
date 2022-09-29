@@ -18,61 +18,6 @@ footer
     height: 300px;
     width: 300px;
 }
-.container
-{
-    transform: translate(0%, 15%);   
-}
-
-#addCart
-{
-    background-color: indigo;
-    color: white;
-    
-}
-
-#espacio
-{
-    width: 20px; 
-    height: 20px;   
-}
-
-#func
-{
-    float: left;
-    display: flex;
-    
-}
-
-#data
-{
-    padding-right: 0%;
-}
-
-#gato
-{
-    background-image: linear-gradient(rgb(0, 73, 182), rgb(15, 14, 71));
-}
-
-#fond_inv
-{
-    background-color: rgba(75, 75, 175, 0.527);
-    width: 200px;
-    margin-bottom: 200px;
-    align-items: center;
-    justify-content: center;
-}
-
-#sp-bot
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#inv
-{
-    margin-top: 20px; 
-}
 
 .bgbutton
 {
@@ -99,6 +44,20 @@ th, td
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+}
+
+.header-right > p
+{
+    float: right;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    float: right;
+    padding: 12px;
+    height: 30px;
 }
 
 .letras
@@ -143,3 +102,4 @@ th, td
 
     height: 50px;
 }
+

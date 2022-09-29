@@ -1,0 +1,31 @@
+#func
+{
+    float: left;
+    display: flex;
+}
+
+#fond_inv
+{
+    background-color: rgba(75, 75, 175, 0.527);
+    width: 200px;
+    margin-bottom: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+#sp-bot
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inv
+{
+    margin-top: 20px; 
+}
+
+#gato
+{
+    background-image: linear-gradient(rgb(0, 73, 182), rgb(15, 14, 71));
+}
