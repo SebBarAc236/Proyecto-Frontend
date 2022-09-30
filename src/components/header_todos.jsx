@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import './INICIO/loginstyle.css'
 const Header = () => 
 {
     const [inputSearch, setInputSearch] = useState("");
@@ -8,7 +8,11 @@ const Header = () =>
 
     return <div> 
         <div className="header-right">
-            <Link to={"/Home"}><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Perfil" /></Link>
+            
+            <Link to={"/Register"}><a id="botonMorado" class="btn btn-primary" role="button">Sign Up</a></Link>
+            <Link to={"/Login"}><a id="botonMorado" class="btn btn-primary" role="button">Sign In</a></Link>
+        
+            <Link to={"/"}><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Perfil" /></Link>
             <Link to={"/Cart"}><img className="links" src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Cart" /></Link>
             <img onClick={() => setEscondido(!escondido)} src="https://cdn-icons-png.flaticon.com/512/7018/7018972.png" alt="Search" />
 
@@ -19,7 +23,7 @@ const Header = () =>
             <a className="letras" href="#about">Reviews</a>
             <a className="letras" href="#contact">Support</a>
             <a className="letras" href="#about">About</a>
-            <Link to={"/Home"}><p className="letras">Home</p></Link>
+            <Link to={"/"}><p className="letras">Home</p></Link>
         </div>
     </div>
 }

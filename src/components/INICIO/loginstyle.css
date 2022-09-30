@@ -1,0 +1,50 @@
+#botonblanco{
+    background-color:rgb(208, 172, 238);
+    background: linear-gradient(to right,rgb(208, 172, 238),rgb(243, 243, 243));
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    
+}
+
+#contenedorR{
+    color: white;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background: linear-gradient(to right,rgb(45, 2, 80),rgb(62, 0, 112));
+}
+
+#ignore{
+    color: rgb(45, 2, 80);
+}
+
+#textoContenedorR{
+    
+}
+
+#tituloContenedorR{
+    font-weight: bold;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    
+}
+#floatingInput{
+    
+}
+#bordescontenedorR{
+    border: 4px;
+    border-color: white;
+}
+#botonMorado{
+    background-color: rgb(53, 5, 92);
+    border-color: black;
+    border-width: 2px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
