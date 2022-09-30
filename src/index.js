@@ -7,13 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import InfoProducto from './components/compras/info_producto';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/shopping_cart';
+import Login from './components/login';
+import Register from './components/register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <Home/> } /> 
+          <Route path="/" element={ <Register/> } />
+          <Route path="/login" element={ <Login/> } />
+          <Route path="/Home" element={ <Home/> } /> 
           <Route path="/Producto" element={ <InfoProducto/> } /> 
           <Route path="/Cart" element={ <Cart/> } /> 
         </Routes>
