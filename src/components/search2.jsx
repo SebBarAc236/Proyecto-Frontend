@@ -1,11 +1,12 @@
 import React from 'react';
-import Search1 from './search1';
 
 function SearchList({ filtro }) {
-  const filtered = filtro.map(data =>  <Search1 key={data.id} data={data} />); 
+  const filtered = filtro.map(data =>  ["Ratón", "Teclado", "Monitor", "Audífonos"]); 
   return (
     <div>
-      {filtered}
+      {
+        filtered
+      }
     </div>
   );
 }
