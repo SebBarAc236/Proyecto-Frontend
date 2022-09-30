@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/shopping_cart';
 import Login from './components/INICIO/login';
 import Register from './components/INICIO/register';
+import Perfil from './components/perfil';
 
 
 
@@ -17,6 +18,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
+          <Route path="/Perfil" element={ <Perfil/> } />
           <Route path="/Register" element={ <Register/> } />
           <Route path="/Login" element={ <Login/> } />
           <Route path="/" element={ <Home/> } /> 

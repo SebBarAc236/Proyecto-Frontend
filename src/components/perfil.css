@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+#body{
+    min-height: 100vh;
+    margin-right: 80%;
+}
+
+#tituloPerfil{
+    font-weight: bold;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+#botonblanco{
+    background-color:rgb(208, 172, 238);
+    background: linear-gradient(to right,rgb(208, 172, 238),rgb(243, 243, 243));
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    
+}
+#ignore{
+    color: rgb(48, 34, 56);
+}

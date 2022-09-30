@@ -15,13 +15,13 @@ const Login = (props) => {
             <input type="password" class="form-control" id="floatingInput" placeholder="Password"/>
             
             <Link to={"/"}>
-                <button id='botonblanco' class="btn btn-primary">LOGIN</button>
+                <a id='botonblanco' class="btn btn-primary" role="button">LOGIN</a>
             </Link>
             <div><a href=" ">Forgot your password?</a></div>
             <div id='ignore'>.</div>
             <div id='textoContenedorR'>Don't have an account?</div>
             <Link to={"/Register"}>
-                <button id='botonblanco' class="btn btn-primary">SIGN UP</button>
+                <a id='botonblanco' class="btn btn-primary">SIGN UP</a>
             </Link>
         </div>
         </div>
