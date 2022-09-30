@@ -4,11 +4,14 @@
     display: flex;
 }
 
+#data
+{
+    width: 100%;
+}
+
 #fond_inv
 {
     background-color: rgba(75, 75, 175, 0.527);
-    width: 200px;
-    margin-bottom: 200px;
     align-items: center;
     justify-content: center;
 }
@@ -28,4 +31,11 @@
 #gato
 {
     background-image: linear-gradient(rgb(0, 73, 182), rgb(15, 14, 71));
+    margin-left: 30%;
+}
+
+#addCart
+{
+    background-color: blueviolet;
+    color: aliceblue;
 }
