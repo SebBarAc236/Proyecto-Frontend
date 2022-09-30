@@ -6,7 +6,7 @@ import Searchlist from './Search2';
 import Scroll from './Search3';
 
 function Search({ details }) {
-
+  
   const [searchField, setSearchField] = useState("");
 
   const filteredPersons = details.filter(
