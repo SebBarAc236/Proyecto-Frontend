@@ -10,6 +10,7 @@ import Cart from './components/shopping_cart';
 import Login from './components/INICIO/login';
 import Register from './components/INICIO/register';
 import Perfil from './components/perfil';
+import Avanzado from './components/avanzando';
 
 
 
@@ -18,6 +19,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
+          <Route path="/Avanzado" element={ <Avanzado/> } />
           <Route path="/Perfil" element={ <Perfil/> } />
           <Route path="/Register" element={ <Register/> } />
           <Route path="/Login" element={ <Login/> } />

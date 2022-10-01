@@ -18,9 +18,11 @@ const Home = (props) => {
                         Build for beginners
                     </button>
                 </Link> 
-                <button className="bgbutton rounded border border-success m-1 p-2 border-opacity-10">
-                    Advanced building
-                </button>
+                <Link to={"/Avanzado"}>
+                    <button className="bgbutton rounded border border-success m-1 p-2 border-opacity-10">
+                        Advanced building
+                    </button>
+                </Link>
             </span>
         </div>
         <footer id="foot">
