@@ -12,18 +12,17 @@
 
 #contenedorR{
     color: white;
-    margin-top: 10%;
-    margin-left: 20%;
-    margin-right: 20%;
     background: linear-gradient(to right,rgb(45, 2, 80),rgb(62, 0, 112));
+    
 }
 
 #ignore{
     color: rgb(45, 2, 80);
 }
 
+
 #textoContenedorR{
-    
+
 }
 
 #tituloContenedorR{
