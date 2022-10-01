@@ -11,7 +11,7 @@ import Login from './components/INICIO/login';
 import Register from './components/INICIO/register';
 import Perfil from './components/perfil';
 import Avanzado from './components/avanzando';
-
+import Olvidada from './components/INICIO/contraolvidada';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +19,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
+          <Route path="/Olvidada" element={ <Olvidada/> } />
           <Route path="/Avanzado" element={ <Avanzado/> } />
           <Route path="/Perfil" element={ <Perfil/> } />
           <Route path="/Register" element={ <Register/> } />
