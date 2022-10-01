@@ -6,13 +6,13 @@ import pcgamer from './imagenes/pcgamer.png'
 
 const Avanzado = () => {
     return <div>
-        <div className='container'  align="center">
-        <div className='row'>
-            <div><Header/></div>
-        </div>
+        <div className='row' align="right"><Header/></div>
+        
+        <div className='container mt-2'  align="center" id="contenedorA"> 
+            
         <div className='row'> 
             <div className='col' align="left">
-                <div>Build your PC!</div>
+                <div id="tituloavanzado">Build your PC!</div>
             </div>
             <div className='col'>
                 <Link to={"/"}><button className='mx-auto btn btn-primary'>Back</button></Link>
@@ -40,12 +40,12 @@ const Avanzado = () => {
                 <button className='mx-auto btn btn-primary'>Power Supply</button>
             </div>
         </div>
-        <div className='col mt-3'>
-            <div className='row'>
+        <div className='col mt-3' id='columnaiz'>
+            <div className='row mb-3'>
                 <img src={pcgamer} alt="..." />
             </div>
             <div className='row'>
-                <div className='container'>
+                <div className='container' id='resumen'>
                     <div>Components price</div>
                     <div>$1899</div>
                     <div>Build fee</div>

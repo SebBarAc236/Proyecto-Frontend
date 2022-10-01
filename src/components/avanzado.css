@@ -9,3 +9,22 @@
     background-color: rgb(154, 109, 196);
 }
 
+#tituloavanzado{
+    font-weight: bold;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    letter-spacing: 0.05em;
+}
+#contenedorA{
+    margin-left: 15%;
+}
+
+#resumen{
+    color: white;
+    background-color: rgb(92, 127, 192);
+    font-weight: bolder;
+}
+#columnaiz{
+    margin-right: 15px;
+}
