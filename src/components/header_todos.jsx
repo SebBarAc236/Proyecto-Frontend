@@ -8,7 +8,6 @@ const Header = () =>
 
     return <div> 
         <div className="header-right">
-            
             <Link to={"/Register"}><a id="botonMorado" class="btn btn-primary" role="button">Sign Up</a></Link>
             <Link to={"/Login"}><a id="botonMorado" class="btn btn-primary" role="button">Sign In</a></Link>
         
