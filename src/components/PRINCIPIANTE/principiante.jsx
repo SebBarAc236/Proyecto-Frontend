@@ -1,10 +1,11 @@
-import Header from './header_todos';
+import Header from '../header_todos';
 import { Link } from "react-router-dom"
-import mando1 from './IMAGENES-F/mando1.png'
+import mando1 from '../IMAGENES-F/mando1.png'
 
 
 const Principiante = () => {
     return <div>
+            <Header/>
             <div>
             <span id="titulo" className="texto" style={{color: "white", fontsize: "35px"}}>
                 <b>
