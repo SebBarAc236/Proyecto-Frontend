@@ -16,7 +16,7 @@ import gpay from '../IMAGENES-F/gpay.png'
 import './pantalla-compra.css'
 
 
-const Principiante = () => {
+const PantallaCompra = () => {
     return <div>
            
            <Header/>
@@ -366,3 +366,4 @@ const Principiante = () => {
 
 </div>
 }
+export default PantallaCompra;
