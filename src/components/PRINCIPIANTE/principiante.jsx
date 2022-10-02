@@ -2,9 +2,12 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import mando1 from '../IMAGENES-F/mando1.png'
 import design1 from '../IMAGENES-F/design1.png'
-import rendering from '../IMAGENES-F/rendering1'
-import office from '../IMAGENES-F/office'
-import other1 from '../IMAGENES-F/other1'
+
+
+import rendering from '../IMAGENES-F/rendering1.png'
+import office from '../IMAGENES-F/office.png'
+import other1 from '../IMAGENES-F/other1.png'
+import coding from '../IMAGENES-F/coding.png'
 import './principiante.css'
 
 
