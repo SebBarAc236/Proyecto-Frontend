@@ -2,7 +2,7 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import star from '../IMAGENES-F/5star.png'
 
-const Principiante = () => {
+const Reviews = () => {
     return <div>
            
            <Header/>
@@ -89,3 +89,4 @@ const Principiante = () => {
         </div>
 
 }
+export default Reviews;
