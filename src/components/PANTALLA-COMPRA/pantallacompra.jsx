@@ -19,7 +19,7 @@ import gpay from '../IMAGENES-F/gpay.png'
 const Principiante = () => {
     return <div>
            
-
+           <Header/>
             
 
 <div class="container text-center">
