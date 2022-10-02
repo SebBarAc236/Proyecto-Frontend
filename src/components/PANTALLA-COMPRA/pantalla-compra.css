@@ -1,0 +1,63 @@
+#Bloque1 {
+    background-color: white;
+    width: 60%;
+    height: 850px;
+
+}
+#Bloque2 {
+    background-color: black;
+    width: 40%;
+    height: 850px;
+
+}
+
+
+
+.imagenpago1 {
+    height: 50px;
+    width: 70px;
+}
+.imagenpago {
+    height: 30px;
+    width: 60px;
+}
+
+#BotonPago2 {
+    background-color: rgba(255,196,57,255);
+    width: 100%;
+    height: 50px;
+}
+#BotonPago1 {
+    background-color: rgb(96,52,244);
+    width: 100%;
+    height: 50px;
+}
+#BotonPago3 {
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
+
+
+#idpago {
+    width: 100px;
+}
+
+.texto {
+    font-size: 20px;
+}
+
+.userblack {
+    width: 50px;
+    height: 50px;
+}
+
+.componentes {
+    width: 50px;
+    height: 50px;
+}
+
+.textocomponentes{
+    color: white;
+    margin-top: 10px;
+}

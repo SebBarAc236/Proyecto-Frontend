@@ -21,6 +21,9 @@ root.render(
     <BrowserRouter>
         <Routes>
           <Route path="/Principiante" element={ <Principiante/> } />
+          <Route path="/Reseñas" element={ <Reseñas/> } />
+          <Route path="/Reviews" element={ <Reviews/> } />
+          <Route path="/Pantalla-compra" element={ <Pantalla-compra/> } />
           <Route path="/orderHistory" element={ <OrderHistory/> } />
           <Route path="/Olvidada" element={ <Olvidada/> } />
           <Route path="/Avanzado" element={ <Avanzado/> } />

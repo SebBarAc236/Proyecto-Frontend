@@ -4,7 +4,7 @@ import nexus from '../IMAGENES-F/nexus.png'
 import linuslogo from '../IMAGENES-F/linuslogo.png'
 import comillas from '../IMAGENES-F/comillas.png'
 
-const Principiante = () => {
+const Reseñas = () => {
     return <div>
            
            <Header/>
@@ -140,3 +140,4 @@ const Principiante = () => {
          
 
 }
+export default Reseñas;

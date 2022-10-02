@@ -13,6 +13,7 @@ import r from '../IMAGENES-F/r.jpg'
 import shop from '../IMAGENES-F/shop.png'
 import paypal from '../IMAGENES-F/paypal.png'
 import gpay from '../IMAGENES-F/gpay.png'
+import './pantalla-compra.css'
 
 
 
@@ -366,4 +367,3 @@ const Checkout = () => {
 
 </div>
 }
-export default Checkout;
