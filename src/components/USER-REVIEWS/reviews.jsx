@@ -21,7 +21,7 @@ const Principiante = () => {
 
                     <img style={{height: "35px", width: "120px"}} src={star}/>
                 </b>
-                <div  class="border-bottom border-2">
+                <div  className="border-bottom border-2">
                     &nbsp;
                 </div>
                </div>
@@ -40,7 +40,7 @@ const Principiante = () => {
                 <div style={{fontsize:"14px", marginleft: "20px"}}>
                     I completely recomend this service
                 </div>
-                <div  class="border-bottom border-2">
+                <div  className="border-bottom border-2">
                     &nbsp;
                 </div>
                </div>
@@ -59,7 +59,7 @@ const Principiante = () => {
                 <div style={{fontsize:"14px", marginleft: "20px"}}>
                     Great service
                 </div>
-                <div  class="border-bottom border-2">
+                <div  className="border-bottom border-2">
                     &nbsp;
                 </div>
                </div>

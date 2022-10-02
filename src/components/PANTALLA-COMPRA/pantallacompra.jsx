@@ -22,9 +22,9 @@ const Principiante = () => {
            <Header/>
             
 
-<div class="container text-center">
-    <div class="row">
-      <div class="col-7" id="Bloque1">
+<div className="container text-center">
+    <div className="row">
+      <div className="col-7" id="Bloque1">
       <div id="Links" align="LEFT">
         <a style={{textdecoration:"none", color: "black"}} href=""> Cart {'>'}</a>  
         <a style={{textdecoration:"none", color: "black"}}  href=""> Information {'>'}</a> 
@@ -38,20 +38,20 @@ const Principiante = () => {
         </b>
       </DIV>
 
-      <div class="row">
-        <div class="col" id="colpago">
-       <button id="BotonPago1" class="border-0 rounded">
-        <img class="imagenpago1" src={shop}/>
+      <div className="row">
+        <div className="col" id="colpago">
+       <button id="BotonPago1" className="border-0 rounded">
+        <img className="imagenpago1" src={shop}/>
        </button>
        </div>
-       <div class="col" id="colpago">
-        <button id="BotonPago2" class="border-0 rounded">
-         <img class="imagenpago" src={paypal}/>
+       <div className="col" id="colpago">
+        <button id="BotonPago2" className="border-0 rounded">
+         <img className="imagenpago" src={paypal}/>
         </button>
         </div>
-        <div class="col" id="colpago">
-            <button id="BotonPago3" class="border-0 rounded">
-             <img class="imagenpago" src={gpay}/>
+        <div className="col" id="colpago">
+            <button id="BotonPago3" className="border-0 rounded">
+             <img className="imagenpago" src={gpay}/>
             </button>
             </div>
       </div>
@@ -62,14 +62,14 @@ const Principiante = () => {
         OR
       </div>
 
-      <div  class="texto" align="LEFT">
+      <div  className="texto" align="LEFT">
         Contact Information
       </div>
       <div>
         &nbsp;
       </div>
       <div align="LEFT">
-        <img class="userblack" src="userblack.png"/>
+        <img className="userblack" src="userblack.png"/>
       
 
       
@@ -88,7 +88,7 @@ const Principiante = () => {
         </div>
         
       
-      <div class="texto" align="LEFT">
+      <div className="texto" align="LEFT">
         Shipping Address
       </div>
       
@@ -101,9 +101,9 @@ const Principiante = () => {
       <DIV>
 
     
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01">Saved Addresses</label>
-          <select class="form-select" id="inputGroupSelect01">
+        <div className="input-group mb-3">
+          <label className="input-group-text" for="inputGroupSelect01">Saved Addresses</label>
+          <select className="form-select" id="inputGroupSelect01">
             <option selected>Choose...</option>
             <option value="1">United States (Ed Va)</option>
             <option value="2">Perú (Ed Va)</option>
@@ -114,9 +114,9 @@ const Principiante = () => {
 
       
 
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">Country/Region</label>
-        <select class="form-select" id="inputGroupSelect01">
+      <div className="input-group mb-3">
+        <label className="input-group-text" for="inputGroupSelect01">Country/Region</label>
+        <select className="form-select" id="inputGroupSelect01">
           <option selected>Choose...</option>
           <option value="1"> United states</option>
           <option value="2">Perú</option>
@@ -129,42 +129,42 @@ const Principiante = () => {
       </div>
       </div>
 
-      <div class="row mb-3" >
-        <div class="col">
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name"/>
+      <div className="row mb-3" >
+        <div className="col">
+          <input type="text" className="form-control" placeholder="First name" aria-label="First name"/>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"/>
+        <div className="col">
+          <input type="text" className="form-control" placeholder="Last name" aria-label="Last name"/>
         </div>
       </div>
 
-      <div class="mb-3">
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Company (optional)"/>
+      <div className="mb-3">
+        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Company (optional)"/>
       </div>
 
-      <div class="mb-3">
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Address"/>
+      <div className="mb-3">
+        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Address"/>
       </div>
 
-      <div class="mb-3">
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Apartment, suite, etc. (optional)"/>
+      <div className="mb-3">
+        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Apartment, suite, etc. (optional)"/>
       </div>
 
 
    
-      <div class="row g-3 mb-3">
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="City" aria-label="First name"/>
+      <div className="row g-3 mb-3">
+        <div className="col-sm-4">
+          <input type="text" className="form-control" placeholder="City" aria-label="First name"/>
         </div>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Zip code" aria-label="Zip"/>
+        <div className="col-sm-4">
+          <input type="text" className="form-control" placeholder="Zip code" aria-label="Zip"/>
         </div>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="State" aria-label="Zip"/>
+        <div className="col-sm-4">
+          <input type="text" className="form-control" placeholder="State" aria-label="Zip"/>
         </div>  
 
         <div >
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Phone"/>
+          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Phone"/>
         </div>
       </div>
   
@@ -180,7 +180,7 @@ const Principiante = () => {
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
 
-        <button class="border-0 rounded-top" style={{backgroundcolor: "rgba(195,90,234,255)"}}>
+        <button className="border-0 rounded-top" style={{backgroundcolor: "rgba(195,90,234,255)"}}>
           <div style={{color: "white"}}>
             Continue to shipping
           </div>
@@ -199,9 +199,9 @@ const Principiante = () => {
 
 
       <div 
-      class="col-5" id="Bloque2">
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={r} />
+      className="col-5" id="Bloque2">
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={r} />
           <b>
           
           Build + Setup + Testing + Warranty
@@ -211,8 +211,8 @@ const Principiante = () => {
           $99.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={atx} />
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={atx} />
           <b>
           
           700" ATX 80 Plus Gold
@@ -224,8 +224,8 @@ const Principiante = () => {
           $79.00
         </b>
       </div>
-      <div class="textocomponentes " align="LEFT">
-        <img class="componentes" src={liquid} />
+      <div className="textocomponentes " align="LEFT">
+        <img className="componentes" src={liquid} />
           <b>
           
           CM Masterliquid ML240L
@@ -237,8 +237,8 @@ const Principiante = () => {
           $89.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={windows}/ >
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={windows}/ >
           <b>
           
           Windows 11 Home + USB Recovery
@@ -248,8 +248,8 @@ const Principiante = () => {
           $120.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={rtx}/ >
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={rtx}/ >
           <b>
           
           NVIDIA GeForce RTX 3070 8GB (VR Ready)
@@ -258,8 +258,8 @@ const Principiante = () => {
           $679.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={cooler} />
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={cooler} />
           <b>
           
           Cooler Master TD500 RGB
@@ -271,8 +271,8 @@ const Principiante = () => {
           $99.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={nvm} />
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={nvm} />
           <b>
           
           1TB NVMe M.2
@@ -285,8 +285,8 @@ const Principiante = () => {
           $99.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={ddr} />
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={ddr} />
           <b>
           
           16GB DDR Dual Channel
@@ -298,8 +298,8 @@ const Principiante = () => {
           $69.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={asus} />
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={asus} />
           <b>
           
           ASUS PRIME B660M-A | Intel
@@ -310,8 +310,8 @@ const Principiante = () => {
           $149.00
         </b>
       </div>
-      <div class="textocomponentes" align="LEFT">
-        <img class="componentes" src={wire}/ >
+      <div className="textocomponentes" align="LEFT">
+        <img className="componentes" src={wire}/ >
           <b>
           
           Wireless 802.11ac
@@ -348,9 +348,9 @@ const Principiante = () => {
         &nbsp;
       </div>
       
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Discount code" aria-label="Discount code" aria-describedby="button-addon2"/>
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Apply</button>
+      <div className="input-group mb-3">
+        <input type="text" className="form-control" placeholder="Discount code" aria-label="Discount code" aria-describedby="button-addon2"/>
+        <button className="btn btn-outline-secondary" type="button" id="button-addon2">Apply</button>
       </div>
 
 
