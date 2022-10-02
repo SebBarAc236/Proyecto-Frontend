@@ -37,7 +37,23 @@ const Header = () =>
             <div hidden={escondido} id="pSearch" className="position-relative">
                 <input  id="searchInput" type="text" className="form-control m-2" 
                 value={inputSearch} onChange={inputHandler}/>
-                <div hidden={escondidoD} id="card" className="bg-white">NVIDIA GEFORCE GTX 1650 4GB</div>
+                <div hidden={escondidoD} id="card" className="bg-white card">
+                    <div className="p-2">Products</div>
+                    <hr />
+                    <Link to={"/Producto"} className="prod d-flex text-secondary">
+             
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJtWO9rlPsNocaOb2hpjn9-5igenkCWzaVQ&usqp=CAU" alt="NVIDIA" />
+                        <div className="d-flex flex-column">
+                            <div className="pr fw-semibold fst-italic"> NVIDIA GEFORCE GTX 1650 4GB</div>
+                            <div>Redux</div>
+                            <div>$229</div>
+                        </div>
+             
+                    </Link>
+                    <hr />
+                    <div className="prod p-2">Search for "{inputSearch}"...</div>
+                </div>
+                
             </div>
             <a className="letras" href="#about">Ranking</a>
             <a className="letras" href="#about">Reviews</a>
