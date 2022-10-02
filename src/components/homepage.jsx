@@ -13,7 +13,7 @@ const Home = (props) => {
             <h2 id="subpc" className="p-1">Just what you need</h2>
             <br />
             <span>
-                <Link to={"/Producto"}>
+                <Link to={"/Principiante"}>
                     <button className="bgbutton rounded border border-success m-1 p-2 border-opacity-10">
                         Build for beginners
                     </button>

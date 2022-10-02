@@ -10,7 +10,7 @@ import coding from '../IMAGENES-F/coding.png'
 
 const Principiante = () => {
     return <div>
-            <Header/>
+            <div className='row mx-auto'><Header/></div>
             <div>
             <span id="titulo" className="texto" style={{color: "white", fontsize: "35px"}}>
                 <b>
@@ -35,9 +35,11 @@ const Principiante = () => {
         
             </span>
             <span ALIGN="RIGHT">
-                <button className="rounded border-0" style={{height: "50px" , width: "150px"}}>
-                    Back
-                </button>
+                <Link to={"/"}>
+                    <button className="rounded border-0" style={{height: "50px" , width: "150px"}}>
+                        Back
+                    </button>
+                </Link>
                 <span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
@@ -55,7 +57,7 @@ const Principiante = () => {
                 &nbsp; 
             </div>
         </div>
-        <div className="row mb-5" id="contentrow" >
+        <div className="row mb-5" ALIGN="center" id="contentrow" >
             <div className="col" id= "contentcol"  >
                 <button id="boton" type="button" className="bg-secondary rounded border-0" 
                     >
@@ -85,7 +87,7 @@ const Principiante = () => {
             </div>
           
         </div>
-        <div class="row" id="contentrow">
+        <div class="row" ALIGN="center" id="contentrow">
             <div class="col" id= "contentcol" style={{width:"110%", height:"50%"}}>
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >

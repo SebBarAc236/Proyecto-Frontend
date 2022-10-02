@@ -16,10 +16,10 @@ import gpay from '../IMAGENES-F/gpay.png'
 
 
 
-const Principiante = () => {
+const Checkout = () => {
     return <div>
            
-           <Header/>
+           <div className='row mx-auto'><Header/></div>
             
 
 <div className="container text-center">
@@ -32,11 +32,11 @@ const Principiante = () => {
         <a style={{textdecoration:"none", color: "black"}}  href=""> Payment  </a> 
       </div>
 
-      <DIV>
+      <div>
         <b>
             Express Checkout
         </b>
-      </DIV>
+      </div>
 
       <div className="row">
         <div className="col" id="colpago">
@@ -98,7 +98,7 @@ const Principiante = () => {
 
 
 
-      <DIV>
+      <div>
 
     
         <div className="input-group mb-3">
@@ -110,7 +110,7 @@ const Principiante = () => {
             <option value="3">Argentina (Ed Va)</option>
           </select>
         </div>
-      </DIV>
+      </div>
 
       
 
@@ -366,3 +366,4 @@ const Principiante = () => {
 
 </div>
 }
+export default Checkout;
