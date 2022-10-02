@@ -5,6 +5,7 @@ import design1 from '../IMAGENES-F/design1.png'
 import rendering from '../IMAGENES-F/rendering1'
 import office from '../IMAGENES-F/office'
 import other1 from '../IMAGENES-F/other1'
+import './principiante.css'
 
 
 
