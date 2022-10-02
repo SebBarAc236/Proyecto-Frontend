@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    background: #f9f9ff;
+    font-family: sans-serif;
+    padding-top: 60px;
+  }
+  
+  ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .filterBlock {
+    width: 470px;
+    color: #222;
+  }
+  
+  .filterBlock input {
+    padding: 16px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.28rem;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+  }
+  
+  .filterBlock ul {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 15px;
+    padding: 0 16px;
+    max-height: 320px;
+    background-color: #ffffff;
+  }
+  
+  .filterBlock ul li {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #c7c0c0;
+    margin-top: 0.5px;
+  }
+  
+  .filterBlock li:hover {
+    color: rgb(248, 21, 82);
+  }
