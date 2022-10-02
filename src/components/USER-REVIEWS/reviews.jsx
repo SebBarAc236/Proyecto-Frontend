@@ -7,7 +7,7 @@ const Reviews = () => {
            
            <Header/>
 
-           <DIV  style={{color:"rgb(56,60,76)", fontsize:"25px", marginleft: "30px"}}>
+           <div  style={{color:"rgb(56,60,76)", fontsize:"25px", marginleft: "30px"}}>
                 <b>
                     User reviews
                 </b>
@@ -80,7 +80,7 @@ const Reviews = () => {
     
                </div>
             
-            </DIV>
+            </div>
     
     
 

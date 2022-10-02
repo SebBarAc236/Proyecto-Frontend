@@ -13,11 +13,12 @@ import r from '../IMAGENES-F/r.jpg'
 import shop from '../IMAGENES-F/shop.png'
 import paypal from '../IMAGENES-F/paypal.png'
 import gpay from '../IMAGENES-F/gpay.png'
+import userblack from '../IMAGENES-F/userblack.png'
 import './pantalla-compra.css'
 
 
 
-const Checkout = () => {
+const Pantallacompra = () => {
     return <div>
            
            <div className='row mx-auto'><Header/></div>
@@ -33,7 +34,7 @@ const Checkout = () => {
         <a style={{textdecoration:"none", color: "black"}}  href=""> Payment  </a> 
       </div>
 
-      <div>
+      <div id='textoanegro' className='mb-3 mt-3'>
         <b>
             Express Checkout
         </b>
@@ -59,23 +60,23 @@ const Checkout = () => {
       <div>
         &nbsp;
       </div>
-      <div align="CENTER">
+      <div align="CENTER" id='textoanegro'>
         OR
       </div>
 
-      <div  className="texto" align="LEFT">
+      <div  className="texto" align="LEFT" id='textoanegro'>
         Contact Information
       </div>
       <div>
         &nbsp;
       </div>
-      <div align="LEFT">
-        <img className="userblack" src="userblack.png"/>
-      
+      <div align="LEFT" id='textoanegro'>
+        <img className="userblack" src={userblack}/>
+        
 
       
         Ed Va (edjahevs@gmail.com) <br/>
-        <a href="" style="text-decoration:none; color: black;">Log out</a>
+        <a href="" style={{textdecoration:"none", color: "black"}}>Log out</a>
         
        
       
@@ -172,7 +173,7 @@ const Checkout = () => {
       
    
       <div align="left">
-        <a href="" style={{textdecoration: "none", color: "black"}}>  Return to cart</a>
+        <Link to={"/Cart"}><a href="" style={{textdecoration: "none", color: "black"}}>  Return to cart</a></Link>
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
@@ -181,13 +182,13 @@ const Checkout = () => {
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
 
-        <button className="border-0 rounded-top" style={{backgroundcolor: "rgba(195,90,234,255)"}}>
+        <button className="border-0 rounded-top btn btn-primary" id='botonrosado'>
           <div style={{color: "white"}}>
             Continue to shipping
           </div>
         </button>
       </div>
-      
+      </div>
 
       
      
@@ -239,7 +240,7 @@ const Checkout = () => {
         </b>
       </div>
       <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={windows}/ >
+        <img className="componentes" src={windows}/>
           <b>
           
           Windows 11 Home + USB Recovery
@@ -249,8 +250,8 @@ const Checkout = () => {
           $120.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={rtx}/ >
+      <div className="textocomponentes" align="left">
+        <img className="componentes" src={rtx} />
           <b>
           
           NVIDIA GeForce RTX 3070 8GB (VR Ready)
@@ -259,7 +260,7 @@ const Checkout = () => {
           $679.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
+      <div className="textocomponentes" align="left">
         <img className="componentes" src={cooler} />
           <b>
           
@@ -272,7 +273,7 @@ const Checkout = () => {
           $99.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
+      <div className="textocomponentes" align="left">
         <img className="componentes" src={nvm} />
           <b>
           
@@ -286,7 +287,7 @@ const Checkout = () => {
           $99.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
+      <div className="textocomponentes" align="left">
         <img className="componentes" src={ddr} />
           <b>
           
@@ -299,7 +300,7 @@ const Checkout = () => {
           $69.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
+      <div className="textocomponentes" align="left">
         <img className="componentes" src={asus} />
           <b>
           
@@ -311,8 +312,8 @@ const Checkout = () => {
           $149.00
         </b>
       </div>
-      <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={wire}/ >
+      <div className="textocomponentes" align="left">
+        <img className="componentes" src={wire}/>
           <b>
           
           Wireless 802.11ac
@@ -365,5 +366,6 @@ const Checkout = () => {
 
 </div> 
 
-</div>
+
 }
+export default Pantallacompra;

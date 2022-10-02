@@ -14,6 +14,10 @@ import Avanzado from './components/avanzando';
 import Olvidada from './components/INICIO/contraolvidada';
 import OrderHistory from './components/Perfil/orderhistory';
 import Principiante from './components/PRINCIPIANTE/principiante';
+import Pantallacompra from './components/PANTALLA-COMPRA/pantallacompra';
+import Reseñas from './components/RESEÑASYT/RESEÑAS';
+import Reviews from './components/USER-REVIEWS/reviews';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,7 +27,7 @@ root.render(
           <Route path="/Principiante" element={ <Principiante/> } />
           <Route path="/Reseñas" element={ <Reseñas/> } />
           <Route path="/Reviews" element={ <Reviews/> } />
-          <Route path="/Pantalla-compra" element={ <Pantalla-compra/> } />
+          <Route path="/Pantallacompra" element={ <Pantallacompra/> } />
           <Route path="/orderHistory" element={ <OrderHistory/> } />
           <Route path="/Olvidada" element={ <Olvidada/> } />
           <Route path="/Avanzado" element={ <Avanzado/> } />

@@ -20,7 +20,7 @@ const Avanzado = () => {
             <div className='col'>
                 <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco'>Back</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button>
+                <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button></Link>
             </div>
         <div className='row justify-content-center'>
             <div className='col mb-1' align="center">
