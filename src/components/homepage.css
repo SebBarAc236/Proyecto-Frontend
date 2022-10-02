@@ -5,7 +5,7 @@ body
 
 footer
 {
-    position: fixed;
+    
     left: 0;
     right: 0;
     bottom: 0;
@@ -48,6 +48,19 @@ th, td
 {
     color: white;
 }
+
+.fb
+{
+    width: 20px;
+    height: 20px;
+}
+
+#subs
+{
+    background-color: blueviolet;
+    color: whitesmoke;
+}
+
 
 .header-right a
 {
