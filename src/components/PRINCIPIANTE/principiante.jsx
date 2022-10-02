@@ -1,4 +1,4 @@
-import Header from './header_todos';
+import Header from '../header_todos';
 import { Link } from "react-router-dom"
 
 
@@ -82,7 +82,7 @@ const Principiante = () => {
             <div className="col" id= "contentcol" style="height: 100%;">
                 <button id="boton" type="button" className="bg-secondary rounded border-0" 
                 >
-                <img src="rendering.png" width="110" height="50"/ >
+                <img src="rendering.png" width="110" height="50"/>
                 <div className="Boton" style="color: white;">
                     <b> Rendering</b>
                 </div>
