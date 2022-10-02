@@ -2,6 +2,9 @@ import Header from './header_todos';
 import { Link } from "react-router-dom"
 import './avanzado.css'
 import nvidialogo from './imagenes/nvidialogo.png'
+import ryzenlogo from './imagenes/ryzenlogo.jpg'
+import aoruslogo from './imagenes/gigabytelogo.png'
+import corsairlogo from './imagenes/corsairlogo.png'
 import pcgamer from './imagenes/pcgamer.png'
 
 const Avanzado = () => {
@@ -15,29 +18,29 @@ const Avanzado = () => {
                 <div id="tituloavanzado">Build your PC!</div>
             </div>
             <div className='col'>
-                <Link to={"/"}><button className='mx-auto btn btn-primary'>Back</button></Link>
+                <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco'>Back</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Checkout</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button>
             </div>
         <div className='row justify-content-center'>
             <div className='col mb-1' align="center">
-                <button className='mx-auto btn btn-primary'>Graphics</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Graphics</button>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Processor</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Processor</button>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Memory</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Memory</button>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Storage</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Storage</button>
                 &nbsp;
             </div>
         </div>
         <div className='row'>
             <div className='col'>
-                <button className='mx-auto btn btn-primary'>Cooler</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Cooler</button>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Windows</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Windows</button>
                 &nbsp;
-                <button className='mx-auto btn btn-primary'>Power Supply</button>
+                <button className='mx-auto btn btn-primary' id='botonrosado'>Power Supply</button>
             </div>
         </div>
         <div className='col mt-3' id='columnaiz'>
@@ -45,7 +48,7 @@ const Avanzado = () => {
                 <img src={pcgamer} alt="..." />
             </div>
             <div className='row'>
-                <div className='container' id='resumen'>
+                <div className='container rounded-5' id='resumen'>
                     <div>Components price</div>
                     <div>$1899</div>
                     <div>Build fee</div>
@@ -67,7 +70,7 @@ const Avanzado = () => {
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <button className='mx-auto btn btn-primary' id='botonagregado'>+</button>
                 </div>
             </div>
             </div>
@@ -80,12 +83,12 @@ const Avanzado = () => {
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3090</p>
-                    <p class="card-text"><small class="text-muted">900$</small></p>
+                    <p class="card-text">NVIDIA RTX 3080</p>
+                    <p class="card-text"><small class="text-muted">800$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <button className='mx-auto btn btn-primary' id='botonagregado'>+</button>
                 </div>
             </div>
             </div>
@@ -98,12 +101,12 @@ const Avanzado = () => {
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3090</p>
-                    <p class="card-text"><small class="text-muted">900$</small></p>
+                    <p class="card-text">NVIDIA RTX 3070</p>
+                    <p class="card-text"><small class="text-muted">700$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <button className='mx-auto btn btn-primary' id='botonagregado'>+</button>
                 </div>
             </div>
             </div>
@@ -116,12 +119,12 @@ const Avanzado = () => {
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3090</p>
-                    <p class="card-text"><small class="text-muted">900$</small></p>
+                    <p class="card-text">NVIDIA RTX 3060</p>
+                    <p class="card-text"><small class="text-muted">600$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <button className='mx-auto btn btn-primary' id='botonagregado'>+</button>
                 </div>
             </div>
             </div>
@@ -132,16 +135,16 @@ const Avanzado = () => {
                 <div class="card mb-3" id='listacompra'>
                 <div class="row g-0">
                     <div class="col-md-3">
-                        <img src={nvidialogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                        <img src={ryzenlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
                     </div>
                     <div class="col-md-6">
                     <div class="card-body">
-                        <p class="card-text">NVIDIA RTX 3090</p>
+                        <p class="card-text">AMD RYZEN 3600X</p>
                     </div>
                     </div>
                     <div class="col-md-3">
                         <div>&nbsp;</div>
-                        900$
+                        350$
                     </div>
                 </div>
                 </div>
@@ -150,16 +153,16 @@ const Avanzado = () => {
                 <div class="card mb-3" id='listacompra'>
                 <div class="row g-0">
                     <div class="col-md-3">
-                        <img src={nvidialogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                        <img src={corsairlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
                     </div>
                     <div class="col-md-6">
                     <div class="card-body">
-                        <p class="card-text">NVIDIA RTX 3090</p>
+                        <p class="card-text">CORSAIR VENGANCE 16GB RAM 8X2</p>
                     </div>
                     </div>
                     <div class="col-md-3">
                         <div>&nbsp;</div>
-                        900$
+                        250$
                     </div>
                 </div>
                 </div>
@@ -168,16 +171,16 @@ const Avanzado = () => {
                 <div class="card mb-3" id='listacompra'>
                 <div class="row g-0">
                     <div class="col-md-3">
-                        <img src={nvidialogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                        <img src={aoruslogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
                     </div>
                     <div class="col-md-6">
                     <div class="card-body">
-                        <p class="card-text">NVIDIA RTX 3090</p>
+                        <p class="card-text">GIGABYTE POWER SUPPLY 80PLUS GOLD</p>
                     </div>
                     </div>
                     <div class="col-md-3">
                         <div>&nbsp;</div>
-                        900$
+                        200$
                     </div>
                 </div>
                 </div>

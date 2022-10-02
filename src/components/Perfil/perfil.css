@@ -11,7 +11,7 @@
     font-style: italic;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
-#botonblanco{
+#botonblancoP{
     background-color:rgb(208, 172, 238);
     background: linear-gradient(to right,rgb(208, 172, 238),rgb(243, 243, 243));
     border-color: black;
@@ -20,8 +20,11 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    
+    width: 100%;
 }
 #ignore{
     color: rgb(48, 34, 56);
+}
+#contenidoPerfil{
+    background-color: rgba(188, 146, 207, 0.904);
 }
