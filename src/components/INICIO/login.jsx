@@ -5,7 +5,7 @@ import './loginstyle.css'
 const Login = (props) => {
 
     return <div>
-        <div className='row'><Header/></div>
+        <div className='row mx-auto'><Header/></div>
         <div className='container'>
             
             <div className='row' id='ignore'>.</div>

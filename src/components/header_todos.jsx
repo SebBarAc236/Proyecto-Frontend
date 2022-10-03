@@ -57,7 +57,7 @@ const Header = () =>
             </div>
             <Link to={"/Ranking"}><button className="letras" id="botonreviews" href="#about">Ranking</button></Link>
             <Link to={"/Reviews"}><button className="letras" id="botonreviews" href="#about">Reviews</button></Link>
-            <a className="letras" href="#contact">Support</a>
+            <Link to={"/Soporte"}><button className="letras" id="botonreviews" href="#contact">Support</button></Link>
             <a className="letras">About</a>
             <Link to={"/"} className="letras">Home</Link>
         </div>
