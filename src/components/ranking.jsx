@@ -2,6 +2,16 @@ import Header from './header_todos';
 import { Link } from "react-router-dom"
 import './ranking.css'
 import pcgamer from './imagen/pc_gamer.png'
+import coolermaster from './imagen/cooler_master.png'
+import corei7 from './imagen/core_i7.png'
+import masterliquid from './imagen/master_liquid.png'
+import motherboard from './imagen/motherboard.png'
+import powersupply from './imagen/power_supply.png'
+import qty from './imagen/QTY_CM.png'
+import ram from './imagen/RAM.png'
+import rtx from './imagen/RTX.png'
+import ssd from './imagen/SSD.png'
+
 const Ranking = ()=>{
     return <div>
         <div className='row mx-auto' align="right"><Header/></div>
@@ -47,16 +57,17 @@ const Ranking = ()=>{
                 </div>
                 <div className='col-6' id='ordenadores'>
                     <div style={{color:"white", fontSize:"35px"}}>ORDENADORES</div>
-                    <div className='row' style={{height:"100%", width:"100%"}}>
+                    <h1 style={{textAlign:"left",color:"rgb(59, 59, 161)"}}>Ranking best sellers builds</h1>
+                    <div className='row mt-5' style={{height:"50%", width:"100%"}}>
                     <div class="list-group-item d-flex justify-content-between align-items-center pb-2 pb-md-100 mb-md-200" id='ordenadorrank'>
-                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"50%"}}>
                                                     <span class="ms-5">
-                                                        <img class="img-fluid" src={pcgamer} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                        <img class="img-fluid" src={pcgamer} width="30" height="30" alt="Computer Hope" aria-colspan="icons" align="left"/>
                                                     </span>
                                                     <span class="ms-5">
                                                         Monster PC
                                                     </span> 
-                                                    <span class="ms-5">
+                                                    <span class="ms-5" align="right">
                                                         $1899
                                                     </span>
                                                 </button>
@@ -64,7 +75,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/core_i7.jpg" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={corei7} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 INTEL CORE I7-12700F 12-CORE
@@ -77,7 +88,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={rtx} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 NVIDIA GEFORCE RTX 3070 8GB (VR READY)
@@ -90,7 +101,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/memoria_16GB.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ram} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 16GB DDR4 DUAL CHANNEL
@@ -103,7 +114,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={rtx} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 1TB NVME M.2
@@ -116,7 +127,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={masterliquid} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 CM MASTERLIQUID ML240L
@@ -129,7 +140,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={qty} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 QTY 4X CM MASTERFANS RGB
@@ -142,7 +153,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={coolermaster} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 COOLER MASTER TD500 RGB
@@ -155,7 +166,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={powersupply} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 700W ATX 80 PLUS GOLD
@@ -168,7 +179,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={motherboard} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 ASUS B660 SERIES | INTEL
@@ -178,25 +189,25 @@ const Ranking = ()=>{
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul>                     
                     </div>
                     <div class="list-group-item d-flex justify-content-between align-items-center pb-2 pb-md-100 mb-md-200" id='ordenadorrank'>
-                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"50%"}}>
                                                     <span class="ms-5">
-                                                        <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                        <img class="img-fluid" src={pcgamer} width="30" height="30" alt="Computer Hope" aria-colspan="icons" align="left"/>
                                                     </span>
                                                     <span class="ms-5">
-                                                        Monster PC
+                                                        Cruser Build
                                                     </span> 
-                                                    <span class="ms-5">
-                                                        $1899
+                                                    <span class="ms-5" align="right">
+                                                        $1759
                                                     </span>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/core_i7.jpg" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={corei7} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 INTEL CORE I7-12700F 12-CORE
@@ -209,7 +220,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={rtx} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 NVIDIA GEFORCE RTX 3070 8GB (VR READY)
@@ -222,7 +233,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/memoria_16GB.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ram} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 16GB DDR4 DUAL CHANNEL
@@ -235,7 +246,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ssd} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 1TB NVME M.2
@@ -248,7 +259,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={masterliquid} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 CM MASTERLIQUID ML240L
@@ -261,7 +272,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={qty} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 QTY 4X CM MASTERFANS RGB
@@ -274,7 +285,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={coolermaster} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 COOLER MASTER TD500 RGB
@@ -287,7 +298,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={powersupply} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 700W ATX 80 PLUS GOLD
@@ -300,7 +311,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={motherboard} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 ASUS B660 SERIES | INTEL
@@ -310,25 +321,25 @@ const Ranking = ()=>{
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul>                     
                     </div>
                     <div class="list-group-item d-flex justify-content-between align-items-center pb-2 pb-md-100 mb-md-200" id='ordenadorrank'>
-                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"50%"}}>
                                                     <span class="ms-5">
-                                                        <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                        <img class="img-fluid" src={pcgamer} width="30" height="30" alt="Computer Hope" aria-colspan="icons" align="left"/>
                                                     </span>
                                                     <span class="ms-5">
-                                                        Monster PC
+                                                        NASA PC
                                                     </span> 
-                                                    <span class="ms-5">
-                                                        $1899
+                                                    <span class="ms-5" align="right">
+                                                        $1679
                                                     </span>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/core_i7.jpg" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={corei7} width="30" height="30" alt="Computer Hope" aria-colspan="icons" align="left"/>
                                                             </span>
                                                             <span>
                                                                 INTEL CORE I7-12700F 12-CORE
@@ -341,7 +352,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={rtx} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 NVIDIA GEFORCE RTX 3070 8GB (VR READY)
@@ -354,7 +365,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/memoria_16GB.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ram} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 16GB DDR4 DUAL CHANNEL
@@ -367,7 +378,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ssd} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 1TB NVME M.2
@@ -380,7 +391,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={masterliquid} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 CM MASTERLIQUID ML240L
@@ -393,7 +404,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={qty} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 QTY 4X CM MASTERFANS RGB
@@ -406,7 +417,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={coolermaster} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 COOLER MASTER TD500 RGB
@@ -419,7 +430,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={powersupply} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 700W ATX 80 PLUS GOLD
@@ -432,7 +443,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={motherboard} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 ASUS B660 SERIES | INTEL
@@ -442,25 +453,25 @@ const Ranking = ()=>{
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul>                     
                     </div>
                     <div class="list-group-item d-flex justify-content-between align-items-center pb-2 pb-md-100 mb-md-200" id='ordenadorrank'>
-                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"50%"}}>
                                                     <span class="ms-5">
-                                                        <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                        <img class="img-fluid" src={pcgamer} width="30" height="30" alt="Computer Hope" aria-colspan="icons" align="left"/>
                                                     </span>
                                                     <span class="ms-5">
-                                                        Monster PC
+                                                        Budget Build
                                                     </span> 
-                                                    <span class="ms-5">
-                                                        $1899
+                                                    <span class="ms-5" align="right">
+                                                        $1299
                                                     </span>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/core_i7.jpg" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={corei7} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 INTEL CORE I7-12700F 12-CORE
@@ -473,7 +484,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={rtx} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 NVIDIA GEFORCE RTX 3070 8GB (VR READY)
@@ -486,7 +497,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/memoria_16GB.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ram} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 16GB DDR4 DUAL CHANNEL
@@ -499,7 +510,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={ssd} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 1TB NVME M.2
@@ -512,7 +523,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={masterliquid} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 CM MASTERLIQUID ML240L
@@ -525,7 +536,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={qty} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 QTY 4X CM MASTERFANS RGB
@@ -538,7 +549,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={coolermaster} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 COOLER MASTER TD500 RGB
@@ -551,7 +562,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={powersupply} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 700W ATX 80 PLUS GOLD
@@ -564,7 +575,7 @@ const Ranking = ()=>{
                                                     <li>
                                                         <a class="dropdown-item" href="#">
                                                             <span>
-                                                                <img class="img-fluid" src="/imagen/pc_gamer.png" width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
+                                                                <img class="img-fluid" src={motherboard} width="30" height="30" alt="Computer Hope" aria-colspan="icons"/>
                                                             </span>
                                                             <span>
                                                                 ASUS B660 SERIES | INTEL
@@ -574,13 +585,14 @@ const Ranking = ()=>{
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul>                     
+                    </div>
                     </div>
                     
                     </div>
                 </div>
         </div>
-    </div>
+   
 }
 
 export default Ranking;
