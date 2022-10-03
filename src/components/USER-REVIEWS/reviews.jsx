@@ -7,19 +7,19 @@ const Reviews = () => {
            
            <div className='row mx-auto'><Header/></div>
 
-           <div style={{color:"black", background:"white", fontsize:"25px", marginleft: "30px", height:"887px"}}>
-                <b id='tituloreview'>
+           <div id='tituloreview' >
+                <b >
                     User reviews
                 </b>
                 <div>
                     &nbsp;
                 </div> 
              
-               <div style={{fontsize:"18px"}}>
-                <b id='contenidoreview'>
+               <div id='contenidoreview' >
+                <b >
                     Global rate                 &nbsp; &nbsp;
 
-                    <img style={{height: "35px", width: "120px"}} src={star}/>
+                    <img id="estrellas"  src={star}/>
                 </b>
                 <div  className="border-bottom border-2">
                     &nbsp;
@@ -30,14 +30,14 @@ const Reviews = () => {
                <div>
                 &nbsp;
               </div> 
-               <div style={{fontsize:"18px"}}>
-                <b id='contenidoreview'>
+               <div id='contenidoreview' >
+                <b >
                     Juan Lopez
                 </b>
                 <div>
                     &nbsp;
                   </div>
-                <div  id='contenidoreview' style={{fontsize:"14px", marginleft: "20px"}}>
+                <div  id='reviews'>
                     I completely recomend this service
                 </div>
                 <div  className="border-bottom border-2">
@@ -49,14 +49,14 @@ const Reviews = () => {
                <div>
                 &nbsp;
               </div> 
-               <div style={{fontsize:"18px"}}>
-                <b id='contenidoreview'>
+               <div id='contenidoreview' >
+                <b >
                     Jhon Doe
                 </b>
                 <div>
                     &nbsp;
                   </div>
-                <div  id='contenidoreview' style={{fontsize:"14px", marginleft: "20px"}}>
+                <div  id='reviews' >
                     Great service
                 </div>
                 <div  className="border-bottom border-2">
@@ -67,14 +67,14 @@ const Reviews = () => {
                <div>
                 &nbsp;
               </div> 
-               <div style={{fontsize:"18px"}}>
-                <b id='contenidoreview'>
+               <div id='contenidoreview' >
+                <b>
                     Carl Johnson
                 </b>
                 <div>
                     &nbsp;
                   </div>
-                <div  id='contenidoreview' style={{fontsize:"14px", marginleft: "20px"}}>
+                <div  id='reviews' >
                     Pc well builded and nice case quality
                 </div>
     

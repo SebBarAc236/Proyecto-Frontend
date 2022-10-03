@@ -1,8 +1,25 @@
 #tituloreview{
     font-size: 35px;
     margin-left: 15px;
+    color:black;
+     background:white;
+     margin-left: 30px;
+      height: 887px;
 
 }
 #contenidoreview{
     margin-left: 15px;
+}
+
+#reviews{
+    font-size: 18px;
+}
+#reviews{
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+#estrellas{
+    height: 35px;
+     width: 120px;
 }
