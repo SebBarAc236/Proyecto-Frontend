@@ -1,0 +1,58 @@
+.container{
+    color: rgb(255, 255, 255);
+}
+.card{
+    color: black;
+}
+
+#listacompra{
+    background-color: rgb(154, 109, 196);
+}
+
+#tituloavanzado{
+    font-weight: bold;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    letter-spacing: 0.05em;
+}
+#contenedorA{
+    margin-left: 15%;
+}
+
+#resumen{
+    color: white;
+    background: linear-gradient(to right,rgb(92, 127, 192),rgb(199, 151, 221));
+    font-weight: bolder;
+    width: 80%;
+}
+#columnaiz{
+    margin-right: 15px;
+}
+#botonblanco{
+    background: linear-gradient(to right,rgb(208, 172, 238),rgb(243, 243, 243));
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+#botonrosado{
+    background: linear-gradient(to right,rgb(148, 43, 235),rgb(250, 150, 253));
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+#botonagregado{
+    background: linear-gradient(to right,rgb(148, 43, 235),rgb(250, 150, 253));
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
