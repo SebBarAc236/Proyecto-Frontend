@@ -1,20 +1,33 @@
 {
   "files": {
-    "main.css": "/PW-TrabajoGrupal/static/css/main.c40c4821.css",
-    "main.js": "/PW-TrabajoGrupal/static/js/main.04cf23d2.js",
+    "main.css": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css",
+    "main.js": "/PW-TrabajoGrupal/static/js/main.915de474.js",
     "static/js/787.fca83d61.chunk.js": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js",
+    "static/media/cooler_master.png": "/PW-TrabajoGrupal/static/media/cooler_master.039c79c5eb29c1e0a772.png",
+    "static/media/motherboard.png": "/PW-TrabajoGrupal/static/media/motherboard.5c29c9449c1a5ab7c20c.png",
+    "static/media/pc_gamer.png": "/PW-TrabajoGrupal/static/media/pc_gamer.392c67e81a1ace6ac382.png",
     "static/media/pcgamer.png": "/PW-TrabajoGrupal/static/media/pcgamer.392c67e81a1ace6ac382.png",
+    "static/media/SSD.png": "/PW-TrabajoGrupal/static/media/SSD.a5b69c63e02debb8ce08.png",
     "static/media/asus.jpg": "/PW-TrabajoGrupal/static/media/asus.f5fae390d04a79f3718f.jpg",
     "static/media/wire.jpg": "/PW-TrabajoGrupal/static/media/wire.d171fe8e72dee6e2fd82.jpg",
+    "static/media/QTY_CM.png": "/PW-TrabajoGrupal/static/media/QTY_CM.828f4e58a72d138865fb.png",
+    "static/media/core_i7.png": "/PW-TrabajoGrupal/static/media/core_i7.115677b4d8fecd6be2e2.png",
     "static/media/700at.jpg": "/PW-TrabajoGrupal/static/media/700at.6209db91a32871640b9c.jpg",
+    "static/media/windows11.png": "/PW-TrabajoGrupal/static/media/windows11.7c838795a9c0346077ef.png",
     "static/media/rtx.jpg": "/PW-TrabajoGrupal/static/media/rtx.339c32cc9a1f7a5bbdeb.jpg",
+    "static/media/RAM.png": "/PW-TrabajoGrupal/static/media/RAM.2c7c840c73a5f8010dc7.png",
     "static/media/nvm.jpg": "/PW-TrabajoGrupal/static/media/nvm.2ccf51bd723a3ebd43aa.jpg",
+    "static/media/power_supply.png": "/PW-TrabajoGrupal/static/media/power_supply.207c7db8b95669efc329.png",
     "static/media/nexus.png": "/PW-TrabajoGrupal/static/media/nexus.ca2c51b7205e48295b3d.png",
+    "static/media/master_liquid.png": "/PW-TrabajoGrupal/static/media/master_liquid.dfa3ada9900a17bdec91.png",
+    "static/media/build_logo.png": "/PW-TrabajoGrupal/static/media/build_logo.e71f8225efd061a46770.png",
     "static/media/5star.png": "/PW-TrabajoGrupal/static/media/5star.d5b7277295d35a97cc0c.png",
+    "static/media/wireless.png": "/PW-TrabajoGrupal/static/media/wireless.81c54ba7d3726353a491.png",
     "static/media/nvidialogo.png": "/PW-TrabajoGrupal/static/media/nvidialogo.05f5ccebcabdbcb26c7e.png",
     "static/media/gpay.png": "/PW-TrabajoGrupal/static/media/gpay.fcbe59f91821d82a16a7.png",
     "static/media/linuslogo.png": "/PW-TrabajoGrupal/static/media/linuslogo.55cb49fe3400db914c48.png",
     "static/media/windows.jpg": "/PW-TrabajoGrupal/static/media/windows.1914ea3e6b23211895a6.jpg",
+    "static/media/kingston.jpg": "/PW-TrabajoGrupal/static/media/kingston.e716392be9aab1cf92b0.jpg",
     "static/media/r.jpg": "/PW-TrabajoGrupal/static/media/r.f2d19c95ac37b13883ae.jpg",
     "static/media/ddr.jpg": "/PW-TrabajoGrupal/static/media/ddr.f05a75746de3a3fd4ca2.jpg",
     "static/media/corsairlogo.png": "/PW-TrabajoGrupal/static/media/corsairlogo.8eaf4b151c093d5fc979.png",
@@ -22,12 +35,12 @@
     "static/media/ryzenlogo.jpg": "/PW-TrabajoGrupal/static/media/ryzenlogo.f132ff8586e5bb1b7d35.jpg",
     "static/media/paypal.png": "/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
     "index.html": "/PW-TrabajoGrupal/index.html",
-    "main.c40c4821.css.map": "/PW-TrabajoGrupal/static/css/main.c40c4821.css.map",
-    "main.04cf23d2.js.map": "/PW-TrabajoGrupal/static/js/main.04cf23d2.js.map",
+    "main.e2e825c8.css.map": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css.map",
+    "main.915de474.js.map": "/PW-TrabajoGrupal/static/js/main.915de474.js.map",
     "787.fca83d61.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c40c4821.css",
-    "static/js/main.04cf23d2.js"
+    "static/css/main.e2e825c8.css",
+    "static/js/main.915de474.js"
   ]
 }
