@@ -1,13 +1,13 @@
-import Header from './header_todos';
+import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './avanzado.css'
-import nvidialogo from './imagenes/nvidialogo.png'
-import ryzenlogo from './imagenes/ryzenlogo.jpg'
-import aoruslogo from './imagenes/gigabytelogo.png'
-import corsairlogo from './imagenes/corsairlogo.png'
-import pcgamer from './imagenes/pcgamer.png'
-
-const Avanzado = () => {
+import nvidialogo from '../imagenes/nvidialogo.png'
+import ryzenlogo from '../imagenes/ryzenlogo.jpg'
+import aoruslogo from '../imagenes/gigabytelogo.png'
+import corsairlogo from '../imagenes/corsairlogo.png'
+import pcgamer from '../imagenes/pcgamer.png'
+import windows from '../imagen/windows11.png'
+const Windowsa = () => {
     return <div>
         <div className='row mx-auto' align="right"><Header/></div>
         
@@ -22,25 +22,25 @@ const Avanzado = () => {
                 &nbsp;
                 <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button></Link>
             </div>
-        <div className='row justify-content-center'>
+            <div className='row justify-content-center'>
             <div className='col mb-1' align="center">
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Graphics</button>
+                <Link to={"/Avanzado"}><button className='mx-auto btn btn-primary' id='botonrosado'>Graphics</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Processor</button>
+                <Link to={"/Processora"}><button className='mx-auto btn btn-primary' id='botonrosado'>Processor</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Memory</button>
+                <Link to={"/Memoria"}><button className='mx-auto btn btn-primary' id='botonrosado'>Memory</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Storage</button>
+                <Link to={"/Storagea"}><button className='mx-auto btn btn-primary' id='botonrosado'>Storage</button></Link>
                 &nbsp;
             </div>
         </div>
         <div className='row'>
             <div className='col'>
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Cooler</button>
+                <Link to={"/Coolera"}><button className='mx-auto btn btn-primary' id='botonrosado'>Cooler</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Windows</button>
+                <Link to={"/Windowsa"}><button className='mx-auto btn btn-primary' id='botonrosado'>Windows</button></Link>
                 &nbsp;
-                <button className='mx-auto btn btn-primary' id='botonrosado'>Power Supply</button>
+                <Link to={"/Powera"}><button className='mx-auto btn btn-primary' id='botonrosado'>Power Supply</button></Link>
             </div>
         </div>
         <div className='col mt-3' id='columnaiz'>
@@ -61,12 +61,12 @@ const Avanzado = () => {
             <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
+                    <img src={windows} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3090</p>
-                    <p class="card-text"><small class="text-muted">900$</small></p>
+                    <p class="card-text">WINDOWS 11</p>
+                    <p class="card-text"><small class="text-muted">30$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
@@ -79,12 +79,12 @@ const Avanzado = () => {
             <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
+                    <img src={windows} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3080</p>
-                    <p class="card-text"><small class="text-muted">800$</small></p>
+                    <p class="card-text">WINDOWS 10 PRO</p>
+                    <p class="card-text"><small class="text-muted">25$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
@@ -97,12 +97,12 @@ const Avanzado = () => {
             <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
+                    <img src={windows} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3070</p>
-                    <p class="card-text"><small class="text-muted">700$</small></p>
+                    <p class="card-text">WINDOWS 8</p>
+                    <p class="card-text"><small class="text-muted">10$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
@@ -115,12 +115,12 @@ const Avanzado = () => {
             <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
+                    <img src={windows} class="img-fluid rounded-start mt-3 mx-auto" alt="..."/>
                 </div>
                 <div class="col-md-6">
                 <div class="card-body">
-                    <p class="card-text">NVIDIA RTX 3060</p>
-                    <p class="card-text"><small class="text-muted">600$</small></p>
+                    <p class="card-text">WINDOWS 7</p>
+                    <p class="card-text"><small class="text-muted">15$</small></p>
                 </div>
                 </div>
                 <div class='col-md-3 mt-4'>
@@ -192,4 +192,4 @@ const Avanzado = () => {
     </div>
 }
 
-export default Avanzado;
+export default Windowsa;
