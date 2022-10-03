@@ -1,29 +1,29 @@
 #contentrow {
     width: 80%;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 300px;
+    margin-right: 300px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 #boton{
-    width: 120px;
-    height: 170px;
+    width: 150px;
+    height: 200px;
 }
 #titulo{
     color: white;
     font-size: 35px;
 }
 #boton1{
-    width: 50px;
-    height: 150px;
+    width: 150px;
+    height: 50px;
 }
 #boton2{
-    width: 50px;
-    height: 150px;
+    width: 150px;
+    height: 50px;
     background-color: violet;
 }
 #primeralinea{
-    margin-left: 200px;
+    margin-left: 250px;
 }
 
 #icons{
