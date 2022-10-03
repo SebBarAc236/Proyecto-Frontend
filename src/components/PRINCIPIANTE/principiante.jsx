@@ -15,6 +15,7 @@ import './principiante.css'
 const Principiante = () => {
     return <div>
             <Header/>
+            <div className='container'>
             <div>
                 &nbsp; 
             </div>
@@ -46,7 +47,7 @@ const Principiante = () => {
             </span>
             <span ALIGN="RIGHT">
                 <Link to={"/"}>
-                    <button className="rounded border-0" id="boton1" >
+                    <button className="btn btn-primary rounded" id="botonblanco" >
                         Back
                     </button>
                 </Link>
@@ -54,7 +55,7 @@ const Principiante = () => {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
                 <Link to={"/Recomendado"}>
-                <button className="rounded border-0" id="boton1"  >
+                <button className="btn btn-primary rounded" id="botonrosado"  >
                     Next
                 </button>
                 </Link>
@@ -70,7 +71,7 @@ const Principiante = () => {
             </div>
         </div>
         <div className="row mb-5" align="center" id="contentrow" >
-            <div className="col" align="center" id= "contentcol"  >
+            <div className="col" align="center" id= "contentcol1"  >
                 <button id="boton" type="button" className=" rounded border-0" 
                     >
                     <img id="icons" src={mando1}  />
@@ -131,7 +132,7 @@ const Principiante = () => {
            
 
         </div>
-
+        </div>
        
 
         </div>

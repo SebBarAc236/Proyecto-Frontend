@@ -3,11 +3,12 @@ import { Link } from "react-router-dom"
 import nexus from '../IMAGENES-F/nexus.png'
 import linuslogo from '../IMAGENES-F/linuslogo.png'
 import comillas from '../IMAGENES-F/comillas.png'
-
+import './reseñas.css'
 const Reseñas = () => {
     return <div>
            
-           <Header/>
+           <div className='row mx-auto' align="right"><Header/></div>
+           <div className='container' id='influencers'>
            <div id="titulo" >
                 <b>
                     Influencers
@@ -28,7 +29,7 @@ const Reseñas = () => {
                 <iframe id="video" src="https://www.youtube.com/embed/b2vrvQydVIw"  title="YouTube video" allowFullScreen></iframe>
                 </div>
                 </div>
-
+            </div>
 
 
 
@@ -39,12 +40,12 @@ const Reseñas = () => {
                          
                            <span>
                             &nbsp; <br/>   
-                            <img id="comillas" src={comillas} /> 
+                            <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
                             You basically just pick wich games you play, wich <br/>
                             performance you want, and it'll suggest a rig for you. <br/>
                             They make things much, much simpler and again for only 75$ bucks? Okay! <br/>
                             recommend it.
-                            <img id="comillas"  src={comillas} /> 
+                            <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
                             </span>
                         
                          </div>
@@ -54,12 +55,12 @@ const Reseñas = () => {
                          
                             <span>
                              &nbsp; <br/>   
-                             <img id="comillas"  src={comillas} /> 
+                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
                              This computer is absolutely insane! Once again if you <br/>
                              want to check out this brand new Redux gaming PC - <br/>
                              it's an absolute super computer. Highly, highly <br/>
                              recommend it.
-                             <img id="comillas"  src={comillas} /> 
+                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" />
                              </span>
                          
                           </div>
@@ -75,12 +76,12 @@ const Reseñas = () => {
             <div className="row">
                 <div className="col mt-3 ms-3" >
                     <span>
-                        <img id="logo1"  src={linuslogo} />
+                        <img id="logo1" className='img-fluid' src={linuslogo} width="50" height="50" />
                     </span>
                     
                    <span>
                     <b>
-                    <em> 
+                    <em id='nombreinfl'> 
                     LINUS TECH TIPS.
                     </em>
                     </b>
@@ -101,12 +102,12 @@ const Reseñas = () => {
 
                 <div className="col  mt-3">
                     <span>
-                        <img id="logo2"  src={nexus} />
+                        <img id="logo2" className='img-fluid' src={nexus} width="50" height="50"/>
                     </span>
                     
                    <span>
                     <b>
-                    <em> 
+                    <em id='nombreinfl'> 
                     NEXUS GAMERS.
                     </em>
                     </b>
@@ -128,12 +129,12 @@ const Reseñas = () => {
 
 
             </div>
-
-
-
-
-
             </div>
+
+
+
+
+           
            
          
 

@@ -79,9 +79,14 @@ const Reviews = () => {
                 </div>
     
                </div>
-            
+               <div  className="border-bottom border-2">
+                    &nbsp;
+                </div>
+                <Link to={"/Resenas"}>
+               <button className='btn btn-primary rounder' id='botonrosadoinfl'> INFLUENCERS REVIEW</button>
+               </Link>
             </div>
-    
+            
     
 
 
