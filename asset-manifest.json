@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PW-TrabajoGrupal/static/css/main.744b8bc1.css",
-    "main.js": "/PW-TrabajoGrupal/static/js/main.17be41f2.js",
+    "main.css": "/PW-TrabajoGrupal/static/css/main.c40c4821.css",
+    "main.js": "/PW-TrabajoGrupal/static/js/main.bf317370.js",
     "static/js/787.fca83d61.chunk.js": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js",
     "static/media/pcgamer.png": "/PW-TrabajoGrupal/static/media/pcgamer.392c67e81a1ace6ac382.png",
     "static/media/asus.jpg": "/PW-TrabajoGrupal/static/media/asus.f5fae390d04a79f3718f.jpg",
@@ -22,12 +22,12 @@
     "static/media/ryzenlogo.jpg": "/PW-TrabajoGrupal/static/media/ryzenlogo.f132ff8586e5bb1b7d35.jpg",
     "static/media/paypal.png": "/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
     "index.html": "/PW-TrabajoGrupal/index.html",
-    "main.744b8bc1.css.map": "/PW-TrabajoGrupal/static/css/main.744b8bc1.css.map",
-    "main.17be41f2.js.map": "/PW-TrabajoGrupal/static/js/main.17be41f2.js.map",
+    "main.c40c4821.css.map": "/PW-TrabajoGrupal/static/css/main.c40c4821.css.map",
+    "main.bf317370.js.map": "/PW-TrabajoGrupal/static/js/main.bf317370.js.map",
     "787.fca83d61.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.744b8bc1.css",
-    "static/js/main.17be41f2.js"
+    "static/css/main.c40c4821.css",
+    "static/js/main.bf317370.js"
   ]
 }
