@@ -5,7 +5,7 @@ import './loginstyle.css'
 const Register = (props) => {
 
     return <div>
-        <div className='row' align="right"><Header/></div>
+        <div className='row mx-auto' align="right"><Header/></div>
         <div className='container'>
             <div className='row' id='ignore'>.</div>
             <div className='row'>

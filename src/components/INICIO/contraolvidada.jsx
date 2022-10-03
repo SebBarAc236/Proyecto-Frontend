@@ -4,9 +4,8 @@ import './loginstyle.css'
 
 const Olvidada =()=>{
     return <div>
-        <div className='row' align="right"><Header/></div>
+        <div className='row mx-auto' align="right"><Header/></div>
         <div className='container'>
-            
             <div className='row' id='ignore'>.</div>
             <div className='row'>
             <div className='col'></div>

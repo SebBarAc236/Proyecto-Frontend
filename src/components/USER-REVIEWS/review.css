@@ -1,9 +1,7 @@
 #tituloreview{
-    font-size: 35px;
     margin-left: 15px;
-    color:black;
      background:white;
-     margin-left: 30px;
+     margin-left: 0px;
       height: 887px;
 
 }
@@ -22,4 +20,9 @@
 #estrellas{
     height: 35px;
      width: 120px;
+}
+
+#titulotitulo{
+    font-size: 35px;
+    margin-left: 10px;
 }

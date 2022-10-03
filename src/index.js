@@ -17,6 +17,10 @@ import Principiante from './components/PRINCIPIANTE/principiante';
 import Pantallacompra from './components/PANTALLA-COMPRA/pantallacompra';
 import Reseñas from './components/RESEÑASYT/RESEÑAS';
 import Reviews from './components/USER-REVIEWS/reviews';
+import Ranking from './components/ranking';
+import Soporte from './components/soporte';
+import Respuesta from './components/Respuesta';
+import Recomendado from './components/Recomendado';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +28,10 @@ root.render(
   <React.StrictMode>
     <HashRouter>
         <Routes>
+          <Route path="/Recomendado" element={ <Recomendado/> } />
+          <Route path="/Respuesta" element={ <Respuesta/> } />
+          <Route path="/Soporte" element={ <Soporte/> } />
+          <Route path="/Ranking" element={ <Ranking/> } />
           <Route path="/Principiante" element={ <Principiante/> } />
           <Route path="/Resenas" element={ <Reseñas/> } />
           <Route path="/Reviews" element={ <Reviews/> } />
