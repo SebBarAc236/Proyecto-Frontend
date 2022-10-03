@@ -55,9 +55,9 @@ const Header = () =>
                 </div>
                 
             </div>
-            <a className="letras" href="#about">Ranking</a>
+            <a className="letras">Ranking</a>
             <Link to={"/Reviews"}><button className="letras" id="botonreviews">Reviews</button></Link>
-            <a className="letras" href="#contact">Support</a>
+            <a className="letras">Support</a>
             <a className="letras">About</a>
             <Link to={"/"} className="letras">Home</Link>
         </div>
