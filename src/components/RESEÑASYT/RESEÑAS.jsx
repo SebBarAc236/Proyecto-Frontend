@@ -8,7 +8,7 @@ const Reseñas = () => {
     return <div>
            
            <Header/>
-           <div  style={{color:"black", fontsize:"40px", marginleft: "30px"}}>
+           <div id="titulo" >
                 <b>
                     Influencers
                 </b>
@@ -17,21 +17,16 @@ const Reseñas = () => {
                 </div> 
             </div>
             <div className="row">
-            <div className="row">
                 <div className="col" >
-                    <iframe width="500" height="315" src="https://www.youtube.com/embed/UhO7MLntkDE" 
-                    title="YouTube video player" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                    </iframe>
-
-                
+                <div class="ratio ratio-16x9">
+                <iframe  id="video" src="https://www.youtube.com/embed/UhO7MLntkDE" title="YouTube video" allowFullScreen></iframe>
+                </div>
                 </div >
+
                 <div className="col" align="center">
-                    <iframe width="500" height="315" src="https://www.youtube.com/embed/b2vrvQydVIw" 
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+                <div class="ratio ratio-16x9">
+                <iframe id="video" src="https://www.youtube.com/embed/b2vrvQydVIw"  title="YouTube video" allowFullScreen></iframe>
+                </div>
                 </div>
 
 
@@ -40,31 +35,31 @@ const Reseñas = () => {
 
                 <div className="row">
                     <div className="col" >
-                        <div style={{backgroundcolor: "antiquewhite", fontsize:"13px", height: "130px", width: "500px"}} align="center"> 
+                        <div id="cuadrado1"  align="center"> 
                          
                            <span>
                             &nbsp; <br/>   
-                            <img style={{height: "30px", width:"30px"}} src={comillas} /> 
+                            <img id="comillas" src={comillas} /> 
                             You basically just pick wich games you play, wich <br/>
                             performance you want, and it'll suggest a rig for you. <br/>
                             They make things much, much simpler and again for only 75$ bucks? Okay! <br/>
                             recommend it.
-                            <img style={{height: "30px", width:"30px"}} src={comillas} /> 
+                            <img id="comillas"  src={comillas} /> 
                             </span>
                         
                          </div>
                     </div>
                     <div className="col">
-                        <div  style={{backgroundcolor: "antiquewhite", fontsize:"13px", width: "500px", marginleft: "73px"}} align="center"  > 
+                        <div id="cuadrado2"  align="center"  > 
                          
                             <span>
                              &nbsp; <br/>   
-                             <img style={{height: "30px", width:"30px"}} src={comillas} /> 
+                             <img id="comillas"  src={comillas} /> 
                              This computer is absolutely insane! Once again if you <br/>
                              want to check out this brand new Redux gaming PC - <br/>
                              it's an absolute super computer. Highly, highly <br/>
                              recommend it.
-                             <img style={{height: "30px", width:"30px"}} src={comillas} /> 
+                             <img id="comillas"  src={comillas} /> 
                              </span>
                          
                           </div>
@@ -80,7 +75,7 @@ const Reseñas = () => {
             <div className="row">
                 <div className="col mt-3 ms-3" >
                     <span>
-                        <img style={{height: "50px", width: "50px"}} src={linuslogo} />
+                        <img id="logo1"  src={linuslogo} />
                     </span>
                     
                    <span>
@@ -90,10 +85,10 @@ const Reseñas = () => {
                     </em>
                     </b>
                      <br/>
-                     <div style={{backgroundcolor:"orange", width:"190px", height:"10px", marginleft: "60px"}}>
+                     <div id="linea1" >
 
                      </div>
-                    <div style={{fontsize:"15px", marginleft:"60px", color:"black"}}>
+                    <div id="agradecimiento1" >
                         Thanks to @LinusTechTips for showing off the unboxing <br/>
                          of the #BuildRedux PC! Check 
                         out his video to see his PC <br/>
@@ -106,7 +101,7 @@ const Reseñas = () => {
 
                 <div className="col  mt-3">
                     <span>
-                        <img style={{height: "50px", width: "50px", marginleft: "80px"}} src={nexus} />
+                        <img id="logo2"  src={nexus} />
                     </span>
                     
                    <span>
@@ -116,10 +111,10 @@ const Reseñas = () => {
                     </em>
                     </b>
                      <br/>
-                     <div style={{backgroundcolor:"aqua", width:"190px", height:"10px", marginleft: "142px"}}>
+                     <div id="linea2" >
 
                      </div>
-                    <div style={{fontsize:"15px", marginleft:"142px", color:"black"}}>
+                    <div id="agradecimiento2" >
                         Thanks for the awesome review @NexusGamers<br/>
                          
                     </div>
@@ -138,105 +133,7 @@ const Reseñas = () => {
 
 
 
-                <div className="row">
-                    <div className="col" >
-                        <div style={{backgroundcolor: "antiquewhite", fontsize:"13px", height: "130px", width: "500px"}} align="center"> 
-                         
-                           <span>
-                            &nbsp; <br/>   
-                            <img style={{height: "30px", width:"30px"}} src={comillas} /> 
-                            You basically just pick wich games you play, wich <br/>
-                            performance you want, and it'll suggest a rig for you. <br/>
-                            They make things much, much simpler and again for only 75$ bucks? Okay! <br/>
-                            recommend it.
-                            <img style={{height: "30px", width:"30px"}} src={comillas} /> 
-                            </span>
-                        
-                         </div>
-                    </div>
-                    <div className="col">
-                        <div  style={{backgroundcolor: "antiquewhite", fontsize:"13px", width: "500px", marginleft: "73px"}} align="center"  > 
-                         
-                            <span>
-                             &nbsp; <br/>   
-                             <img style={{height: "30px", width:"30px"}} src={comillas} /> 
-                             This computer is absolutely insane! Once again if you <br/>
-                             want to check out this brand new Redux gaming PC - <br/>
-                             it's an absolute super computer. Highly, highly <br/>
-                             recommend it.
-                             <img style={{height: "30px", width:"30px"}} src={comillas} /> 
-                             </span>
-                         
-                          </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-            <div className="row">
-                <div className="col mt-3 ms-3" >
-                    <span>
-                        <img style={{height: "50px", width: "50px"}} src={linuslogo} />
-                    </span>
-                    
-                   <span>
-                    <b>
-                    <em> 
-                    LINUS TECH TIPS.
-                    </em>
-                    </b>
-                     <br/>
-                     <div style={{backgroundcolor:"orange", width:"190px", height:"10px", marginleft: "60px"}}>
-
-                     </div>
-                    <div style={{fontsize:"15px", marginleft:"60px", color:"black"}}>
-                        Thanks to @LinusTechTips for showing off the unboxing <br/>
-                         of the #BuildRedux PC! Check 
-                        out his video to see his PC <br/>
-                         and setup!
-                    </div>
-                   </span>
-                </div>
-
-
-
-                <div className="col  mt-3">
-                    <span>
-                        <img style={{height: "50px", width: "50px", marginleft: "80px"}} src={nexus} />
-                    </span>
-                    
-                   <span>
-                    <b>
-                    <em> 
-                    NEXUS GAMERS.
-                    </em>
-                    </b>
-                     <br/>
-                     <div style={{backgroundcolor:"aqua", width:"190px", height:"10px", marginleft: "142px"}}>
-
-                     </div>
-                    <div style={{fontsize:"15px", marginleft:"142px", color:"black"}}>
-                        Thanks for the awesome review @NexusGamers<br/>
-                         
-                    </div>
-                   </span>
-                </div>
-
             </div>
-
-
-
-
-
-            </div>
-
-
-
-           </div>
            
          
 

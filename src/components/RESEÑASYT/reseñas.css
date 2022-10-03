@@ -1,0 +1,74 @@
+#video{
+    height: 315px;
+    width: 500px;
+}
+#titulo{
+    color:black;
+     font-size:40px; 
+     margin-left: 30px
+    
+}
+#cuadrado1{
+    background-color:antiquewhite;
+     font-size:13px; 
+     height: 130px;
+      width: 500px;
+}
+#cuadrado2{
+    background-color: antiquewhite;
+    font-size:13px;
+    width: 500px; 
+    margin-left: 73px;
+}
+#comillas{
+    height: 30px;
+     width:30px;
+}
+
+#logo1{
+    height: 50px;
+     width: 50px;
+}
+#logo2{
+    height: 50px;
+     width: 50px; 
+     margin-left:80px;
+}
+
+#linea1{
+    background-color:orange;
+     width:190px;
+      height:10px;
+       margin-left: 60px;
+}
+#linea2{
+    background-color:aqua;
+    width:190px;
+    height:10px;
+    margin-left: 142px;
+}
+
+#agradecimiento1{
+    font-size:15px;
+     margin-left:60px;
+      color:black;
+}
+#agradecimiento2{
+
+    font-size:15px;
+    margin-left:142px;
+    color:black;
+}
+#cuadrado11{
+    background-color: antiquewhite;
+     font-size:13px;
+      height: 130px;
+      width: 500px;
+}
+#cuadrado22{
+    background-color: antiquewhite;
+     font-size:13px;
+      height: 130px;
+      width: 500px;
+      margin-left: 73px;
+}

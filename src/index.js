@@ -5,7 +5,7 @@ import Home from './components/homepage';
 import Header from './components/header_todos';
 import reportWebVitals from './reportWebVitals';
 import InfoProducto from './components/compras/info_producto';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/shopping_cart';
 import Login from './components/INICIO/login';
 import Register from './components/INICIO/register';
@@ -23,11 +23,11 @@ import Ranking from './components/ranking';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
         <Routes>
           <Route path="/Ranking" element={ <Ranking/> } />
           <Route path="/Principiante" element={ <Principiante/> } />
-          <Route path="/Reseñas" element={ <Reseñas/> } />
+          <Route path="/Resenas" element={ <Reseñas/> } />
           <Route path="/Reviews" element={ <Reviews/> } />
           <Route path="/Pantallacompra" element={ <Pantallacompra/> } />
           <Route path="/orderHistory" element={ <OrderHistory/> } />
@@ -40,7 +40,7 @@ root.render(
           <Route path="/Producto" element={ <InfoProducto/> } /> 
           <Route path="/Cart" element={ <Cart/> } /> 
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
