@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css",
-    "main.js": "/PW-TrabajoGrupal/static/js/main.915de474.js",
+    "main.js": "/PW-TrabajoGrupal/static/js/main.ec1dfdb7.js",
     "static/js/787.fca83d61.chunk.js": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js",
     "static/media/cooler_master.png": "/PW-TrabajoGrupal/static/media/cooler_master.039c79c5eb29c1e0a772.png",
     "static/media/motherboard.png": "/PW-TrabajoGrupal/static/media/motherboard.5c29c9449c1a5ab7c20c.png",
@@ -36,11 +36,11 @@
     "static/media/paypal.png": "/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
     "index.html": "/PW-TrabajoGrupal/index.html",
     "main.e2e825c8.css.map": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css.map",
-    "main.915de474.js.map": "/PW-TrabajoGrupal/static/js/main.915de474.js.map",
+    "main.ec1dfdb7.js.map": "/PW-TrabajoGrupal/static/js/main.ec1dfdb7.js.map",
     "787.fca83d61.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e2e825c8.css",
-    "static/js/main.915de474.js"
+    "static/js/main.ec1dfdb7.js"
   ]
 }
