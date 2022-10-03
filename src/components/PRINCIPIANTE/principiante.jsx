@@ -15,8 +15,8 @@ import './principiante.css'
 const Principiante = () => {
     return <div>
             <Header/>
-            <div>
-            <span id="titulo" className="texto" style={{color: "white", fontsize: "35px"}}>
+            <div id="primeralinea">
+            <span id="titulo" className="texto" >
                 <b>
                     What do you need?
                 </b>
@@ -39,13 +39,13 @@ const Principiante = () => {
         
             </span>
             <span ALIGN="RIGHT">
-                <button className="rounded border-0" style={{height: "50px" , width: "150px"}}>
+                <button className="rounded border-0" id="boton1" >
                     Back
                 </button>
                 <span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
-                <button className="rounded border-0" style={{height: "50px" , width: "150px", backgroundcolor: "rgba(195,90,234,255)"}} >
+                <button className="rounded border-0" id="boton1"  >
                     Next
                 </button>
             </span>
@@ -63,8 +63,8 @@ const Principiante = () => {
             <div className="col" id= "contentcol"  >
                 <button id="boton" type="button" className="bg-secondary rounded border-0" 
                     >
-                    <img src={mando1} style={{width:"110px", height:"50px"}} />
-                    <div className="Boton" style={{color: "white"}}>
+                    <img id="icons" src={mando1}  />
+                    <div className="Boton" >
                         <b> Gaming</b>
                         </div>
                 </button>
@@ -72,17 +72,17 @@ const Principiante = () => {
             <div class="col" id= "contentcol" >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                    >
-                    <img src={design1} style={{width:"110px", height:"50px"}}/>
-                    <div class="Boton" style={{color: "white"}}>
+                    <img  id="icons" src={design1} style={{width:"110px", height:"50px"}}/>
+                    <div class="Boton" >
                         <b> Design</b>
                     </div>
                 </button>
             </div>
-            <div class="col" id= "contentcol" style={{width:"110%", height:"50%"}}>
+            <div class="col" id= "contentcol" >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >
-                <img src={coding} style={{width:"110px", height:"50px"}} />
-                <div class="Boton" style={{color: "white"}}>
+                <img  id="icons" src={coding}  />
+                <div class="Boton" >
                     <b> Coding</b>
                 </div>
             </button>
@@ -90,29 +90,29 @@ const Principiante = () => {
           
         </div>
         <div class="row" id="contentrow">
-            <div class="col" id= "contentcol" style={{width:"110%", height:"50%"}}>
+            <div class="col" id= "contentcol" >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >
-                <img src={rendering} style={{width:"110px", height:"50px"}} />
-                <div class="Boton" style={{color: "white"}}>
+                <img  id="icons" src={rendering}  />
+                <div class="Boton" >
                     <b> Rendering</b>
                 </div>
             </button>
             </div>
-            <div class="col" id= "contentcol" >
+            <div class="col"  >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >
-                <img src={office} style={{width:"110", height:"50"}} />
-                 <div class="Boton" style={{color: "white"}}>
+                <img  id="icons" src={office}  />
+                 <div class="Boton" >
                         <b> Office</b>
                     </div>
             </button>
             </div>
-            <div class="col" id= "contentcol" style={{marginright: "350px"}}>
+            <div class="col" id="contentcolmargin" >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >
-                <img src={other1} style={{width:"110", height:"50"}} />
-                <div class="Boton" style={{color: "white"}}>
+                <img  id="icons" src={other1}  />
+                <div class="Boton">
                     <b> Other</b>
                 </div>
             </button>
