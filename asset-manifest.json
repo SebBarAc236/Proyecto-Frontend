@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PW-TrabajoGrupal/static/css/main.744b8bc1.css",
-    "main.js": "/PW-TrabajoGrupal/static/js/main.a1d31f8a.js",
-    "static/js/787.f499275f.chunk.js": "/PW-TrabajoGrupal/static/js/787.f499275f.chunk.js",
+    "main.js": "/PW-TrabajoGrupal/static/js/main.17be41f2.js",
+    "static/js/787.fca83d61.chunk.js": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js",
     "static/media/pcgamer.png": "/PW-TrabajoGrupal/static/media/pcgamer.392c67e81a1ace6ac382.png",
     "static/media/asus.jpg": "/PW-TrabajoGrupal/static/media/asus.f5fae390d04a79f3718f.jpg",
     "static/media/wire.jpg": "/PW-TrabajoGrupal/static/media/wire.d171fe8e72dee6e2fd82.jpg",
@@ -23,11 +23,11 @@
     "static/media/paypal.png": "/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
     "index.html": "/PW-TrabajoGrupal/index.html",
     "main.744b8bc1.css.map": "/PW-TrabajoGrupal/static/css/main.744b8bc1.css.map",
-    "main.a1d31f8a.js.map": "/PW-TrabajoGrupal/static/js/main.a1d31f8a.js.map",
-    "787.f499275f.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.f499275f.chunk.js.map"
+    "main.17be41f2.js.map": "/PW-TrabajoGrupal/static/js/main.17be41f2.js.map",
+    "787.fca83d61.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.744b8bc1.css",
-    "static/js/main.a1d31f8a.js"
+    "static/js/main.17be41f2.js"
   ]
 }
