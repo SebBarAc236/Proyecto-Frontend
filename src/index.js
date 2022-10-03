@@ -25,7 +25,7 @@ root.render(
     <HashRouter>
         <Routes>
           <Route path="/Principiante" element={ <Principiante/> } />
-          <Route path="/Reseñas" element={ <Reseñas/> } />
+          <Route path="/Resenas" element={ <Reseñas/> } />
           <Route path="/Reviews" element={ <Reviews/> } />
           <Route path="/Pantallacompra" element={ <Pantallacompra/> } />
           <Route path="/orderHistory" element={ <OrderHistory/> } />
