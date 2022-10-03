@@ -15,6 +15,12 @@ import './principiante.css'
 const Principiante = () => {
     return <div>
             <Header/>
+            <div>
+                &nbsp; 
+            </div>
+            <div>
+                &nbsp; 
+            </div>
             <div id="primeralinea">
             <span id="titulo" className="texto" >
                 <b>
@@ -61,9 +67,9 @@ const Principiante = () => {
                 &nbsp; 
             </div>
         </div>
-        <div className="row mb-5" ALIGN="center" id="contentrow" >
-            <div className="col" id= "contentcol"  >
-                <button id="boton" type="button" className="bg-secondary rounded border-0" 
+        <div className="row mb-5" align="center" id="contentrow" >
+            <div className="col" align="center" id= "contentcol"  >
+                <button id="boton" type="button" className=" rounded border-0" 
                     >
                     <img id="icons" src={mando1}  />
                     <div className="Boton" >
@@ -71,17 +77,17 @@ const Principiante = () => {
                         </div>
                 </button>
             </div>
-            <div class="col" id= "contentcol" >
-                <button id="boton" type="button" class="bg-secondary rounded border-0" 
+            <div class="col" align="center" id= "contentcol" >
+                <button id="boton" type="button" class=" rounded border-0" 
                    >
-                    <img  id="icons" src={design1} style={{width:"110px", height:"50px"}}/>
+                    <img  id="icons" src={design1}/>
                     <div class="Boton" >
                         <b> Design</b>
                     </div>
                 </button>
             </div>
-            <div class="col" id= "contentcol" >
-                <button id="boton" type="button" class="bg-secondary rounded border-0" 
+            <div class="col" align="center" id= "contentcol" >
+                <button id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={coding}  />
                 <div class="Boton" >
@@ -92,8 +98,8 @@ const Principiante = () => {
           
         </div>
         <div class="row" align="center "id="contentrow">
-            <div class="col" id= "contentcol" >
-                <button id="boton" type="button" class="bg-secondary rounded border-0" 
+            <div class="col" align="center" id= "contentcol" >
+                <button id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={rendering}  />
                 <div class="Boton" >
@@ -101,8 +107,8 @@ const Principiante = () => {
                 </div>
             </button>
             </div>
-            <div class="col"  >
-                <button id="boton" type="button" class="bg-secondary rounded border-0" 
+            <div class="col" align="center" >
+                <button id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={office}  />
                  <div class="Boton" >
@@ -110,8 +116,8 @@ const Principiante = () => {
                     </div>
             </button>
             </div>
-            <div class="col" id="contentcolmargin" >
-                <button id="boton" type="button" class="bg-secondary rounded border-0" 
+            <div class="col" align="center" id="contentcolmargin" >
+                <button id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={other1}  />
                 <div class="Boton">
