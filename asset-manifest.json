@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Jannire.github.io/PW-TrabajoGrupal/static/css/main.744b8bc1.css",
+    "main.js": "/Jannire.github.io/PW-TrabajoGrupal/static/js/main.89baa9fc.js",
+    "static/js/787.f499275f.chunk.js": "/Jannire.github.io/PW-TrabajoGrupal/static/js/787.f499275f.chunk.js",
+    "static/media/pcgamer.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/pcgamer.392c67e81a1ace6ac382.png",
+    "static/media/asus.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/asus.f5fae390d04a79f3718f.jpg",
+    "static/media/wire.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/wire.d171fe8e72dee6e2fd82.jpg",
+    "static/media/700at.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/700at.6209db91a32871640b9c.jpg",
+    "static/media/rtx.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/rtx.339c32cc9a1f7a5bbdeb.jpg",
+    "static/media/nvm.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/nvm.2ccf51bd723a3ebd43aa.jpg",
+    "static/media/nexus.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/nexus.ca2c51b7205e48295b3d.png",
+    "static/media/5star.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/5star.d5b7277295d35a97cc0c.png",
+    "static/media/nvidialogo.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/nvidialogo.05f5ccebcabdbcb26c7e.png",
+    "static/media/gpay.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/gpay.fcbe59f91821d82a16a7.png",
+    "static/media/linuslogo.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/linuslogo.55cb49fe3400db914c48.png",
+    "static/media/windows.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/windows.1914ea3e6b23211895a6.jpg",
+    "static/media/r.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/r.f2d19c95ac37b13883ae.jpg",
+    "static/media/ddr.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/ddr.f05a75746de3a3fd4ca2.jpg",
+    "static/media/corsairlogo.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/corsairlogo.8eaf4b151c093d5fc979.png",
+    "static/media/gigabytelogo.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/gigabytelogo.61f1a120493874d52d36.png",
+    "static/media/ryzenlogo.jpg": "/Jannire.github.io/PW-TrabajoGrupal/static/media/ryzenlogo.f132ff8586e5bb1b7d35.jpg",
+    "static/media/paypal.png": "/Jannire.github.io/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
+    "index.html": "/Jannire.github.io/PW-TrabajoGrupal/index.html",
+    "main.744b8bc1.css.map": "/Jannire.github.io/PW-TrabajoGrupal/static/css/main.744b8bc1.css.map",
+    "main.89baa9fc.js.map": "/Jannire.github.io/PW-TrabajoGrupal/static/js/main.89baa9fc.js.map",
+    "787.f499275f.chunk.js.map": "/Jannire.github.io/PW-TrabajoGrupal/static/js/787.f499275f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.744b8bc1.css",
+    "static/js/main.89baa9fc.js"
+  ]
+}
