@@ -53,9 +53,11 @@ const Principiante = () => {
                 <span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
+                <Link to={"/Recomendado"}>
                 <button className="rounded border-0" id="boton1"  >
                     Next
                 </button>
+                </Link>
             </span>
             <div>
                 &nbsp; 

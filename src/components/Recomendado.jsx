@@ -18,7 +18,7 @@ const Recomendado = () => {
                 <div id="tituloavanzado">Your optimized PC!</div>
             </div>
             <div className='col'>
-                <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco'>Back</button></Link>
+                <Link to={"/Principiante"}><button className='mx-auto btn btn-primary' id='botonblanco'>Back</button></Link>
                 &nbsp;
                 <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button></Link>
             </div>
