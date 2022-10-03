@@ -67,8 +67,8 @@ const Perfil =() =>{
                         <input type="text" class="form-control" name="telefono" id="telefono"/>
                     </div>
                     <div class="col-12">
-                        <button class="btn-btn-primary">ACEPTAR</button>
-                        <button class="btn-btn-primary">CANCELAR</button>
+                        <button id='botonprofileinfo' class="btn-btn-primary rounded">ACEPTAR</button>
+                        <button id='botonprofileinfo' class="btn-btn-primary rounded">CANCELAR</button>
                     </div>
                     </div>
                         </div>

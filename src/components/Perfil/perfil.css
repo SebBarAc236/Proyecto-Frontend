@@ -28,3 +28,8 @@
 #contenidoPerfil{
     background-color: rgba(188, 146, 207, 0.904);
 }
+#botonprofileinfo{
+    background:linear-gradient(to right,rgb(208, 172, 238),rgb(243, 243, 243));
+    margin-bottom: 15px;
+    margin-left: 250px;
+}
