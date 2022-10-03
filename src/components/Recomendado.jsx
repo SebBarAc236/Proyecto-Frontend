@@ -150,7 +150,116 @@ const Recomendado = () => {
                 </div>
             </div>
         </div>
-        
+        <div className='col mt-3 ms-3'>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={ryzenlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">AMD RYZEN 3600X</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        350$
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={corsairlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">CORSAIR VENGANCE 16GB RAM 8X2</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        250$
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={aoruslogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">GIGABYTE POWER SUPPLY 80PLUS GOLD</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        200$
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={ryzenlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">AMD RYZEN 3600X</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        350$
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={corsairlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">CORSAIR VENGANCE 16GB RAM 8X2</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        250$
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div class="card mb-3" id='listacompra'>
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src={aoruslogo} class="img-fluid rounded-start mt-2 mb-2" alt="..."/>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <p class="card-text">GIGABYTE POWER SUPPLY 80PLUS GOLD</p>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>&nbsp;</div>
+                        200$
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
         </div>
         </div>
     </div>
