@@ -9,7 +9,7 @@ import pcgamer from './imagenes/pcgamer.png'
 
 const Avanzado = () => {
     return <div>
-        <div className='row' align="right"><Header/></div>
+        <div className='row mx-auto' align="right"><Header/></div>
         
         <div className='container mt-2'  align="center" id="contenedorA"> 
             

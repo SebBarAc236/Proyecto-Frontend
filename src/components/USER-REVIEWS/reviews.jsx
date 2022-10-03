@@ -8,8 +8,8 @@ const Reviews = () => {
            <div className='row mx-auto'><Header/></div>
 
            <div id='tituloreview' >
-                <b >
-                    User reviews
+                <b>
+                    <div id='titulotitulo'> User reviews</div>
                 </b>
                 <div>
                     &nbsp;

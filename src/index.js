@@ -17,6 +17,7 @@ import Principiante from './components/PRINCIPIANTE/principiante';
 import Pantallacompra from './components/PANTALLA-COMPRA/pantallacompra';
 import Reseñas from './components/RESEÑASYT/RESEÑAS';
 import Reviews from './components/USER-REVIEWS/reviews';
+import Ranking from './components/ranking';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +25,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
+          <Route path="/Ranking" element={ <Ranking/> } />
           <Route path="/Principiante" element={ <Principiante/> } />
           <Route path="/Reseñas" element={ <Reseñas/> } />
           <Route path="/Reviews" element={ <Reviews/> } />
