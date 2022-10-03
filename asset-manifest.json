@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css",
+    "main.css": "/PW-TrabajoGrupal/static/css/main.e8c99341.css",
     "main.js": "/PW-TrabajoGrupal/static/js/main.ec1dfdb7.js",
     "static/js/787.fca83d61.chunk.js": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js",
     "static/media/cooler_master.png": "/PW-TrabajoGrupal/static/media/cooler_master.039c79c5eb29c1e0a772.png",
@@ -35,12 +35,12 @@
     "static/media/ryzenlogo.jpg": "/PW-TrabajoGrupal/static/media/ryzenlogo.f132ff8586e5bb1b7d35.jpg",
     "static/media/paypal.png": "/PW-TrabajoGrupal/static/media/paypal.25b341e7e8db7bd5e1e5.png",
     "index.html": "/PW-TrabajoGrupal/index.html",
-    "main.e2e825c8.css.map": "/PW-TrabajoGrupal/static/css/main.e2e825c8.css.map",
+    "main.e8c99341.css.map": "/PW-TrabajoGrupal/static/css/main.e8c99341.css.map",
     "main.ec1dfdb7.js.map": "/PW-TrabajoGrupal/static/js/main.ec1dfdb7.js.map",
     "787.fca83d61.chunk.js.map": "/PW-TrabajoGrupal/static/js/787.fca83d61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2e825c8.css",
+    "static/css/main.e8c99341.css",
     "static/js/main.ec1dfdb7.js"
   ]
 }
