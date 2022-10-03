@@ -39,9 +39,11 @@ const Principiante = () => {
         
             </span>
             <span ALIGN="RIGHT">
-                <button className="rounded border-0" id="boton1" >
-                    Back
-                </button>
+                <Link to={"/"}>
+                    <button className="rounded border-0" id="boton1" >
+                        Back
+                    </button>
+                </Link>
                 <span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
@@ -59,7 +61,7 @@ const Principiante = () => {
                 &nbsp; 
             </div>
         </div>
-        <div className="row mb-5" id="contentrow" >
+        <div className="row mb-5" ALIGN="center" id="contentrow" >
             <div className="col" id= "contentcol"  >
                 <button id="boton" type="button" className="bg-secondary rounded border-0" 
                     >
@@ -89,7 +91,7 @@ const Principiante = () => {
             </div>
           
         </div>
-        <div class="row" id="contentrow">
+        <div class="row" align="center "id="contentrow">
             <div class="col" id= "contentcol" >
                 <button id="boton" type="button" class="bg-secondary rounded border-0" 
                 >
