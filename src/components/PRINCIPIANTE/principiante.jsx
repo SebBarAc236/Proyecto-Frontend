@@ -13,6 +13,7 @@ import './principiante.css'
 
 
 const Principiante = () => {
+    const [OptionSelected, setOptionSelected] = useState("")
     return <div>
             <Header/>
             <div className='container'>
@@ -47,7 +48,7 @@ const Principiante = () => {
             </span>
             <span ALIGN="RIGHT">
                 <Link to={"/"}>
-                    <button className="btn btn-primary rounded" id="botonblanco" >
+                    <button  className="btn btn-primary rounded" id="botonblanco" >
                         Back
                     </button>
                 </Link>
@@ -72,7 +73,7 @@ const Principiante = () => {
         </div>
         <div className="row mb-5" align="center" id="contentrow" >
             <div className="col" align="center" id= "contentcol1"  >
-                <button id="boton" type="button" className=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="1" value="1" id="boton" type="button" className=" rounded border-0" 
                     >
                     <img id="icons" src={mando1}  />
                     <div className="Boton" >
@@ -81,7 +82,7 @@ const Principiante = () => {
                 </button>
             </div>
             <div class="col" align="center" id= "contentcol" >
-                <button id="boton" type="button" class=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="2" value="2" id="boton" type="button" class=" rounded border-0" 
                    >
                     <img  id="icons" src={design1}/>
                     <div class="Boton" >
@@ -90,7 +91,7 @@ const Principiante = () => {
                 </button>
             </div>
             <div class="col" align="center" id= "contentcol" >
-                <button id="boton" type="button" class=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="3" value="3" id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={coding}  />
                 <div class="Boton" >
@@ -102,7 +103,7 @@ const Principiante = () => {
         </div>
         <div class="row" align="center "id="contentrow">
             <div class="col" align="center" id= "contentcol" >
-                <button id="boton" type="button" class=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="4" value="4" id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={rendering}  />
                 <div class="Boton" >
@@ -111,7 +112,7 @@ const Principiante = () => {
             </button>
             </div>
             <div class="col" align="center" >
-                <button id="boton" type="button" class=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="5" value="5" id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={office}  />
                  <div class="Boton" >
@@ -120,7 +121,7 @@ const Principiante = () => {
             </button>
             </div>
             <div class="col" align="center" id="contentcolmargin" >
-                <button id="boton" type="button" class=" rounded border-0" 
+                <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="6" value="6" id="boton" type="button" class=" rounded border-0" 
                 >
                 <img  id="icons" src={other1}  />
                 <div class="Boton">
