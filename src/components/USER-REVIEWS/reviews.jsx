@@ -2,7 +2,26 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import star from '../IMAGENES-F/5star.png'
 import './review.css'
+import {useState} from "react";
+import {useEffect} from "react";
+import ListadoDeReviews from "./USER-REVIEWS/ListadoDeReviews"
+
 const Reviews = () => {
+    //Variable de estado
+    const[ListadoReviews, setListadoReviews] = useState([])
+
+ 
+    const httpObtenerReviews = async () =>{
+        const resp = await fetch("http:/localhost:4321/Resena")
+        const data = await resp.json()
+        setListadoReviews(data)
+    }
+
+    //Hook 
+    useEffect(() => {
+        httpObtenerReviews()
+    },[])
+
     return <div>
            
            <div className='row mx-auto'><Header/></div>
@@ -30,6 +49,19 @@ const Reviews = () => {
                <div>
                 &nbsp;
               </div> 
+
+               
+
+                
+                
+                
+               
+                    
+                    
+                    
+                
+
+
                <div id='contenidoreview' >
                 <b >
                     Juan Lopez
@@ -44,6 +76,13 @@ const Reviews = () => {
                     &nbsp;
                 </div>
                </div>
+
+
+                 
+
+
+
+
 
 
                <div>
