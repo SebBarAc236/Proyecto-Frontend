@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 
 const Avanzado = () => {
     const [listadoComponentes, setListadoComponentes] = useState([])
+    
     const httpObtenerComponente = async (componenteTipo = null) => {
         const ruta = componenteTipo == null ?
             "http://localhost:4444/Producto?Categoria=Grafica" :

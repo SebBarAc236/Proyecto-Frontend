@@ -2,11 +2,30 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
-
-const Login = (props) => {
-
+import { type } from '@testing-library/user-event/dist/type';
+const Login = () => {
+    const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
+
+    const httpObtenerUsuarios = async (usuarioCorreo = null) => {
+        const ruta = usuarioCorreo == null ? 
+            "http://localhost:4444/Usuario" : 
+            `http://localhost:4444/Usuario?Correo=${usuarioCorreo}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setListadoUsuarios(data)
+    }
+
+    useEffect(() => {
+        httpObtenerUsuarios()
+    },[])
+
+    const onUsuarioDetected = (usuarioCorreo) => {
+        console.log("se busca los datos de "+ usuarioCorreo)
+        httpObtenerUsuarios(usuarioCorreo)
+    }
 
     return <div>
         <div className='row mx-auto'><Header/></div>
@@ -20,15 +39,27 @@ const Login = (props) => {
                 <div id='tituloContenedorR'>LOG IN.</div>
                 <div id='textoContenedorR'>Log in with your details below to view your order.</div>
                 <div id='ignore'>.</div>
-                <input type="text" class="form-control" id="floatingInput" placeholder="Email" value={correo} onChange={(evt)=>setCorreo(evt.target.value)}/>
+                <input type="text" class="form-control" id="floatingInput" placeholder="Email" value={correo}
+                onChange={(evt)=>{setCorreo(evt.target.value); onUsuarioDetected(correo)}}/>
+
                 <div id='ignore'>.</div>
-                <input type="password" class="form-control" id="floatingInput" placeholder="Password" value={password} onChange={(evt)=>setPassword(evt.target.value)}/>
+                <input type="password" class="form-control" id="floatingInput" placeholder="Password" value={password} 
+                onChange={(evt)=>{setPassword(evt.target.value); onUsuarioDetected(correo)}}/>
+
                 <div id='ignore'>.</div>
-                <Link to={"/"}>
                 <div class="d-grid gap-2">
-                    <button id='botonblanco' class="btn btn-primary" type="button" onClick={()=>console.log("Correo: "+correo+"\n"+"Password: "+password)}>LOGIN</button>
+                    <button id='botonblanco' class="btn btn-primary" type="button" onClick={
+                        
+                        ()=>{onUsuarioDetected(correo)
+                             return listadoUsuarios.map((usuario)=>{
+                                if(usuario.Contrasena === password){
+                                    console.log("Datos correctos!!")
+                                    console.log("Bienvenido "+usuario.Nombre)
+                                }
+                             })}
+                     
+                    }>LOGIN</button>
                 </div>
-                </Link>
                 <Link to={"/Olvidada"}>
                 <div><a href=" ">Forgot your password?</a></div>
                 </Link>
