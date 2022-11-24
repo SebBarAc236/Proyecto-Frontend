@@ -1,17 +1,21 @@
 import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './avanzado.css'
-import nvidialogo from '../imagenes/nvidialogo.png'
-import ryzenlogo from '../imagenes/ryzenlogo.jpg'
-import aoruslogo from '../imagenes/gigabytelogo.png'
-import corsairlogo from '../imagenes/corsairlogo.png'
-import pcgamer from '../imagenes/pcgamer.png'
+import nvidialogo from '../imagenes_logos/nvidialogo.png'
+import ryzenlogo from '../imagenes_logos/ryzenlogo.jpg'
+import gigabytelogo from '../imagenes_logos/gigabytelogo.png'
+import aoruslogo from '../imagenes_logos/aoruslogo.png'
+import corsairlogo from '../imagenes_logos/corsairlogo.png'
+import pcgamer from '../imagenes_logos/pcgamer.png'
+import intellogo from '../imagenes_logos/intellogo.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 const Avanzado = () => {
     const [listadoComponentes, setListadoComponentes] = useState([])
-    
+    const [listadoOrden, setListadoOrden] = useState([])
+    const [listadoProductos, setlistadoProductos] = useState([])
+
     const httpObtenerComponente = async (componenteTipo = null) => {
         const ruta = componenteTipo == null ?
             "http://localhost:4444/Producto?Categoria=Grafica" :
@@ -22,8 +26,29 @@ const Avanzado = () => {
         setListadoComponentes(data)
     }
 
+    const httpObtenerTODOProducto = async () => {
+        const ruta = "http://localhost:4444/Producto"
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setlistadoProductos(data)
+    }
+
+    const httpObtenerOrden = async (usrID = null) => {
+        const ruta = usrID == null ?
+            "http://localhost:4444/Orden" :
+            `http://localhost:4444/Orden?Usuario_ID=${usrID}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setlistadoProductos(data)
+    }
+
+
     useEffect(() => {
         httpObtenerComponente()
+        httpObtenerTODOProducto()
+        httpObtenerOrden()
     }, [])
 
     const onComponenteSelected = (componenteTipo) => {
@@ -86,7 +111,24 @@ const Avanzado = () => {
                                     <div class="card mb-3">
                                         <div class="row g-0">
                                             <div class="col-md-3">
-                                                <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                {(()=>{
+                                                    if(componente.Marca === "NVIDIA"){
+                                                        return <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "AMD"){
+                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "AORUS"){
+                                                        return <img src={aoruslogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "CORSAIR"){
+                                                        return <img src={corsairlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "GIGABYTE"){
+                                                        return <img src={gigabytelogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "KINGSTON"){
+                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "INTEL"){
+                                                        return <img src={intellogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }
+                                                })()}
+                                                
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="card-body">

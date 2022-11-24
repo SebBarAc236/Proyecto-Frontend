@@ -1,11 +1,11 @@
 import Header from './header_todos';
 import { Link } from "react-router-dom"
 import './Recomendado.css'
-import nvidialogo from './imagenes/nvidialogo.png'
-import ryzenlogo from './imagenes/ryzenlogo.jpg'
-import aoruslogo from './imagenes/gigabytelogo.png'
-import corsairlogo from './imagenes/corsairlogo.png'
-import pcgamer from './imagenes/pcgamer.png'
+import nvidialogo from './imagenes_logos/nvidialogo.png'
+import ryzenlogo from './imagenes_logos/ryzenlogo.jpg'
+import aoruslogo from './imagenes_logos/gigabytelogo.png'
+import corsairlogo from './imagenes_logos/corsairlogo.png'
+import pcgamer from './imagenes_logos/pcgamer.png'
 import windows from './imagen/windows11.png'
 import wireless from './imagen/wireless.png'
 import buildlogo from './imagen/build_logo.png'

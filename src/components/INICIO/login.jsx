@@ -2,7 +2,7 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
-import { type } from '@testing-library/user-event/dist/type';
+
 const Login = () => {
     const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")

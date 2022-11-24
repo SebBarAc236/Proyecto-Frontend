@@ -21,12 +21,6 @@ import Ranking from './components/ranking';
 import Soporte from './components/soporte';
 import Respuesta from './components/Respuesta';
 import Recomendado from './components/Recomendado';
-import Coolera from './components/avanzado/coolerA';
-import Memoria from './components/avanzado/memoryA';
-import Powera from './components/avanzado/powerA';
-import Processora from './components/avanzado/processorA';
-import Storagea from './components/avanzado/storageA';
-import Windowsa from './components/avanzado/windowsA';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -34,12 +28,6 @@ root.render(
   <React.StrictMode>
     <HashRouter>
         <Routes>
-          <Route path="/Coolera" element={ <Coolera/> } />
-          <Route path="/Memoria" element={ <Memoria/> } />
-          <Route path="/Powera" element={ <Powera/> } />
-          <Route path="/Processora" element={ <Processora/> } />
-          <Route path="/Storagea" element={ <Storagea/> } />
-          <Route path="/Windowsa" element={ <Windowsa/> } />
           <Route path="/Recomendado" element={ <Recomendado/> } />
           <Route path="/Respuesta" element={ <Respuesta/> } />
           <Route path="/Soporte" element={ <Soporte/> } />
