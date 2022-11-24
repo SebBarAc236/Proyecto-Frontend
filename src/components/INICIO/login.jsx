@@ -2,12 +2,13 @@ import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
-
-const Login = () => {
+import { useNavigate } from 'react-router-dom';
+const Login = (props) => {
+    const [usuarioLogeado, setUsuarioLogeado] = useState("")
     const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
-
+    const navigate = useNavigate()
     const httpObtenerUsuarios = async (usuarioCorreo = null) => {
         const ruta = usuarioCorreo == null ? 
             "http://localhost:4444/Usuario" : 
@@ -28,7 +29,7 @@ const Login = () => {
     }
 
     return <div>
-        <div className='row mx-auto'><Header/></div>
+        <div className='row mx-auto'><Header usuario = {usuarioLogeado}/></div>
         <div className='container'>
             
             <div className='row' id='ignore'>.</div>
@@ -55,7 +56,10 @@ const Login = () => {
                                 if(usuario.Contrasena === password){
                                     console.log("Datos correctos!!")
                                     console.log("Bienvenido "+usuario.Nombre)
+                                    setUsuarioLogeado(usuario.Nombre)
+                                    navigate("/")
                                 }
+                                
                              })}
                      
                     }>LOGIN</button>
