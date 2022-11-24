@@ -4,7 +4,7 @@ import star from '../IMAGENES-F/5star.png'
 import './review.css'
 import {useState} from "react";
 import {useEffect} from "react";
-import ListadoDeReviews from "./USER-REVIEWS/ListadoDeReviews"
+
 
 const Reviews = () => {
     //Variable de estado
