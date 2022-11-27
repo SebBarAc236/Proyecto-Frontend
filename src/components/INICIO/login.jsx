@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { RUTA_BACKEND } from '../../conf';
+
 const Login = (props) => {
     const [usuarioLogeado, setUsuarioLogeado] = useState("")
     const [listadoUsuarios, setListadoUsuarios] = useState([])
@@ -11,22 +13,23 @@ const Login = (props) => {
     const navigate = useNavigate()
     const httpObtenerUsuarios = async (usuarioCorreo = null) => {
         const ruta = usuarioCorreo == null ? 
-            "http://localhost:4444/Usuario" : 
-            `http://localhost:4444/Usuario?Correo=${usuarioCorreo}`
+            `${RUTA_BACKEND}/Usuario`: 
+            `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
         console.log(data)
         setListadoUsuarios(data)
+    }
+    
+    const onUsuarioDetected = (usuarioCorreo) => {
+        console.log("se busca los datos de "+ usuarioCorreo)
+        httpObtenerUsuarios(usuarioCorreo)
     }
 
     useEffect(() => {
         httpObtenerUsuarios()
     },[])
 
-    const onUsuarioDetected = (usuarioCorreo) => {
-        console.log("se busca los datos de "+ usuarioCorreo)
-        httpObtenerUsuarios(usuarioCorreo)
-    }
 
     return <div>
         <div className='row mx-auto'><Header usuario = {usuarioLogeado}/></div>

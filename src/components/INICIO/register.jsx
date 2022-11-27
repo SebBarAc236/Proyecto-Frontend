@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import './loginstyle.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import { RUTA_BACKEND } from '../../conf';
 
 
 const Register = (props) => {
@@ -16,8 +16,8 @@ const Register = (props) => {
 
     const httpObtenerUsuarios = async (Correo = null) => {
         const ruta = Usuario_ID == null ? 
-            "http://localhost:4444/Usuario" : 
-            `http://localhost:4444/Usuario?Correo=${Correo}`
+            `${RUTA_BACKEND}/Usuario` : 
+            `${RUTA_BACKEND}/Usuario?Correo=${Correo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
         console.log(data)
@@ -36,7 +36,7 @@ const Register = (props) => {
             Correo : Correo,
             Contrasena : Contrasena
         }
-        const resp = await fetch(`http://localhost:4444/Usuario`, {
+        const resp = await fetch(`${RUTA_BACKEND}/Usuario`, {
             method : "POST",
             body : JSON.stringify(data),
             headers : {
@@ -81,7 +81,7 @@ const Register = (props) => {
                     <button id='botonblanco' class="btn btn-primary" type="button"
                     onClick = {
                         ()=>{
-                            registrar("ca2fe104-83c8-4609-b8a8-c0cb8b5c6d8a",Nombre,Apellido,Correo,Contrasena)
+                            registrar("c841c18b-d411-4cbe-8aa5-21a088627699",Nombre,Apellido,Correo,Contrasena)
                         }
                     }
                     >CREATE</button>

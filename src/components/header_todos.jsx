@@ -27,10 +27,13 @@ const Header = (props) =>
         }
 
     }
+    const detectarUsuarioLogeado = () => {
+        
+    }
     return <div> 
         <div className="header-right d-flex flex-row-reverse">
             {(()=>{
-                if(props.usuario == undefined){
+                if(props.usuario == null){
                     return <div>
                         <Link to={"/Register"}><a id="botonMorado" className="btn btn-primary" role="button">Sign Up</a></Link>
                         <Link to={"/Login"}><a id="botonMorado" className="btn btn-primary" role="button">Sign In</a></Link>

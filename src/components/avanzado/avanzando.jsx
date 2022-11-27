@@ -10,7 +10,7 @@ import pcgamer from '../imagenes_logos/pcgamer.png'
 import intellogo from '../imagenes_logos/intellogo.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import { RUTA_BACKEND } from '../../conf';
 const Avanzado = () => {
     const [listadoComponentes, setListadoComponentes] = useState([])
     const [listadoOrden, setListadoOrden] = useState([])
@@ -18,8 +18,8 @@ const Avanzado = () => {
 
     const httpObtenerComponente = async (componenteTipo = null) => {
         const ruta = componenteTipo == null ?
-            "http://localhost:4444/Producto?Categoria=Grafica" :
-            `http://localhost:4444/Producto?Categoria=${componenteTipo}`
+            `${RUTA_BACKEND}/Producto?Categoria=Grafica`:
+            `${RUTA_BACKEND}/Producto?Categoria=${componenteTipo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
         console.log(data)
@@ -27,7 +27,7 @@ const Avanzado = () => {
     }
 
     const httpObtenerTODOProducto = async () => {
-        const ruta = "http://localhost:4444/Producto"
+        const ruta = `${RUTA_BACKEND}/Producto`
         const resp = await fetch(ruta)
         const data = await resp.json()
         console.log(data)
@@ -36,8 +36,8 @@ const Avanzado = () => {
 
     const httpObtenerOrden = async (usrID = null) => {
         const ruta = usrID == null ?
-            "http://localhost:4444/Orden" :
-            `http://localhost:4444/Orden?Usuario_ID=${usrID}`
+            `${RUTA_BACKEND}/Orden`:
+            `${RUTA_BACKEND}/Orden?Usuario_ID=${usrID}`
         const resp = await fetch(ruta)
         const data = await resp.json()
         console.log(data)

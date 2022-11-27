@@ -9,6 +9,7 @@ import office from '../IMAGENES-F/office.png'
 import other1 from '../IMAGENES-F/other1.png'
 import coding from '../IMAGENES-F/coding.png'
 import './principiante.css'
+import { useState } from 'react';
 
 
 
