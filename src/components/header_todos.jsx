@@ -1,18 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './INICIO/loginstyle.css'
+import { RUTA_BACKEND } from '../conf';
 
 const Header = (props) => 
 {
-    const[inputSearch, setInputSearch] = useState("");
-    const[escondido, setEscondido] = useState(true);
-    const[escondidoD, setEscondidoD] = useState(true);
-    
+    const [inputSearch, setInputSearch] = useState("");
+    const [escondido, setEscondido] = useState(true);
+    const [escondidoD, setEscondidoD] = useState(true);
+    const [listadoProductos, setListadoProductos] = useState([])
+    const [prod_filtrado, setProd_filtrado] = useState([]);
+
+    const httpObtenerProductos = async () => {
+        const resp = await fetch(`${RUTA_BACKEND}/producto`)
+        const data = await resp.json()
+        console.log(data)
+        setListadoProductos(data)
+    }
+
+    useEffect(() => {
+        httpObtenerProductos()
+    }, [])
+
+    const onProductoSelected = (producto) => {
+        console.log("Se selecciono producto " +  producto)
+        httpObtenerProductos(producto)
+    }
+
     const inputHandler = (e) => 
     {
-        setInputSearch(e.target.value);
-        e.target.value = e.target.value.toLowerCase();
-        if(e.target.value == "")
+        setInputSearch(() => e.target.value)
+        const inputBarra = e.target.value.toLowerCase();
+        /*for (let i = 0; i < listadoProductos.length; i++) {
+            console.log(listadoProductos[i].Nombre);
+        }*/
+        //console.log(listadoProductos);
+        const filtrado = listadoProductos.filter(producto => producto.Nombre.toLowerCase().includes(inputBarra));
+        setProd_filtrado(() => filtrado)
+        
+        if(filtrado.length == 0)
+        {
+            setEscondidoD(() => true);
+        }
+        else if(inputBarra == "")
+        {
+            setEscondidoD(() => true);
+        }
+        else
+        {
+            console.log("It worked!");
+            console.log(prod_filtrado);
+            setEscondidoD(() => false);
+        }
+        /*if(e.target.value == "")
         {
             setEscondidoD(true);
         }
@@ -24,9 +64,10 @@ const Header = (props) =>
         else
         {
             setEscondidoD(true);
-        }
+        }*/
 
     }
+
     const detectarUsuarioLogeado = () => {
         
     }
@@ -52,16 +93,16 @@ const Header = (props) =>
                 <div hidden={escondidoD} id="card" className="bg-white card">
                     <div className="p-2">Products</div>
                     <hr />
-                    <Link to={"/Producto"} className="prod d-flex text-secondary">
-             
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJtWO9rlPsNocaOb2hpjn9-5igenkCWzaVQ&usqp=CAU" alt="NVIDIA" />
-                        <div className="d-flex flex-column">
-                            <div className="pr fw-semibold fst-italic"> NVIDIA GEFORCE GTX 1650 4GB</div>
-                            <div>Redux</div>
-                            <div>$229</div>
-                        </div>
-             
-                    </Link>
+                    {prod_filtrado.map((producto) => 
+                        <Link to={"/Producto"} className="prod d-flex text-secondary" key={producto.id}>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJtWO9rlPsNocaOb2hpjn9-5igenkCWzaVQ&usqp=CAU" alt="NVIDIA" />
+                            <div className="d-flex flex-column">
+                                <div className="pr fw-semibold fst-italic"> {producto.Nombre}</div>
+                                <div>Redux</div>
+                                <div>${producto.Precio}</div>
+                            </div>
+                        </Link>
+                    )}
                     <hr />
                     <div className="prod p-2">Search for "{inputSearch}"...</div>
                 </div>
