@@ -1,25 +1,37 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './INICIO/loginstyle.css'
-import { RUTA_BACKEND } from '../conf';
+import { RUTA_BACKEND, USUARIOCORREOLOGED, USUARIOIDLOGED } from '../conf';
 
 const Header = (props) => 
 {
     const [inputSearch, setInputSearch] = useState("");
+    const [listadoUsuarios, setListadoUsuarios] = useState([]);
     const [escondido, setEscondido] = useState(true);
     const [escondidoD, setEscondidoD] = useState(true);
     const [listadoProductos, setListadoProductos] = useState([])
     const [prod_filtrado, setProd_filtrado] = useState([]);
 
     const httpObtenerProductos = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/producto`)
+        const resp = await fetch(`${RUTA_BACKEND}/Producto`)
         const data = await resp.json()
         console.log(data)
         setListadoProductos(data)
     }
 
+    const httpObtenerUsuarios = async (usuarioCorreo = null) => {
+        const ruta = usuarioCorreo == null ? 
+            `${RUTA_BACKEND}/Usuario`: 
+            `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setListadoUsuarios(data)
+    }
+
     useEffect(() => {
-        httpObtenerProductos()
+        httpObtenerProductos();
+        httpObtenerUsuarios(USUARIOCORREOLOGED);
     }, [])
 
     const onProductoSelected = (producto) => {
@@ -68,19 +80,17 @@ const Header = (props) =>
 
     }
 
-    const detectarUsuarioLogeado = () => {
-        
-    }
     return <div> 
         <div className="header-right d-flex flex-row-reverse">
             {(()=>{
-                if(props.usuario == null){
-                    return <div>
+                
+                if(USUARIOCORREOLOGED == null){
+                    return <div className="mt-1">
                         <Link to={"/Register"}><a id="botonMorado" className="btn btn-primary" role="button">Sign Up</a></Link>
                         <Link to={"/Login"}><a id="botonMorado" className="btn btn-primary" role="button">Sign In</a></Link>
                     </div>
                 }else{
-                    return <div>{`Bienvenido ${props.usuario}!`}</div>
+                    return <div id="bienvenidostyle" className="mt-1">{`Bienvenido ${listadoUsuarios.map((usuarios)=>{return usuarios.Nombre})} !`}</div>
                 }
             })()}
                     

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RUTA_BACKEND } from '../../conf';
+import { RUTA_BACKEND, getUsuarioLoged } from '../../conf';
 
 const Login = (props) => {
-    const [usuarioLogeado, setUsuarioLogeado] = useState("")
+
     const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
@@ -32,7 +32,7 @@ const Login = (props) => {
 
 
     return <div>
-        <div className='row mx-auto'><Header usuario = {usuarioLogeado}/></div>
+        <div className='row mx-auto'><Header/></div>
         <div className='container'>
             
             <div className='row' id='ignore'>.</div>
@@ -59,7 +59,7 @@ const Login = (props) => {
                                 if(usuario.Contrasena === password){
                                     console.log("Datos correctos!!")
                                     console.log("Bienvenido "+usuario.Nombre)
-                                    setUsuarioLogeado(usuario.Nombre)
+                                    getUsuarioLoged(usuario.Usuario_ID, usuario.Correo)
                                     navigate("/")
                                 }
                                 

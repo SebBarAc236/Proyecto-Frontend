@@ -1,6 +1,7 @@
 import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import './perfil.css'
+import { getUsuarioLoged } from '../../conf';
 
 const Perfil =() =>{
     return <div>
@@ -25,7 +26,7 @@ const Perfil =() =>{
                     </div>
                     <div className='row'>
                         <Link to={"/"}>
-                            <button id='botonblancoP' className='btn btn-primary mt-2'>Log Out</button>
+                            <button id='botonblancoP' className='btn btn-primary mt-2' onClick={()=>{getUsuarioLoged(null,null)}}>Log Out</button>
                         </Link>
                     </div>
                 </div>

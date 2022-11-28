@@ -1,9 +1,9 @@
 import Header from '../header_todos';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './loginstyle.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { RUTA_BACKEND } from '../../conf';
+import { getUsuarioLoged, RUTA_BACKEND } from '../../conf';
 
 
 const Register = (props) => {
@@ -13,7 +13,7 @@ const Register = (props) => {
     const [Contrasena, setContrasena] = useState("")
     const [Nombre, setNombre] = useState("")
     const [Apellido, setApellido] = useState("")
-
+    const navigate = useNavigate()
     const httpObtenerUsuarios = async (Correo = null) => {
         const ruta = Usuario_ID == null ? 
             `${RUTA_BACKEND}/Usuario` : 
@@ -53,6 +53,7 @@ const Register = (props) => {
     const registrar = (Usuario_ID,Nombre,Apellido,Correo,Contrasena) => {
         console.log(`ID: ${Usuario_ID} Nombre: ${Nombre} Apellido: ${Apellido} Correo: ${Correo} Contraseña: ${Contrasena}`)
         usuarioRegister(Usuario_ID,Nombre,Apellido,Correo,Contrasena)
+        
     }
 
     return <div>
@@ -81,7 +82,11 @@ const Register = (props) => {
                     <button id='botonblanco' class="btn btn-primary" type="button"
                     onClick = {
                         ()=>{
-                            registrar("c841c18b-d411-4cbe-8aa5-21a088627699",Nombre,Apellido,Correo,Contrasena)
+                            const idnuevo = Math.floor(Math.random()*999999)
+                            console.log(idnuevo)
+                            registrar(idnuevo,Nombre,Apellido,Correo,Contrasena)
+                            getUsuarioLoged(Usuario_ID,Correo)
+                            navigate("/")
                         }
                     }
                     >CREATE</button>
