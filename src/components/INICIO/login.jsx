@@ -7,7 +7,7 @@ import { RUTA_BACKEND} from '../../conf';
 
 const Login = (props) => {
 
-    const [listadoUsuarios, setListadoUsuarios] = useState([])
+    const [setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
     const navigate = useNavigate()

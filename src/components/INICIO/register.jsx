@@ -7,9 +7,9 @@ import { RUTA_BACKEND } from '../../conf';
 
 
 const Register = (props) => {
-    const [listadoUsuarios, setListadoUsuarios] = useState([])
+    const [setListadoUsuarios] = useState([])
     const [Correo, setCorreo] = useState("")
-    const [Usuario_ID, setUsuario_ID] = useState("")
+    const [Usuario_ID] = useState("")
     const [Contrasena, setContrasena] = useState("")
     const [Nombre, setNombre] = useState("")
     const [Apellido, setApellido] = useState("")
@@ -47,7 +47,7 @@ const Register = (props) => {
 
 
     useEffect(()=>{
-        httpObtenerUsuarios(token)
+        httpObtenerUsuarios()
     },[Correo])
 
     const usuarioRegister = async (Usuario_ID,Nombre,Apellido,Correo,Contrasena) => {
@@ -66,7 +66,7 @@ const Register = (props) => {
             }
         })
         const dataResp = await resp.json()
-        if(dataResp.error != ""){
+        if(dataResp.error !== ""){
             console.error(dataResp.error)
         }
         httpObtenerUsuarios(Correo)

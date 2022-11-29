@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './components/homepage';
-import Header from './components/header_todos';
 import reportWebVitals from './reportWebVitals';
 import InfoProducto from './components/compras/info_producto';
 import { HashRouter, Routes, Route } from 'react-router-dom';
