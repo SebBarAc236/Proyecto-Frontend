@@ -7,7 +7,8 @@ import { RUTA_BACKEND } from '../../conf';
 
 
 const Register = (props) => {
-    const [setListadoUsuarios] = useState([])
+    const [error, setError] = useState(false)
+    const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [Correo, setCorreo] = useState("")
     const [Usuario_ID] = useState("")
     const [Contrasena, setContrasena] = useState("")
@@ -15,6 +16,7 @@ const Register = (props) => {
     const [Apellido, setApellido] = useState("")
     const token = localStorage.getItem("TOKEN")
     const navigate = useNavigate()
+    
     const httpObtenerUsuarios = async (Correo = null) => {
         const ruta = Usuario_ID == null ? 
             `${RUTA_BACKEND}/Usuario` : 
@@ -41,7 +43,7 @@ const Register = (props) => {
             localStorage.setItem("TOKEN",data.token)
             navigate("/")
         }else{
-
+            setError(true)
         }
     }
 
@@ -68,6 +70,10 @@ const Register = (props) => {
         const dataResp = await resp.json()
         if(dataResp.error !== ""){
             console.error(dataResp.error)
+            setError(true)
+        }else{
+            setError(false)
+            navigate("/Login")
         }
         httpObtenerUsuarios(Correo)
     }
@@ -75,7 +81,6 @@ const Register = (props) => {
     const registrar = (Usuario_ID,Nombre,Apellido,Correo,Contrasena) => {
         console.log(`ID: ${Usuario_ID} Nombre: ${Nombre} Apellido: ${Apellido} Correo: ${Correo} Contraseña: ${Contrasena}`)
         usuarioRegister(Usuario_ID,Nombre,Apellido,Correo,Contrasena)
-        
     }
 
     return <div>
@@ -104,13 +109,21 @@ const Register = (props) => {
                     <button id='botonblanco' class="btn btn-primary" type="button"
                     onClick = {
                         ()=>{
+                            
                             const idnuevo = Math.floor(Math.random()*999999)
                             console.log(idnuevo)
                             registrar(idnuevo,Nombre,Apellido,Correo,Contrasena)
-                            httpLogin(Correo,Contrasena)
+                            
                         }
                     }
                     >CREATE</button>
+                    {
+                    (()=>{
+                        if(error === true){
+                            return <div className='alert alert-danger'>El correo ya esta en uso</div>
+                        }
+                    })()
+                }
                 </div>
                 <div>Already registered? Try <Link to={"/Login"}><a>sign in</a></Link></div>
                 <div id='ignore'>.</div>

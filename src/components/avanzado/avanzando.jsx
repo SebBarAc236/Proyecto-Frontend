@@ -8,6 +8,9 @@ import aoruslogo from '../imagenes_logos/aoruslogo.png'
 import corsairlogo from '../imagenes_logos/corsairlogo.png'
 import pcgamer from '../imagenes_logos/pcgamer.png'
 import intellogo from '../imagenes_logos/intellogo.png'
+import msilogo from '../imagenes_logos/msilogo.png'
+import kingstonlogo from '../imagenes_logos/kingston.jpg'
+import windowslogo from '../imagenes_logos/windows.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { RUTA_BACKEND } from '../../conf';
@@ -123,9 +126,13 @@ const Avanzado = () => {
                                                     }else if(componente.Marca === "GIGABYTE"){
                                                         return <img src={gigabytelogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
                                                     }else if(componente.Marca === "KINGSTON"){
-                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                        return <img src={kingstonlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
                                                     }else if(componente.Marca === "INTEL"){
                                                         return <img src={intellogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "MSI"){
+                                                        return <img src={msilogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    }else if(componente.Marca === "WINDOWS"){
+                                                        return <img src={windowslogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
                                                     }
                                                 })()}
                                                 

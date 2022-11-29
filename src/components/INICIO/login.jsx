@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { RUTA_BACKEND} from '../../conf';
 
 const Login = (props) => {
-
-    const [setListadoUsuarios] = useState([])
+    const [error, setError] = useState(false)
+    const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
     const navigate = useNavigate()
@@ -42,7 +42,7 @@ const Login = (props) => {
             localStorage.setItem("TOKEN",data.token)
             navigate("/")
         }else{
-
+            setError(true)
         }
     }
 
@@ -76,21 +76,16 @@ const Login = (props) => {
                         
                         ()=>{
                             httpLogin(correo,password)
-                            /*
-                            onUsuarioDetected(correo)
-                             return listadoUsuarios.map((usuario)=>{
-                                if(usuario.Contrasena === password){
-                                    console.log("Datos correctos!!")
-                                    console.log("Bienvenido "+usuario.Nombre)
-                                    getUsuarioLoged(usuario.Usuario_ID, usuario.Correo)
-                                    navigate("/")
-                                }
-                                
-                             })
-                             */
                             }
                      
                     }>LOGIN</button>
+                {
+                    (()=>{
+                        if(error === true){
+                            return <div className='alert alert-danger'>No existe la cuenta que se especifica</div>
+                        }
+                    })()
+                }
                 </div>
                 <Link to={"/Olvidada"}>
                 <div><a href=" ">Forgot your password?</a></div>

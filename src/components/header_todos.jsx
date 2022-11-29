@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './INICIO/loginstyle.css'
-import { RUTA_BACKEND, USUARIOCORREOLOGED, USUARIOIDLOGED } from '../conf';
+import { RUTA_BACKEND } from '../conf';
 
 const Header = (props) => 
 {
