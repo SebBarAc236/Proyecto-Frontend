@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import './loginstyle.css'
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RUTA_BACKEND, getUsuarioLoged } from '../../conf';
+import { RUTA_BACKEND} from '../../conf';
 
 const Login = (props) => {
 
@@ -24,6 +24,26 @@ const Login = (props) => {
     const onUsuarioDetected = (usuarioCorreo) => {
         console.log("se busca los datos de "+ usuarioCorreo)
         httpObtenerUsuarios(usuarioCorreo)
+    }
+
+    const httpLogin = async (correo,password) => {
+        const resp = await fetch(`${RUTA_BACKEND}/login`, {
+            method : "POST",
+            body : JSON.stringify({
+                Correo : correo,
+                Contrasena : password
+            }),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        const data = await resp.json()
+        if(data.error === ""){
+            localStorage.setItem("TOKEN",data.token)
+            navigate("/")
+        }else{
+
+        }
     }
 
     useEffect(() => {
@@ -54,7 +74,10 @@ const Login = (props) => {
                 <div class="d-grid gap-2">
                     <button id='botonblanco' class="btn btn-primary" type="button" onClick={
                         
-                        ()=>{onUsuarioDetected(correo)
+                        ()=>{
+                            httpLogin(correo,password)
+                            /*
+                            onUsuarioDetected(correo)
                              return listadoUsuarios.map((usuario)=>{
                                 if(usuario.Contrasena === password){
                                     console.log("Datos correctos!!")
@@ -63,7 +86,9 @@ const Login = (props) => {
                                     navigate("/")
                                 }
                                 
-                             })}
+                             })
+                             */
+                            }
                      
                     }>LOGIN</button>
                 </div>

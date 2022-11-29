@@ -1,9 +1,11 @@
 import Header from '../header_todos';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './perfil.css'
-import { getUsuarioLoged } from '../../conf';
+
 
 const Perfil =() =>{
+    const token = localStorage.getItem("TOKEN")
+    const navigate = useNavigate()
     return <div>
         <div className='row mx-auto'><Header/></div>
         <div className='container mt-5' id="contenedorA">
@@ -26,7 +28,10 @@ const Perfil =() =>{
                     </div>
                     <div className='row'>
                         <Link to={"/"}>
-                            <button id='botonblancoP' className='btn btn-primary mt-2' onClick={()=>{getUsuarioLoged(null,null)}}>Log Out</button>
+                            <button id='botonblancoP' className='btn btn-primary mt-2' onClick={()=>{
+                                localStorage.clear("TOKEN")
+                                navigate("/")
+                            }}>Log Out</button>
                         </Link>
                     </div>
                 </div>

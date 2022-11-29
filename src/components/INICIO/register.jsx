@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import './loginstyle.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getUsuarioLoged, RUTA_BACKEND } from '../../conf';
+import { RUTA_BACKEND } from '../../conf';
 
 
 const Register = (props) => {
@@ -13,6 +13,7 @@ const Register = (props) => {
     const [Contrasena, setContrasena] = useState("")
     const [Nombre, setNombre] = useState("")
     const [Apellido, setApellido] = useState("")
+    const token = localStorage.getItem("TOKEN")
     const navigate = useNavigate()
     const httpObtenerUsuarios = async (Correo = null) => {
         const ruta = Usuario_ID == null ? 
@@ -24,8 +25,29 @@ const Register = (props) => {
         setListadoUsuarios(data)
     }
 
+    const httpLogin = async (correo,password) => {
+        const resp = await fetch(`${RUTA_BACKEND}/login`, {
+            method : "POST",
+            body : JSON.stringify({
+                Correo : correo,
+                Contrasena : password
+            }),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        const data = await resp.json()
+        if(data.error === ""){
+            localStorage.setItem("TOKEN",data.token)
+            navigate("/")
+        }else{
+
+        }
+    }
+
+
     useEffect(()=>{
-        httpObtenerUsuarios()
+        httpObtenerUsuarios(token)
     },[Correo])
 
     const usuarioRegister = async (Usuario_ID,Nombre,Apellido,Correo,Contrasena) => {
@@ -85,8 +107,7 @@ const Register = (props) => {
                             const idnuevo = Math.floor(Math.random()*999999)
                             console.log(idnuevo)
                             registrar(idnuevo,Nombre,Apellido,Correo,Contrasena)
-                            getUsuarioLoged(Usuario_ID,Correo)
-                            navigate("/")
+                            httpLogin(Correo,Contrasena)
                         }
                     }
                     >CREATE</button>

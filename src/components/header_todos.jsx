@@ -11,7 +11,7 @@ const Header = (props) =>
     const [escondidoD, setEscondidoD] = useState(true);
     const [listadoProductos, setListadoProductos] = useState([])
     const [prod_filtrado, setProd_filtrado] = useState([]);
-
+    const token = localStorage.getItem("TOKEN")
     const httpObtenerProductos = async () => {
         const resp = await fetch(`${RUTA_BACKEND}/Producto`)
         const data = await resp.json()
@@ -31,7 +31,7 @@ const Header = (props) =>
 
     useEffect(() => {
         httpObtenerProductos();
-        httpObtenerUsuarios(USUARIOCORREOLOGED);
+        httpObtenerUsuarios(token);
     }, [])
 
     const onProductoSelected = (producto) => {
@@ -84,7 +84,7 @@ const Header = (props) =>
         <div className="header-right d-flex flex-row-reverse">
             {(()=>{
                 
-                if(USUARIOCORREOLOGED == null){
+                if(token == null){
                     return <div className="mt-1">
                         <Link to={"/Register"}><a id="botonMorado" className="btn btn-primary" role="button">Sign Up</a></Link>
                         <Link to={"/Login"}><a id="botonMorado" className="btn btn-primary" role="button">Sign In</a></Link>
