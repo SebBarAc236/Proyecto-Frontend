@@ -15,10 +15,22 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { RUTA_BACKEND } from '../../conf';
 const Avanzado = () => {
+    const [listadoUsuarios, setListadoUsuarios] = useState([]);
     const [listadoComponentes, setListadoComponentes] = useState([])
+    const [listadoOrdenProd, setListadoOrdenProd] = useState([])
     const [listadoOrden, setListadoOrden] = useState([])
     const [listadoProductos, setlistadoProductos] = useState([])
-
+    const [listadoCarrito, setListadoCarrito] = useState([])
+    const token = localStorage.getItem("TOKEN")
+    const httpObtenerUsuarios = async (usuarioCorreo = null) => {
+        const ruta = usuarioCorreo == null ? 
+            `${RUTA_BACKEND}/Usuario`: 
+            `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setListadoUsuarios(data)
+    }
     const httpObtenerComponente = async (componenteTipo = null) => {
         const ruta = componenteTipo == null ?
             `${RUTA_BACKEND}/Producto?Categoria=Grafica`:
@@ -28,31 +40,16 @@ const Avanzado = () => {
         console.log(data)
         setListadoComponentes(data)
     }
-
-    const httpObtenerTODOProducto = async () => {
-        const ruta = `${RUTA_BACKEND}/Producto`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        console.log(data)
-        setlistadoProductos(data)
-    }
-
-    const httpObtenerOrden = async (usrID = null) => {
-        const ruta = usrID == null ?
-            `${RUTA_BACKEND}/Orden`:
-            `${RUTA_BACKEND}/Orden?Usuario_ID=${usrID}`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        console.log(data)
-        setlistadoProductos(data)
-    }
-
-
+    
     useEffect(() => {
         httpObtenerComponente()
-        httpObtenerTODOProducto()
-        httpObtenerOrden()
+        httpObtenerUsuarios(token)
     }, [])
+
+    const getCarrito = async (correoUsuario) =>{
+        const usuarioID = null
+        listadoUsuarios.map((usuarios)=>{const usuarioID = usuarios.Nombre})
+    }
 
     const onComponenteSelected = (componenteTipo) => {
         console.log("se selecciono el componente " + componenteTipo)
@@ -140,7 +137,7 @@ const Avanzado = () => {
                                             <div class="col-md-6">
                                                 <div class="card-body">
                                                     <p class="card-text">{componente.Nombre}</p>
-                                                    <p class="card-text"><small class="text-muted">{componente.Precio}</small></p>
+                                                    <p class="card-text"><small class="text-muted">{`${componente.Precio}$`}</small></p>
                                                 </div>
                                             </div>
                                             <div class='col-md-3 mt-4'>
