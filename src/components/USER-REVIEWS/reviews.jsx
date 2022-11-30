@@ -12,7 +12,7 @@ const Reviews = () => {
 
  
     const httpObtenerReviews = async () =>{
-        const resp = await fetch("http:/localhost:4321/Resena")
+        const resp = await fetch("http://localhost:4444/Resena")
         const data = await resp.json()
         setListadoReviews(data)
     }
@@ -52,75 +52,34 @@ const Reviews = () => {
 
                
 
+
                 
-                
-                
-               
-                    
-                    
-                    
-                
-
-
-               <div id='contenidoreview' >
-                <b >
-                    Juan Lopez
-                </b>
-                <div>
-                    &nbsp;
-                  </div>
-                <div  id='reviews'>
-                    I completely recomend this service
-                </div>
-                <div  className="border-bottom border-2">
-                    &nbsp;
-                </div>
-               </div>
-
-
-                 
-
-
-
-
-
-
-               <div>
-                &nbsp;
-              </div> 
-               <div id='contenidoreview' >
-                <b >
-                    Jhon Doe
-                </b>
-                <div>
-                    &nbsp;
-                  </div>
-                <div  id='reviews' >
-                    Great service
-                </div>
-                <div  className="border-bottom border-2">
-                    &nbsp;
-                </div>
-               </div>
-
-               <div>
-                &nbsp;
-              </div> 
-               <div id='contenidoreview' >
-                <b>
-                    Carl Johnson
-                </b>
-                <div>
-                    &nbsp;
-                  </div>
-                <div  id='reviews' >
-                    Pc well builded and nice case quality
-                </div>
+                {
+              
+                            (()=>{
+                                return ListadoReviews.map((Review) => {
+                                    return <div id='contenidoreview'>
+                                    <b >
+                                    {`${Review.Usuario.Nombre} ${Review.Usuario.Apellido}`}
+                                    </b>
+                                    <div>
+                                     &nbsp;
+                                     </div>
+                                     <div  id='reviews'>
+                                        {Review.Comentario}
+                                     </div>   
+                                     <div  className="border-bottom border-2">
+                                         &nbsp;
+                                    </div>
     
-               </div>
-               <div  className="border-bottom border-2">
-                    &nbsp;
-                </div>
+                                </div>
+                                })
+                            })()
+                }
+                 
+                    
+
+             
                 <Link to={"/Resenas"}>
                <button className='btn btn-primary rounder' id='botonrosadoinfl'> INFLUENCERS REVIEW</button>
                </Link>
