@@ -12,7 +12,7 @@ const Reviews = () => {
 
  
     const httpObtenerReviews = async () =>{
-        const resp = await fetch("http://localhost:4444/Resena")
+        const resp = await fetch("http://localhost:4321/Resena")
         const data = await resp.json()
         setListadoReviews(data)
     }

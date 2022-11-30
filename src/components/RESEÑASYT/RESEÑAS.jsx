@@ -4,14 +4,16 @@ import nexus from '../IMAGENES-F/nexus.png'
 import linuslogo from '../IMAGENES-F/linuslogo.png'
 import comillas from '../IMAGENES-F/comillas.png'
 import './reseñas.css'
+import {useState} from "react";
+import {useEffect} from "react";
 const Reseñas = () => {
     const[ListadoInfluencers, setListadoInfluencers] = useState([])
 
  
     const httpObtenerInfluencers = async () =>{
-        const resp = await fetch("http://localhost:4444/Resena2")
+        const resp = await fetch("http://localhost:4321/Resena2")
         const data = await resp.json()
-        setListadoReviews(data)
+        setListadoInfluencers(data)
     }
 
     //Hook 
