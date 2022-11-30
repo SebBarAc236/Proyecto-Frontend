@@ -5,10 +5,28 @@ import linuslogo from '../IMAGENES-F/linuslogo.png'
 import comillas from '../IMAGENES-F/comillas.png'
 import './reseñas.css'
 const Reseñas = () => {
+    const[ListadoInfluencers, setListadoInfluencers] = useState([])
+
+ 
+    const httpObtenerInfluencers = async () =>{
+        const resp = await fetch("http://localhost:4444/Resena2")
+        const data = await resp.json()
+        setListadoReviews(data)
+    }
+
+    //Hook 
+    useEffect(() => {
+        httpObtenerInfluencers()
+    },[])
+
     return <div>
-           
+
            <div className='row mx-auto' align="right"><Header/></div>
            <div className='container' id='influencers'>
+
+
+
+
            <div id="titulo" >
                 <b>
                     Influencers
@@ -17,55 +35,53 @@ const Reseñas = () => {
                     &nbsp;
                 </div> 
             </div>
-            <div className="row">
-                <div className="col" >
-                <div class="ratio ratio-16x9">
-                <iframe  id="video" src="https://www.youtube.com/embed/UhO7MLntkDE" title="YouTube video" allowFullScreen></iframe>
-                </div>
-                </div >
-
-                <div className="col" align="center">
-                <div class="ratio ratio-16x9">
-                <iframe id="video" src="https://www.youtube.com/embed/b2vrvQydVIw"  title="YouTube video" allowFullScreen></iframe>
-                </div>
-                </div>
-            </div>
 
 
-
-
-                <div className="row">
+            {
+              
+              (()=>{
+                  return ListadoInfluencers.map((Influencer) => {
+                      return <div className="row">
+                      <div className="col" >
+                      <div class="ratio ratio-16x9">
+                      <iframe  id="video" src={Influencer.Link_infl} title="YouTube video" allowFullScreen></iframe>
+                      </div>
+                      </div >
+      
+                   
+                  </div>
+                  })
+              })()
+             }
+   
+            {
+              
+              (()=>{
+                  return ListadoInfluencers.map((Influencer) => {
+                    return <div className="row">
                     <div className="col" >
                         <div id="cuadrado1"  align="center"> 
                          
                            <span>
                             &nbsp; <br/>   
                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
-                            You basically just pick wich games you play, wich <br/>
-                            performance you want, and it'll suggest a rig for you. <br/>
-                            They make things much, much simpler and again for only 75$ bucks? Okay! <br/>
-                            recommend it.
+                            {Influencer.Comentario}
                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
                             </span>
                         
-                         </div>
-                    </div>
-                    <div className="col">
-                        <div id="cuadrado2"  align="center"  > 
-                         
-                            <span>
-                             &nbsp; <br/>   
-                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" /> 
-                             This computer is absolutely insane! Once again if you <br/>
-                             want to check out this brand new Redux gaming PC - <br/>
-                             it's an absolute super computer. Highly, highly <br/>
-                             recommend it.
-                             <img className='img-fluid' id="comillas" src={comillas} width="30" height="30" />
-                             </span>
-                         
-                          </div>
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                    
+                    </div> 
+      
+                  })
+              })()
+            }
+
+
+
+
+           
 
 
 
@@ -124,11 +140,20 @@ const Reseñas = () => {
 
             </div>
 
+            ****************
+
+
+
+
 
 
 
 
             </div>
+
+
+
+
             </div>
 
 
