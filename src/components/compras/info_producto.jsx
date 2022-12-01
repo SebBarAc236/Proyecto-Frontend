@@ -44,7 +44,33 @@ const InfoProducto = () =>
     }, [])
 
     const [producto] = listadoProductos.filter(producto => producto.Producto_ID == id)
+    const httpCrearOrden = async (token) => {
+        console.log(listadoUsuarios[0])
+        const data = {
+            Usuario_ID : listadoUsuarios[0].Usuario_ID
+        }
+        
+        const resp = await fetch(
+            `${RUTA_BACKEND}/Orden`,
+            {
+                method : "POST",
+                body : JSON.stringify(data),
+                headers : {
+                    "Content-Type" : "application/json",
+                    "Acces-Control-Allow-Origin" : "*"
+                }
+            }
+        )
+        const dataResp = await resp.json()
 
+        if (dataResp.error !== "") {
+            // Hubo un error
+            console.error(dataResp.error)
+        }
+        console.log("Orden creararara add");
+        console.log(dataResp);
+        return dataResp;
+    }
     const httpAddCarrito = async (producto_id) => {
         let ordenIDs;
         try
@@ -68,7 +94,8 @@ const InfoProducto = () =>
                 method : "POST",
                 body : JSON.stringify(data),
                 headers : {
-                    "Content-Type" : "application/json"
+                    "Content-Type" : "application/json",
+                    "Acces-Control-Allow-Origin" : "*"
                 }
             }
         )
@@ -84,32 +111,7 @@ const InfoProducto = () =>
 
     }
 
-    const httpCrearOrden = async (token) => {
-        const data = {
-            Usuario_ID : listadoUsuarios[0].Usuario_ID
-        }
-        
-        const resp = await fetch(
-            `${RUTA_BACKEND}/Orden`,
-            {
-                method : "POST",
-                body : JSON.stringify(data),
-                headers : {
-                    "Content-Type" : "application/json"
-                }
-            }
-        )
-        const dataResp = await resp.json()
-
-        if (dataResp.error !== "") {
-            // Hubo un error
-            console.error(dataResp.error)
-        }
-        console.log("Orden creararara add");
-        console.log(dataResp);
-        return dataResp;
-    }
-
+    
     return (
         <div>
             <Header/>

@@ -35,6 +35,13 @@ const Avanzado = () => {
         const data = await resp.json();
         setListadoComponentes(data);
     }
+    const httpObtenerUsuarios = async (usuarioCorreo) => {
+        const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        setListadoUsuarios(data)
+    }
     const httpObtenerAvanzado = async (usuarioID) => {
         const ruta = usuarioID == null ? 
         `${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`:
@@ -150,12 +157,23 @@ const Avanzado = () => {
     }
 
     const vaciarAvanzada = async (avanzada_id) =>{
-        console.log(`se eliminaron los productos ${avanzada_id}`)
+        const data = {
+            Usuario_ID : usuarioID
+        }
+        await fetch(`${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`, {
+            method : "DELETE",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        httpObtenerAvanzado(usuarioID)
     }
 
     useEffect(() => {
         httpObtenerComponente()
         httpObtenerAvanzado(usuarioID)
+        httpObtenerUsuarios(usuarioID)
     }, [usuarioID])
     
 
@@ -183,6 +201,7 @@ const Avanzado = () => {
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
                         httpAddCarrito(idprod)
+                        listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)})
                     }}>Checkout</button></Link>
                 </div>
 
@@ -234,6 +253,7 @@ const Avanzado = () => {
                                                 <button className='mx-auto btn btn-primary' id='botonagregado' onClick={()=>{
                                                     const idnuevo = Math.floor(Math.random()*999999)
                                                     anadirAvanzado(idnuevo,componente.Nombre,componente.Precio,componente.URL,usuarioID)
+                                                    httpObtenerAvanzado(usuarioID)
                                                 }}>+</button>
                                                 
                                             </div>
