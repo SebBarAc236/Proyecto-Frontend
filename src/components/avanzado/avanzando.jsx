@@ -13,22 +13,23 @@ import kingstonlogo from '../imagenes_logos/kingston.jpg'
 import windowslogo from '../imagenes_logos/windows.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { RUTA_BACKEND } from '../../conf';
+import { RUTA_BACKEND} from '../../conf';
+
 const Avanzado = () => {
     const [listadoUsuarios, setListadoUsuarios] = useState([]);
     const [listadoComponentes, setListadoComponentes] = useState([])
-    const [listadoOrdenProd, setListadoOrdenProd] = useState([])
-    const [listadoOrden, setListadoOrden] = useState([])
     const [listadoProductos, setlistadoProductos] = useState([])
+    const [listadoPiezas, setListadoPiezas] = useState([])
     const [listadoCarrito, setListadoCarrito] = useState([])
+    const [listadoOrdenes, setListadoOrdenes] = useState([])
     const token = localStorage.getItem("TOKEN")
-    const httpObtenerUsuarios = async (usuarioCorreo = null) => {
-        const ruta = usuarioCorreo == null ? 
-            `${RUTA_BACKEND}/Usuario`: 
-            `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
+    const usuarioID = localStorage.getItem("USUARIO_ID")
+
+
+    const httpObtenerUsuarios = async (usuarioCorreo) => {
+        const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
-        console.log(data)
         setListadoUsuarios(data)
     }
     const httpObtenerComponente = async (componenteTipo = null) => {
@@ -37,19 +38,43 @@ const Avanzado = () => {
             `${RUTA_BACKEND}/Producto?Categoria=${componenteTipo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
-        console.log(data)
         setListadoComponentes(data)
     }
     
+    const httpObtenerTodo = async () => {
+        const ruta = `${RUTA_BACKEND}/Producto`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        setlistadoProductos(data)
+    }
+
+    const ordenesUsuario = async () => {
+        const ruta = `${RUTA_BACKEND}/Orden?Usuario_ID=${usuarioID}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        setListadoOrdenes(data)
+        console.log(listadoOrdenes)
+    }
+    const ordenesProductos = async () => {
+        const ordenID = listadoOrdenes[0]
+        const ruta = `${RUTA_BACKEND}/Orden_producto?Orden_ID=${ordenID}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        setListadoPiezas(data)
+        console.log(data)
+        console.log(listadoOrdenes[0])
+    }
+
     useEffect(() => {
         httpObtenerComponente()
         httpObtenerUsuarios(token)
+        ordenesUsuario()
+        ordenesProductos()
+        httpObtenerTodo()
     }, [])
 
-    const getCarrito = async (correoUsuario) =>{
-        const usuarioID = null
-        listadoUsuarios.map((usuarios)=>{const usuarioID = usuarios.Nombre})
-    }
+    
+
 
     const onComponenteSelected = (componenteTipo) => {
         console.log("se selecciono el componente " + componenteTipo)
@@ -78,7 +103,7 @@ const Avanzado = () => {
                         <div className='row'>
                             <div className='container rounded-5' id='resumen'>
                                 <div>Components price</div>
-                                <div>$1899</div>
+                                <div>{1800}</div>
                                 <div>Build fee</div>
                                 <div>$99</div>
                             </div>
@@ -131,6 +156,7 @@ const Avanzado = () => {
                                                     }else if(componente.Marca === "WINDOWS"){
                                                         return <img src={windowslogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
                                                     }
+                                                    console.log(listadoOrdenes)
                                                 })()}
                                                 
                                             </div>
@@ -151,62 +177,54 @@ const Avanzado = () => {
                             })()
                         }
                         
+                        
                     </div>
                     <div className='col mt-3 ms-3'>
-                        <div className='row'>
-                            <div class="card mb-3" id='listacompra'>
-                                <div class="row g-0">
-                                    <div class="col-md-3">
-                                        <img src={ryzenlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..." />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            <p class="card-text">AMD RYZEN 3600X</p>
+                    {
+                            (()=>{
+                                return listadoProductos.map((producto) => {
+                                    return <div className='row'>
+                                    <div class="card mb-3" id='listacompra'>
+                                        <div class="row g-0">
+                                            <div class="col-md-3">
+                                            {(()=>{
+                                                    if(producto.Marca === "NVIDIA"){
+                                                        return <img src={nvidialogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "AMD"){
+                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "AORUS"){
+                                                        return <img src={aoruslogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "CORSAIR"){
+                                                        return <img src={corsairlogo} class="img-fluid rounded-start mt-2 mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "GIGABYTE"){
+                                                        return <img src={gigabytelogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "KINGSTON"){
+                                                        return <img src={kingstonlogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "INTEL"){
+                                                        return <img src={intellogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "MSI"){
+                                                        return <img src={msilogo} class="img-fluid rounded-start mt-2 mx-auto" alt="..." />
+                                                    }else if(producto.Marca === "WINDOWS"){
+                                                        return <img src={windowslogo} class="img-fluid rounded-start mx-auto" alt="..." />
+                                                    }
+                                                })()}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card-body">
+                                                    <p class="card-text">{`${producto.Nombre}`}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div>&nbsp;</div>
+                                                {`${producto.Precio}$`}
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div>&nbsp;</div>
-                                        350$
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div class="card mb-3" id='listacompra'>
-                                <div class="row g-0">
-                                    <div class="col-md-3">
-                                        <img src={corsairlogo} class="img-fluid rounded-start mt-2 mb-2" alt="..." />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            <p class="card-text">CORSAIR VENGANCE 16GB RAM 8X2</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div>&nbsp;</div>
-                                        250$
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div class="card mb-3" id='listacompra'>
-                                <div class="row g-0">
-                                    <div class="col-md-3">
-                                        <img src={aoruslogo} class="img-fluid rounded-start mt-2 mb-2" alt="..." />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            <p class="card-text">GIGABYTE POWER SUPPLY 80PLUS GOLD</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div>&nbsp;</div>
-                                        200$
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                })
+                            })()
+                        }
                     </div>
 
                 </div>

@@ -30,6 +30,7 @@ const Perfil =() =>{
                         <Link to={"/"}>
                             <button id='botonblancoP' className='btn btn-primary mt-2' onClick={()=>{
                                 localStorage.clear("TOKEN")
+                                localStorage.clear("USUARIO_ID")
                                 navigate("/")
                             }}>Log Out</button>
                         </Link>

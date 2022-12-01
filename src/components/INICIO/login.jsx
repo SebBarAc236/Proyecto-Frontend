@@ -26,20 +26,23 @@ const Login = (props) => {
         httpObtenerUsuarios(usuarioCorreo)
     }
 
-    const httpLogin = async (correo,password) => {
+    const httpLogin = async (correo,password,Usuario_ID) => {
         const resp = await fetch(`${RUTA_BACKEND}/login`, {
             method : "POST",
             body : JSON.stringify({
                 Correo : correo,
-                Contrasena : password
+                Contrasena : password,
+                Usuario_ID : Usuario_ID
             }),
             headers : {
                 "Content-Type" : "application/json"
             }
         })
         const data = await resp.json()
+        console.log(data)
         if(data.error === ""){
             localStorage.setItem("TOKEN",data.token)
+            localStorage.setItem("USUARIO_ID",data.usuarioID)
             navigate("/")
         }else{
             setError(true)
@@ -74,8 +77,9 @@ const Login = (props) => {
                 <div class="d-grid gap-2">
                     <button id='botonblanco' class="btn btn-primary" type="button" onClick={
                         
-                        ()=>{
-                            httpLogin(correo,password)
+                        ()=>{listadoUsuarios.map((usuario)=>{const usuarioID = usuario.Usuario_ID
+                            httpLogin(correo,password,usuarioID)})
+                            
                             }
                      
                     }>LOGIN</button>
