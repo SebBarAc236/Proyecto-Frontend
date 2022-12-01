@@ -89,27 +89,20 @@ const httpObtenerOrdenProducto = async () =>{
 
 const httpObtenerInfoProductos = async () =>{
   {
-    (()=>{
-      return ListadoProductos.map ( async  (Producto) => {
-        var contador = 0
-        let ListaProductos = []
-        const resp = await fetch(`${RUTA_BACKEND}/Productoid?Producto_ID=${Producto.Producto_ID}`)
-    
-        
-        const data = await resp.json()
-       
-        ListaProductos = data
-        ListadoInfoProductos[contador] = ListaProductos
-        contador += 1;
-        //console.log(ListaProductos.length)
-
-      })
-
-    })()
+  var Rango = 0
+  var ListaProductos = []
+  Rango = (ListadoProductos.length)
+  for(let i = 0; i < Rango; i++){
+    const resp = await fetch(`${RUTA_BACKEND}/Productoid?Producto_ID=${ListadoProductos[i].Producto_ID}`)
+    const data = await resp.json()
+    ListaProductos = data
+    ListadoInfoProductos[i] = ListaProductos
+    //console.log(ListadoProductos[i].Producto_ID)
   }
- 
+}
 }
 console.log(ListadoInfoProductos)
+
 
 
 
@@ -314,29 +307,7 @@ useEffect(() => {
       
       <div className="col-5" id="Bloque2">
 
-      {
-              
-              (()=>{
-                  return ListadoInfoProductos.map((Producto) => {
-                    return <div className="textocomponentes" align="LEFT">
-                    <img className="componentes" src={Producto.URL} />
-                      <b>
-                      <div className="textocomponentes">
-                      {Producto.Nombre}
-                      </div>
-                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                      &nbsp; &nbsp; 
-                      {Producto.Precio}
-                    </b>
-                  </div>
-                    
-                    
-                    
-      
-                  })
-              })()
-            } 
+     
             
 
      
@@ -360,4 +331,5 @@ useEffect(() => {
 
 
 }
+
 export default Pantallacompra;
