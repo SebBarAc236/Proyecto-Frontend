@@ -189,6 +189,7 @@ const Avanzado = () => {
         }
         console.log("Carro add");
         console.log(data);
+        httpObtenerCarrito(producto_id)
     }
     
 
