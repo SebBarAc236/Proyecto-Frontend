@@ -12,6 +12,7 @@ const Header = (props) =>
     const [listadoProductos, setListadoProductos] = useState([])
     const [prod_filtrado, setProd_filtrado] = useState([]);
     const token = localStorage.getItem("TOKEN")
+
     const httpObtenerProductos = async () => {
         const resp = await fetch(`${RUTA_BACKEND}/Producto`)
         const data = await resp.json()
@@ -43,10 +44,6 @@ const Header = (props) =>
     {
         setInputSearch(() => e.target.value)
         const inputBarra = e.target.value.toLowerCase();
-        /*for (let i = 0; i < listadoProductos.length; i++) {
-            console.log(listadoProductos[i].Nombre);
-        }*/
-        //console.log(listadoProductos);
         const filtrado = listadoProductos.filter(producto => producto.Nombre.toLowerCase().includes(inputBarra));
         setProd_filtrado(() => filtrado)
         
@@ -104,11 +101,11 @@ const Header = (props) =>
                     <div className="p-2">Products</div>
                     <hr />
                     {prod_filtrado.map((producto) => 
-                        <Link to={"/Producto"} className="prod d-flex text-secondary" key={producto.id}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJtWO9rlPsNocaOb2hpjn9-5igenkCWzaVQ&usqp=CAU" alt="NVIDIA" />
+                        <Link to={`/Producto/${producto.Producto_ID}`} className="prod d-flex text-secondary" key={producto.Producto_ID}>
+                            <img src={producto.URL} alt="NVIDIA" />
                             <div className="d-flex flex-column">
                                 <div className="pr fw-semibold fst-italic"> {producto.Nombre}</div>
-                                <div>Redux</div>
+                                <div>{producto.Marca}</div>
                                 <div>${producto.Precio}</div>
                             </div>
                         </Link>
