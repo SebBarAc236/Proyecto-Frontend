@@ -91,17 +91,18 @@ const httpObtenerInfoProductos = async () =>{
   {
   var Rango = 0
   var ListaProductos = []
-  Rango = (ListadoProductos.length)
+  Rango = ListadoProductos.length
   for(let i = 0; i < Rango; i++){
     const resp = await fetch(`${RUTA_BACKEND}/Productoid?Producto_ID=${ListadoProductos[i].Producto_ID}`)
     const data = await resp.json()
     ListaProductos = data
     ListadoInfoProductos[i] = ListaProductos
-    //console.log(ListadoProductos[i].Producto_ID)
+    //console.log(ListadoProductos)
+    //console.log(ListadoInfoProductos[i][0].Nombre)
   }
 }
 }
-console.log(ListadoInfoProductos)
+
 
 
 
@@ -307,7 +308,11 @@ useEffect(() => {
       
       <div className="col-5" id="Bloque2">
 
+      
      
+             
+              
+            
             
 
      
