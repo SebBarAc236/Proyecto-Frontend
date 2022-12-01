@@ -181,7 +181,6 @@ const Avanzado = () => {
         }
         console.log("Carro add");
         console.log(data);
-        httpObtenerCarrito(producto_id)
     }
     
 
@@ -209,7 +208,7 @@ const Avanzado = () => {
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
                         httpAddCarrito(idprod)
-                        listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/Cart")
+                        listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); localStorage.clear("idprod"); navigate("/Cart")
                     }}>Checkout</button>
                 </div>
 
