@@ -13,25 +13,24 @@ import kingstonlogo from '../imagenes_logos/kingston.jpg'
 import windowslogo from '../imagenes_logos/windows.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { RUTA_BACKEND} from '../../conf';
+import { RUTA_BACKEND } from '../../conf';
 
 const Avanzado = () => {
 
     const [listadoComponentes, setListadoComponentes] = useState([])
-    const [listadoProductos, setlistadoProductos] = useState([])
+    const [listadoPrecios, setlistadoPrecios] = useState([])
     const [listadoAvanzado, setListadoAvanzado] = useState([])
-    const montoTotal = 0
     const usuarioID = localStorage.getItem("USUARIO_ID")
+    let monto = 0
+    
 
-
-
-    const httpObtenerComponente = async (componenteTipo = null) => {
+    async function httpObtenerComponente(componenteTipo = null) {
         const ruta = componenteTipo == null ?
-            `${RUTA_BACKEND}/Producto?Categoria=Grafica`:
-            `${RUTA_BACKEND}/Producto?Categoria=${componenteTipo}`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        setListadoComponentes(data)
+            `${RUTA_BACKEND}/Producto?Categoria=Grafica` :
+            `${RUTA_BACKEND}/Producto?Categoria=${componenteTipo}`;
+        const resp = await fetch(ruta);
+        const data = await resp.json();
+        setListadoComponentes(data);
     }
     const httpObtenerAvanzado = async (usuarioID) => {
         const ruta = usuarioID == null ? 
@@ -106,14 +105,7 @@ const Avanzado = () => {
                         <div className='row mb-3'>
                             <img src={pcgamer} alt="..." />
                         </div>
-                        <div className='row'>
-                            <div className='container rounded-5' id='resumen'>
-                                <div>Components price</div>
-                                <div>{montoTotal}</div>
-                                <div>Build fee</div>
-                                <div>$99</div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div className='col mt-3'>
                         <div className='row'>
@@ -157,8 +149,7 @@ const Avanzado = () => {
                                                     const idnuevo = Math.floor(Math.random()*999999)
                                                     anadirAvanzado(idnuevo,componente.Nombre,componente.Precio,componente.URL,usuarioID)
                                                 }}>+</button>
-                                                {()=>{montoTotal = montoTotal + componente.Precio
-                                                console.log(montoTotal)}}
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -174,6 +165,7 @@ const Avanzado = () => {
                     {
                             (()=>{
                                 return listadoAvanzado.map((producto) => {
+                                    listadoPrecios.push(producto.PrecioProd)
                                     return <div className='row'>
                                     <div className="card mb-3" id='listacompra'>
                                         <div className="row g-0">
@@ -191,17 +183,25 @@ const Avanzado = () => {
                                                 <div>&nbsp;</div>
                                                 {`${producto.PrecioProd}$`}
                                             </div>
-
+                                            {()=>{}}
                                         </div>
                                     </div>
-
+                                    {(()=>{monto = monto + producto.PrecioProd})()}
                                 </div>
-                                
                                 })
+                                
                             })()
                         }
+                        
                     </div>
-
+                    {(()=>{return <div className='container'><div className='col-6'><div className='row'>
+                            <div className='container rounded-5' id='resumen'>
+                                <div>Components price</div>
+                                <div>{`${monto}$`}</div>
+                                <div>Build fee</div>
+                                <div>$99</div>
+                            </div>
+                        </div></div></div>})()}
                 </div>
             </div>
         </div>

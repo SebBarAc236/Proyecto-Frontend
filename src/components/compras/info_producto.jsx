@@ -120,7 +120,7 @@ const InfoProducto = () =>
                             <img id="inv" className="rounded img-fluid" src={producto.URL} alt="" />
                         </div>
                         <span id="sp-bot">
-                            <button id="addCart" className="btn m-3" onClick={() => 
+                            <button type="button" id="addCart" className="btn m-3" onClick={() => 
                                 {
                                     console.log("Add car car " + producto.Producto_ID);
                                     httpAddCarrito(producto.Producto_ID)
