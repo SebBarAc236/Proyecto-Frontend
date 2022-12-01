@@ -208,7 +208,7 @@ const Avanzado = () => {
                     <button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
-                        httpAddCarrito("467eed31-e984-4992-a5af-a815998405e0",idprod)
+                        httpAddCarrito(idprod)
                         listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/Cart")
                     }}>Checkout</button>
                 </div>
