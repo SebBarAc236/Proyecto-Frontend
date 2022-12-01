@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import './INICIO/loginstyle.css'
 import { RUTA_BACKEND } from '../conf';
@@ -29,11 +29,28 @@ const Header = (props) =>
         console.log(data)
         setListadoUsuarios(data)
     }
+    
+    const wii = useRef(null);
+    
+    useEffect(() => 
+    {
+        const handleClickOutside = (event) => {
+            if (wii.current && !wii.current.contains(event.target)) {
+                setEscondidoD(() => true);;
+            }
+          };
+          document.addEventListener('click', handleClickOutside, true);
+          return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+          };
+    }, [])
 
     useEffect(() => {
         httpObtenerProductos();
         httpObtenerUsuarios(token);
+
     }, [])
+
 
     const onProductoSelected = (producto) => {
         console.log("Se selecciono producto " +  producto)
@@ -97,7 +114,7 @@ const Header = (props) =>
             <div hidden={escondido} id="pSearch" className="position-relative">
                 <input  id="searchInput" type="text" className="form-control m-2" 
                 value={inputSearch} onChange={inputHandler}/>
-                <div hidden={escondidoD} id="card" className="bg-white card">
+                <div hidden={escondidoD} ref={wii} id="card" className="bg-white card">
                     <div className="p-2">Products</div>
                     <hr />
                     {prod_filtrado.map((producto) => 

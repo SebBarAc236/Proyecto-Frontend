@@ -1,8 +1,58 @@
 import "./shopping_cart.css"
 import Header from './header_todos';
 import { Link } from "react-router-dom"
+import { RUTA_BACKEND } from '../conf';
+import { useState, useEffect } from "react";
+
 const Cart = () => 
 {
+    const token = localStorage.getItem("TOKEN")
+    const [carro, setCarro] = useState([])
+    const [orden, setOrden] = useState([])
+    const [listadoUsuarios, setListadoUsuarios] = useState([]);
+
+    
+    const httpObtenerOrden = async () => {
+        console.log("orden orden!");
+        let usuario;
+        try{
+            usuario = await httpObtenerUsuarios(token);
+        }
+        catch(e)
+        {
+            console.log(e)
+        }
+        console.log(usuario)
+        const resp = await fetch(`${RUTA_BACKEND}/Orden?Usuario_ID=${usuario[0].Usuario_ID}`)
+        const data = await resp.json()
+        console.log("Ordenoirdenasdasd carrito");
+        console.log(data)
+        return data;
+    }
+
+    const httpObtenerUsuarios = async (usuarioCorreo) => {
+        const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        console.log(data)
+        return data;
+    }
+
+    const httpObtenerCarrito = async () => {
+        let ordi;
+        ordi = await httpObtenerOrden();
+        console.log(ordi);
+        const resp = await fetch(`${RUTA_BACKEND}/Orden_producto?Orden_ID=${ordi[0].Orden_ID}`)
+        const data = await resp.json()
+        console.log("Carrito carrito");
+        console.log(data)
+        setCarro(data)
+    }
+
+    useEffect(() => {
+        httpObtenerCarrito();
+    }, [])
+
     return <div> 
         <Header/>
         <div id="all">
@@ -17,14 +67,14 @@ const Cart = () =>
                 </svg>
                 <Link to={"/Pantallacompra"} className="inline-block ms-1 text-white" ><span className="tx-white" style={{ textDecoration: 'none' }}>Checkout</span></Link>
             </button>
-            
         </div>
 
-        <div className="items bg-white rounded p-2 my-3 w-50">
+        {carro.map((producto) => 
+            <div className="items bg-white rounded p-2 my-3 w-50" key={producto.Orden_Producto_ID}>
             <div className="d-flex align-items-center align-middle">
-                <img className="ima me-3" src="https://i.pinimg.com/originals/70/d7/d3/70d7d3fccc11ded2fd4c43c62027a60d.png" alt="Keyboard"/>
-                <p className="btext clearfix desc p-2">Keyboard and mouse bundle</p>
-                <p className="btext price p-2 ms-5 me-2" >$39</p>
+                <img className="ima me-3" src={producto.Producto.URL} alt="Keyboard"/>
+                <p className="btext clearfix desc p-2">{producto.Producto.Nombre}</p>
+                <p className="btext price p-2 ms-5 me-2" >${producto.Producto.Precio}</p>
                 <button className="btn ms-5 mb-2 d-flex align-items-center justify-content-center inline">
                     <svg className="inline-block" style={{height: 24, width: 24}} viewBox="0 0 24 24">
                         <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
@@ -32,30 +82,7 @@ const Cart = () =>
                 </button>
             </div>                
         </div>
-        <div className="items bg-white rounded p-2 my-3 w-50">
-            <div className="d-flex align-items-center align-middle">
-                <img className="ima me-3" src="https://i.pinimg.com/originals/70/d7/d3/70d7d3fccc11ded2fd4c43c62027a60d.png" alt="Keyboard"/>
-                <p className="btext clearfix desc p-2">Keyboard and mouse bundle</p>
-                <p className="btext price p-2 ms-5 me-2" >$39</p>
-                <button className="btn ms-5 mb-2 d-flex align-items-center justify-content-center inline">
-                    <svg className="inline-block" style={{height: 24, width: 24}} viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-                    </svg>
-                </button>
-            </div>                
-        </div>
-        <div className="items bg-white rounded p-2 my-3 w-50">
-            <div className="d-flex align-items-center align-middle">
-                <img className="ima me-3" src="https://i.pinimg.com/originals/70/d7/d3/70d7d3fccc11ded2fd4c43c62027a60d.png" alt="Keyboard"/>
-                <p className="btext clearfix desc p-2">Keyboard and mouse bundle</p>
-                <p className="btext price p-2 ms-5 me-2" >$39</p>
-                <button className="btn ms-5 mb-2 d-flex align-items-center justify-content-center inline">
-                    <svg className="inline-block" style={{height: 24, width: 24}} viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-                    </svg>
-                </button>
-            </div>                
-        </div>
+        )}               
         </div>
     </div>
 }

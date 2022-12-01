@@ -109,17 +109,6 @@ const InfoProducto = () =>
         console.log(dataResp);
         return dataResp;
     }
-    /*
-    return (
-        <div>
-            <Header/>
-            {producto ? <div>
-                <div>{productId}</div>
-                <div>{producto.Nombre}</div>
-                <div>{producto.description}</div>
-            </div> : <div>Not Found</div>}
-        </div>
-    )*/
 
     return (
         <div>
@@ -148,24 +137,16 @@ const InfoProducto = () =>
                         <table id="func" className="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <th scope="row"> CHIPSET MANUFACTERER </th>
-                                    <td>a</td>
+                                    <th scope="row"> Descripcion </th>
+                                    <td>{producto.Descripcion}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"> GPU </th>
-                                    <td>GeForce GTX 1650</td>
+                                    <th scope="row"> Marca </th>
+                                    <td>{producto.Marca}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"> CORE CLOCK </th>
-                                    <td>1530 MHz</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"> BOOST CLOCK </th>
-                                    <td>OC Mode: 1800 MHz Gaming Mode (Default): 1770 MHz</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"> CUDA CORES </th>
-                                    <td>1280</td>
+                                    <th scope="row"> Categoria </th>
+                                    <td>{producto.Categoria}</td>
                                 </tr>
                             </tbody>
                         </table>
