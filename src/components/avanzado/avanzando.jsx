@@ -1,5 +1,5 @@
 import Header from '../header_todos';
-import { Link } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import './avanzado.css'
 import nvidialogo from '../imagenes_logos/nvidialogo.png'
 import ryzenlogo from '../imagenes_logos/ryzenlogo.jpg'
@@ -21,11 +21,12 @@ const Avanzado = () => {
     const [listadoPrecios, setlistadoPrecios] = useState([])
     const [listadoAvanzado, setListadoAvanzado] = useState([])
     const [listadoUsuarios, setListadoUsuarios] = useState([])
-    const [carro, setCarro] = useState([])
+    const [listadoOrdenes, setListadoOrdenes] = useState([])
+
     const usuarioID = localStorage.getItem("USUARIO_ID")
     const token = localStorage.getItem("TOKEN")
     let monto = 0
-    
+    const navigate = useNavigate()
 
     async function httpObtenerComponente(componenteTipo = null) {
         const ruta = componenteTipo == null ?
@@ -34,6 +35,12 @@ const Avanzado = () => {
         const resp = await fetch(ruta);
         const data = await resp.json();
         setListadoComponentes(data);
+    }
+    const httpObtenerOrden = async (usuarioID) => {
+        const ruta = `${RUTA_BACKEND}/Orden?Usuario_ID=${usuarioID}`
+        const resp = await fetch(ruta)
+        const data = await resp.json()
+        setListadoOrdenes(data)
     }
     const httpObtenerUsuarios = async (usuarioCorreo) => {
         const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
@@ -51,12 +58,7 @@ const Avanzado = () => {
         setListadoAvanzado(data)
         console.log(listadoAvanzado)
     }
-    const httpObtenerCarrito = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/Orden_producto`)
-        const data = await resp.json()
-        console.log(data)
-        setCarro(data)
-    }
+
     const anadirAvanzado = async (avanzada_id,nombre,precio,url,usuario_id) => {
         const data = {
             Avanzada_ID : avanzada_id,
@@ -92,69 +94,23 @@ const Avanzado = () => {
         const dataResp = await resp.json()
         localStorage.setItem("idprod",dataResp.idprodcreado)
     }
-    const httpCrearOrden = async (token) => {
+    const crearOrdenProd = async (Orden_ID,Producto_ID) => {
         const data = {
-            Usuario_ID : listadoUsuarios[0].Usuario_ID
+            Orden_ID : Orden_ID,
+            Producto_ID : Producto_ID
         }
-        
-        const resp = await fetch(
-            `${RUTA_BACKEND}/Orden`,
-            {
-                method : "POST",
-                body : JSON.stringify(data),
-                headers : {
-                    "Content-Type" : "application/json"
-                }
+        const resp = await fetch(`${RUTA_BACKEND}/Orden_Producto?Orden_ID=${Orden_ID}`,{
+            method : "POST",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json"
             }
-        )
+        })
         const dataResp = await resp.json()
-
-        if (dataResp.error !== "") {
-            // Hubo un error
-            console.error(dataResp.error)
-        }
-        console.log("Orden creararara add");
-        console.log(dataResp);
-        return dataResp;
+        httpObtenerOrden(usuarioID)
     }
-    const httpAddCarrito = async (producto_id) => {
-        let ordenIDs;
-        try
-        {
-            ordenIDs = await httpCrearOrden(token);
-        }
-        catch(e)
-        {
-            console.log(e);
-        }
-        
-        console.log(ordenIDs[0]);
-        const data = {
-            Orden_ID: ordenIDs[0].Orden_ID,
-            Producto_ID : producto_id,
-        }
-
-        const resp = await fetch(
-            `${RUTA_BACKEND}/Carrito`,
-            {
-                method : "POST",
-                body : JSON.stringify(data),
-                headers : {
-                    "Content-Type" : "application/json"
-                }
-            }
-        )
-        const dataResp = await resp.json()
-
-        if (dataResp.error !== "") {
-            // Hubo un error
-            console.error(dataResp.error)
-        }
-        console.log("Carro add");
-        console.log(data);
-        httpObtenerCarrito(producto_id)
-
-    }
+    
+    
 
     const vaciarAvanzada = async (avanzada_id) =>{
         const data = {
@@ -173,7 +129,8 @@ const Avanzado = () => {
     useEffect(() => {
         httpObtenerComponente()
         httpObtenerAvanzado(usuarioID)
-        httpObtenerUsuarios(usuarioID)
+        httpObtenerUsuarios(token)
+        httpObtenerOrden(usuarioID)
     }, [usuarioID])
     
 
@@ -195,14 +152,14 @@ const Avanzado = () => {
                     <div id="tituloavanzado">Build your PC!</div>
                 </div>
                 <div className='col'>
-                    <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco' onClick={()=>{listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)})}}>Back</button></Link>
+                    <button className='mx-auto btn btn-primary' id='botonblanco' onClick={()=>{listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/")}}>Back</button>
                     &nbsp;
-                    <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
+                    <button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
-                        httpAddCarrito(idprod)
-                        listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)})
-                    }}>Checkout</button></Link>
+                        crearOrdenProd("467eed31-e984-4992-a5af-a815998405e0",idprod)
+                        listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/Cart")
+                    }}>Checkout</button>
                 </div>
 
                 <div className='row'>

@@ -45,11 +45,9 @@ const InfoProducto = () =>
 
     const [producto] = listadoProductos.filter(producto => producto.Producto_ID == id)
     const httpCrearOrden = async (token) => {
-        console.log(listadoUsuarios[0])
         const data = {
-            Usuario_ID : listadoUsuarios[0].Usuario_ID
-        }
-        
+            Usuario_ID : token
+        }    
         const resp = await fetch(
             `${RUTA_BACKEND}/Orden`,
             {
@@ -57,7 +55,7 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json",
-                    "Acces-Control-Allow-Origin" : "*"
+                    "Acces-Control-Allow-Origin" : "http://localhost:3000"
                 }
             }
         )
@@ -95,7 +93,7 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json",
-                    "Acces-Control-Allow-Origin" : "*"
+                    "Acces-Control-Allow-Origin" : "http://localhost:3000"
                 }
             }
         )
