@@ -1,10 +1,10 @@
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import Home from './components/homepage';
 import reportWebVitals from './reportWebVitals';
 import InfoProducto from './components/compras/info_producto';
-import { HashRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/shopping_cart';
 import Login from './components/INICIO/login';
 import Register from './components/INICIO/register';
@@ -20,7 +20,6 @@ import Ranking from './components/ranking';
 import Soporte from './components/soporte';
 import Respuesta from './components/Respuesta';
 import Recomendado from './components/Recomendado';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,7 +41,7 @@ root.render(
           <Route path="/Register" element={ <Register/> } />
           <Route path="/Login" element={ <Login/> } />
           <Route path="/" element={ <Home/> } /> 
-          <Route path="/Producto" element={ <InfoProducto/> } /> 
+          <Route path="/Producto/:productId" element={ <InfoProducto/> } /> 
           <Route path="/Cart" element={ <Cart/> } /> 
         </Routes>
     </HashRouter>
