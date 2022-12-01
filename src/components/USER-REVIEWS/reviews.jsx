@@ -4,6 +4,7 @@ import star from '../IMAGENES-F/5star.png'
 import './review.css'
 import {useState} from "react";
 import {useEffect} from "react";
+import { RUTA_BACKEND} from '../../conf';
 
 
 const Reviews = () => {
@@ -12,7 +13,7 @@ const Reviews = () => {
 
  
     const httpObtenerReviews = async () =>{
-        const resp = await fetch("http://localhost:4321/Resena")
+        const resp = await fetch("http://localhost:4444/Resena")
         const data = await resp.json()
         setListadoReviews(data)
     }
