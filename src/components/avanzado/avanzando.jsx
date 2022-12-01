@@ -128,10 +128,10 @@ const Avanzado = () => {
     }, [usuarioID])
     const httpCrearOrden = async (token) => {
         const data = {
-            Usuario_ID : listadoUsuarios[0].Usuario_ID
+            Usuario_ID : token
         }
         console.log("TEST::::");
-        console.log(listadoUsuarios[0].Usuario_ID);
+        console.log(token);
         const resp = await fetch(
             `${RUTA_BACKEND}/Orden`,
             {
@@ -153,7 +153,7 @@ const Avanzado = () => {
         console.log(dataResp);
         return dataResp;
     }
-    const httpAddCarrito = async (producto_id) => {
+    const httpAddCarrito = async (producto_id,token) => {
         let ordenIDs;
         try
         {
@@ -216,7 +216,7 @@ const Avanzado = () => {
                     <button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
-                        httpAddCarrito(idprod)
+                        httpAddCarrito(idprod,usuarioID)
                         listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/Cart")
                     }}>Checkout</button>
                 </div>
