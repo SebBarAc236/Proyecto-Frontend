@@ -22,6 +22,7 @@ const Avanzado = () => {
     const [listadoAvanzado, setListadoAvanzado] = useState([])
     const [listadoUsuarios, setListadoUsuarios] = useState([])
     const [listadoOrdenes, setListadoOrdenes] = useState([])
+    const [carro, setCarro] = useState([])
 
     const usuarioID = localStorage.getItem("USUARIO_ID")
     const token = localStorage.getItem("TOKEN")
@@ -48,6 +49,12 @@ const Avanzado = () => {
         const data = await resp.json()
         console.log(data)
         setListadoUsuarios(data)
+    }
+    const httpObtenerCarrito = async () => {
+        const resp = await fetch(`${RUTA_BACKEND}/Orden_producto`)
+        const data = await resp.json()
+        //console.log(data)
+        setCarro(data)
     }
     const httpObtenerAvanzado = async (usuarioID) => {
         const ruta = usuarioID == null ? 
@@ -113,6 +120,7 @@ const Avanzado = () => {
 
     useEffect(() => {
         httpObtenerComponente()
+        httpObtenerCarrito()
         httpObtenerOrden(usuarioID)
         httpObtenerAvanzado(usuarioID)
         httpObtenerUsuarios(token)
