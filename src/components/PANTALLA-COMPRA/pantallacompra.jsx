@@ -15,10 +15,63 @@ import paypal from '../IMAGENES-F/paypal.png'
 import gpay from '../IMAGENES-F/gpay.png'
 import userblack from '../IMAGENES-F/userblack.png'
 import './pantalla-compra.css'
-
+import {useState} from "react";
+import {useEffect} from "react";
+import { RUTA_BACKEND} from '../../conf';
+  
 
 
 const Pantallacompra = () => {
+  const token = localStorage.getItem("TOKEN")
+  const UID = localStorage.getItem("USUARIO_ID")
+
+  const httpGuardarOrden = async (Direc,Precio, OrdenID, UsuarioID) => {
+    const data= {
+      Direccion : Direc,
+      Monto : Precio,
+      Orden_ID : OrdenID,
+      Usuario_ID : UsuarioID
+    }
+    const resp = await fetch(
+      `${RUTA_BACKEND}/Orden`,
+      {
+        method : "POST",
+        body : JSON.stringify(data),
+        headers : {
+          "Content-type" : "application/json"
+        }
+      }
+    )
+    const dataResp = await resp.json()
+    if(dataResp.error !== ""){
+      console.error(dataResp.error)
+    }
+  }
+  useEffect(() => {
+    console.log(UID)
+},[])
+  function uuid() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
+  console.log(uuid());
+
+  const[Direc, setDirec] = useState()
+  const[Precio, setPrecio] = useState()
+  const[OrdenID, setOrdenID] = useState()
+  const[UsuarioID, setUsuarioID] = useState()
+
+  //Genero mi id de orden
+  setOrdenID(uuid)
+
+  
+  const generarOrden = (Direc,Precio, OrdenID, UsuarioID) =>{
+
+    httpGuardarOrden(Direc,Precio, OrdenID, UsuarioID)
+
+  }
+
     return <div>
            
            <div className='row mx-auto'><Header/></div>
@@ -145,7 +198,9 @@ const Pantallacompra = () => {
       </div>
 
       <div className="mb-3">
-        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Address"/>
+        <input value={Direc} onChange={(evt) =>{
+          setDirec(evt.target.value)
+        }} type="email" className="form-control" id="exampleFormControlInput1" placeholder="Address"/>
       </div>
 
       <div className="mb-3">
@@ -182,7 +237,11 @@ const Pantallacompra = () => {
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
 
-        <button className="border-0 rounded-top btn btn-primary" id='botonrosado'>
+        
+        <button className="border-0 rounded-top btn btn-primary" id='botonrosado'
+        onClick={ () =>{
+          generarOrden(OrdenID, UsuarioID, Precio, Direc)}}>
+
           <div style={{color: "white"}}>
             Continue to shipping
           </div>
