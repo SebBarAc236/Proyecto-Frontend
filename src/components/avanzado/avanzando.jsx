@@ -94,6 +94,30 @@ const Avanzado = () => {
         const dataResp = await resp.json()
         localStorage.setItem("idprod",dataResp.idprodcreado)
     }
+    
+    
+
+    const vaciarAvanzada = async (avanzada_id) =>{
+        const data = {
+            Usuario_ID : usuarioID
+        }
+        await fetch(`${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`, {
+            method : "DELETE",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        httpObtenerAvanzado(usuarioID)
+    }
+
+    useEffect(() => {
+        httpObtenerComponente()
+        httpObtenerOrden(usuarioID)
+        httpObtenerAvanzado(usuarioID)
+        httpObtenerUsuarios(token)
+        
+    }, [usuarioID])
     const httpCrearOrden = async (token) => {
         const data = {
             Usuario_ID : listadoUsuarios[0].Usuario_ID
@@ -159,30 +183,6 @@ const Avanzado = () => {
         console.log(data);
         httpObtenerCarrito(producto_id)
     }
-    
-    
-
-    const vaciarAvanzada = async (avanzada_id) =>{
-        const data = {
-            Usuario_ID : usuarioID
-        }
-        await fetch(`${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`, {
-            method : "DELETE",
-            body : JSON.stringify(data),
-            headers : {
-                "Content-Type" : "application/json"
-            }
-        })
-        httpObtenerAvanzado(usuarioID)
-    }
-
-    useEffect(() => {
-        httpObtenerComponente()
-        httpObtenerOrden(usuarioID)
-        httpObtenerAvanzado(usuarioID)
-        httpObtenerUsuarios(token)
-        
-    }, [usuarioID])
     
 
     
