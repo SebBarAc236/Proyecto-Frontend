@@ -10,6 +10,7 @@ import other1 from '../IMAGENES-F/other1.png'
 import coding from '../IMAGENES-F/coding.png'
 import './principiante.css'
 import { useState } from 'react';
+import { RUTA_BACKEND} from '../../conf';
 
 
 
@@ -76,7 +77,7 @@ const Principiante = () => {
             <div className="col" align="center" id= "contentcol1"  >
                 <button onClick={(evt) => {setOptionSelected(evt.target.value)}} key="1" value="1" id="boton" type="button" className=" rounded border-0" 
                     >
-                    <img id="icons" src={mando1}  />
+                    <img id="icons" src={`${RUTA_BACKEND}/imagenes/mando1.png`}/>
                     <div className="Boton" >
                         <b> Gaming</b>
                         </div>
