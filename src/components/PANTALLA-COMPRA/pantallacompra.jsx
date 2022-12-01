@@ -69,16 +69,22 @@ const Pantallacompra = () => {
 
 
 
+
   
   const httpObtenerOrden = async () =>{
-    const resp = await fetch(`${RUTA_BACKEND}/Orden`)
+    const resp = await fetch(`${RUTA_BACKEND}/Orden?Usuario_ID=${UID}`)
     const data = await resp.json()
-    setListadoOrdenes(data)
-    console.log(ListadoOrdenes)
-    
+    setListadoOrdenes(data) 
 }
+console.log(ListadoOrdenes.Orden_ID)
+
+
+
+
+
 useEffect(() => {
   httpObtenerOrden()
+ // httpObtenerOrdenProducto()
 
 },[])
   
