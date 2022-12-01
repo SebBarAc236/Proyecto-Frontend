@@ -6,12 +6,13 @@ import comillas from '../IMAGENES-F/comillas.png'
 import './reseñas.css'
 import {useState} from "react";
 import {useEffect} from "react";
+import { RUTA_BACKEND} from '../../conf';
 const Reseñas = () => {
     const[ListadoInfluencers, setListadoInfluencers] = useState([])
 
  
     const httpObtenerInfluencers = async () =>{
-        const resp = await fetch("http://localhost:4321/Resena2")
+        const resp = await fetch(`${RUTA_BACKEND}/Resena2`)
         const data = await resp.json()
         setListadoInfluencers(data)
     }
