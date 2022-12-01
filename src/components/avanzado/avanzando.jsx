@@ -20,7 +20,10 @@ const Avanzado = () => {
     const [listadoComponentes, setListadoComponentes] = useState([])
     const [listadoPrecios, setlistadoPrecios] = useState([])
     const [listadoAvanzado, setListadoAvanzado] = useState([])
+    const [listadoUsuarios, setListadoUsuarios] = useState([])
+    const [carro, setCarro] = useState([])
     const usuarioID = localStorage.getItem("USUARIO_ID")
+    const token = localStorage.getItem("TOKEN")
     let monto = 0
     
 
@@ -41,7 +44,12 @@ const Avanzado = () => {
         setListadoAvanzado(data)
         console.log(listadoAvanzado)
     }
-
+    const httpObtenerCarrito = async () => {
+        const resp = await fetch(`${RUTA_BACKEND}/Orden_producto`)
+        const data = await resp.json()
+        console.log(data)
+        setCarro(data)
+    }
     const anadirAvanzado = async (avanzada_id,nombre,precio,url,usuario_id) => {
         const data = {
             Avanzada_ID : avanzada_id,
@@ -58,13 +66,87 @@ const Avanzado = () => {
             }
         })
         const dataResp = await resp.json()
-        if(dataResp.error !== ""){
-            console.error(dataResp.error)
-
-        }else{
-
-        }
+        
         httpObtenerAvanzado(usuario_id)
+    }
+    const anadirProducto = async (Nombre,Precio,URL) => {
+        const data = {
+            Nombre : Nombre,
+            Precio : Precio,
+            URL : URL
+        }
+        const resp = await fetch(`${RUTA_BACKEND}/Producto`, {
+            method : "POST",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        const dataResp = await resp.json()
+        localStorage.setItem("idprod",dataResp.idprodcreado)
+    }
+    const httpCrearOrden = async (token) => {
+        const data = {
+            Usuario_ID : listadoUsuarios[0].Usuario_ID
+        }
+        
+        const resp = await fetch(
+            `${RUTA_BACKEND}/Orden`,
+            {
+                method : "POST",
+                body : JSON.stringify(data),
+                headers : {
+                    "Content-Type" : "application/json"
+                }
+            }
+        )
+        const dataResp = await resp.json()
+
+        if (dataResp.error !== "") {
+            // Hubo un error
+            console.error(dataResp.error)
+        }
+        console.log("Orden creararara add");
+        console.log(dataResp);
+        return dataResp;
+    }
+    const httpAddCarrito = async (producto_id) => {
+        let ordenIDs;
+        try
+        {
+            ordenIDs = await httpCrearOrden(token);
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+        
+        console.log(ordenIDs[0]);
+        const data = {
+            Orden_ID: ordenIDs[0].Orden_ID,
+            Producto_ID : producto_id,
+        }
+
+        const resp = await fetch(
+            `${RUTA_BACKEND}/Carrito`,
+            {
+                method : "POST",
+                body : JSON.stringify(data),
+                headers : {
+                    "Content-Type" : "application/json"
+                }
+            }
+        )
+        const dataResp = await resp.json()
+
+        if (dataResp.error !== "") {
+            // Hubo un error
+            console.error(dataResp.error)
+        }
+        console.log("Carro add");
+        console.log(data);
+        httpObtenerCarrito(producto_id)
+
     }
 
     const vaciarAvanzada = async (avanzada_id) =>{
@@ -97,7 +179,11 @@ const Avanzado = () => {
                 <div className='col'>
                     <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco' onClick={()=>{listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)})}}>Back</button></Link>
                     &nbsp;
-                    <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button></Link>
+                    <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
+                        anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
+                        const idprod = localStorage.getItem("idprod")
+                        httpAddCarrito(idprod)
+                    }}>Checkout</button></Link>
                 </div>
 
                 <div className='row'>
