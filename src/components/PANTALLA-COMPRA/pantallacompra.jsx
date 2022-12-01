@@ -66,19 +66,59 @@ const Pantallacompra = () => {
   const [OrdenID, setOrdenID] = useState()
   const [UsuarioID, setUsuarioID] = useState()
   const[ListadoOrdenes, setListadoOrdenes] = useState()
-
+ const[ListadoInfoProductos, setListadoInfoProductos] = useState()
 
 
   
-  const httpObtenerOrden = async () =>{
-    const resp = await fetch(`${RUTA_BACKEND}/Orden`)
-    const data = await resp.json()
-    setListadoOrdenes(data)
-    console.log(ListadoOrdenes)
-    
+ const httpObtenerOrden = async () =>{
+  const resp = await fetch(`${RUTA_BACKEND}/Orden?Usuario_ID=${UID}`)
+  const data = await resp.json()
+  setListadoOrdenes(data) 
 }
+//console.log(ListadoOrdenes)
+
+
+
+const httpObtenerOrdenProducto = async () =>{
+  const resp = await fetch(`${RUTA_BACKEND}/Orden_producto?Orden_ID=${ListadoOrdenes[0].Orden_ID}`)
+  const data = await resp.json()
+  setListadoProductos(data) 
+  }
+//console.log(ListadoProductos)
+
+
+const httpObtenerInfoProductos = async () =>{
+  {
+    (()=>{
+      return ListadoProductos.map ( async  (Producto) => {
+        var contador = 0
+        let ListaProductos = []
+        const resp = await fetch(`${RUTA_BACKEND}/Productoid?Producto_ID=${Producto.Producto_ID}`)
+    
+        
+        const data = await resp.json()
+       
+        ListaProductos = data
+        ListadoInfoProductos[contador] = ListaProductos
+        contador += 1;
+        //console.log(ListaProductos.length)
+
+      })
+
+    })()
+  }
+ 
+}
+console.log(ListadoInfoProductos)
+
+
+
+
 useEffect(() => {
   httpObtenerOrden()
+ httpObtenerOrdenProducto()
+ httpObtenerInfoProductos()
+ 
 
 },[])
   
@@ -271,159 +311,36 @@ useEffect(() => {
 
 
      
-
-
-
-
-      <div 
-      className="col-5" id="Bloque2">
-      <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={r} />
-          <b>
-          
-          Build + Setup + Testing + Warranty
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp; 
-          $99.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={atx} />
-          <b>
-          
-          700" ATX 80 Plus Gold
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp; 
-          $79.00
-        </b>
-      </div>
-      <div className="textocomponentes " align="LEFT">
-        <img className="componentes" src={liquid} />
-          <b>
-          
-          CM Masterliquid ML240L
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-           
-          $89.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="LEFT">
-        <img className="componentes" src={windows}/>
-          <b>
-          
-          Windows 11 Home + USB Recovery
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; 
-          $120.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={rtx} />
-          <b>
-          
-          NVIDIA GeForce RTX 3070 8GB (VR Ready)
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          
-          $679.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={cooler} />
-          <b>
-          
-          Cooler Master TD500 RGB
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp; 
-          
-          $99.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={nvm} />
-          <b>
-          
-          1TB NVMe M.2
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          $99.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={ddr} />
-          <b>
-          
-          16GB DDR Dual Channel
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
       
-          $69.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={asus} />
-          <b>
-          
-          ASUS PRIME B660M-A | Intel
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp;  
-          $149.00
-        </b>
-      </div>
-      <div className="textocomponentes" align="left">
-        <img className="componentes" src={wire}/>
-          <b>
-          
-          Wireless 802.11ac
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-          &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          $29.00
-        </b>
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
-      <div>
-        &nbsp;
-      </div>
+      <div className="col-5" id="Bloque2">
+
+      {
+              
+              (()=>{
+                  return ListadoInfoProductos.map((Producto) => {
+                    return <div className="textocomponentes" align="LEFT">
+                    <img className="componentes" src={Producto.URL} />
+                      <b>
+                      <div className="textocomponentes">
+                      {Producto.Nombre}
+                      </div>
+                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                      &nbsp; &nbsp; 
+                      {Producto.Precio}
+                    </b>
+                  </div>
+                    
+                    
+                    
+      
+                  })
+              })()
+            } 
+            
+
+     
+      
       
       <div className="input-group mb-3">
         <input type="text" className="form-control" placeholder="Discount code" aria-label="Discount code" aria-describedby="button-addon2"/>
