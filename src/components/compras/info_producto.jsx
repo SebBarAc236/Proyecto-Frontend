@@ -69,7 +69,8 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json"
-                }
+                },
+                mode : "no-cors"
             }
         )
         const dataResp = await resp.json()
@@ -96,7 +97,8 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json"
-                }
+                },
+                mode : "no-cors"
             }
         )
         const dataResp = await resp.json()
