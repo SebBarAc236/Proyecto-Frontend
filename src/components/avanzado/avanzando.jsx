@@ -94,20 +94,70 @@ const Avanzado = () => {
         const dataResp = await resp.json()
         localStorage.setItem("idprod",dataResp.idprodcreado)
     }
-    const crearOrdenProd = async (Orden_ID,Producto_ID) => {
+    const httpCrearOrden = async (token) => {
         const data = {
-            Orden_ID : Orden_ID,
-            Producto_ID : Producto_ID
+            Usuario_ID : listadoUsuarios[0].Usuario_ID
         }
-        const resp = await fetch(`${RUTA_BACKEND}/Orden_Producto?Orden_ID=${Orden_ID}`,{
-            method : "POST",
-            body : JSON.stringify(data),
-            headers : {
-                "Content-Type" : "application/json"
+        console.log("TEST::::");
+        console.log(listadoUsuarios[0].Usuario_ID);
+        const resp = await fetch(
+            `${RUTA_BACKEND}/Orden`,
+            {
+                method : "POST",
+                body : JSON.stringify(data),
+                headers : {
+                    "Content-Type" : "application/json",
+                }
             }
-        })
+        )
+        console.log("wait")
         const dataResp = await resp.json()
-        httpObtenerOrden(usuarioID)
+        
+        if (dataResp.error !== "") {
+            // Hubo un error
+            console.error(dataResp.error)
+        }
+        console.log("Orden creararara add");
+        console.log(dataResp);
+        return dataResp;
+    }
+    const httpAddCarrito = async (producto_id) => {
+        let ordenIDs;
+        try
+        {
+            ordenIDs = await httpCrearOrden(token);
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+        
+        console.log("ORDEN ID");
+        console.log(ordenIDs[0]);
+        const data = {
+            Orden_ID: ordenIDs[0].Orden_ID,
+            Producto_ID : producto_id,
+        }
+
+        const resp = await fetch(
+            `${RUTA_BACKEND}/Carrito`,
+            {
+                method : "POST",
+                body : JSON.stringify(data),
+                headers : {
+                    "Content-Type" : "application/json",
+                }
+            }
+        )
+        const dataResp = await resp.json()
+        
+        if (dataResp.error !== "") {
+            // Hubo un error
+            console.error(dataResp.error)
+        }
+        console.log("Carro add");
+        console.log(data);
+        httpObtenerCarrito(producto_id)
     }
     
     
@@ -158,7 +208,7 @@ const Avanzado = () => {
                     <button className='mx-auto btn btn-primary' id='botonrosado' onClick={()=>{
                         anadirProducto("PC Armada - Custom",monto,"https://www.tecnosmart.com.ec/wp-content/uploads/2021/08/h500p_argb_04_argb-imageleftorright-1-1024x976.png")
                         const idprod = localStorage.getItem("idprod")
-                        crearOrdenProd("467eed31-e984-4992-a5af-a815998405e0",idprod)
+                        httpAddCarrito("467eed31-e984-4992-a5af-a815998405e0",idprod)
                         listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)}); navigate("/Cart")
                     }}>Checkout</button>
                 </div>
