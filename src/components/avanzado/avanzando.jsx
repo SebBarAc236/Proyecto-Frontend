@@ -128,9 +128,10 @@ const Avanzado = () => {
 
     useEffect(() => {
         httpObtenerComponente()
+        httpObtenerOrden(usuarioID)
         httpObtenerAvanzado(usuarioID)
         httpObtenerUsuarios(token)
-        httpObtenerOrden(usuarioID)
+        
     }, [usuarioID])
     
 
