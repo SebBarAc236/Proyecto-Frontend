@@ -17,14 +17,14 @@ const InfoProducto = () =>
     const httpObtenerProductos = async () => {
         const resp = await fetch(`${RUTA_BACKEND}/Producto`)
         const data = await resp.json()
-        console.log(data)
+        //console.log(data)
         setListadoProductos(data)
     }
 
     const httpObtenerCarrito = async () => {
         const resp = await fetch(`${RUTA_BACKEND}/Orden_producto`)
         const data = await resp.json()
-        console.log(data)
+        //console.log(data)
         setCarro(data)
     }
 
@@ -32,7 +32,7 @@ const InfoProducto = () =>
         const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
         const resp = await fetch(ruta)
         const data = await resp.json()
-        console.log(data)
+        //console.log(data)
         setListadoUsuarios(data)
     }
 
@@ -46,8 +46,10 @@ const InfoProducto = () =>
     const [producto] = listadoProductos.filter(producto => producto.Producto_ID == id)
     const httpCrearOrden = async (token) => {
         const data = {
-            Usuario_ID : token
-        }    
+            Usuario_ID : listadoUsuarios[0].Usuario_ID
+        }
+        console.log("TEST::::");
+        console.log(listadoUsuarios[0].Usuario_ID);
         const resp = await fetch(
             `${RUTA_BACKEND}/Orden`,
             {
@@ -55,12 +57,12 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json",
-                    "Acces-Control-Allow-Origin" : "http://localhost:3000"
                 }
             }
         )
+        console.log("wait")
         const dataResp = await resp.json()
-
+        
         if (dataResp.error !== "") {
             // Hubo un error
             console.error(dataResp.error)
@@ -80,6 +82,7 @@ const InfoProducto = () =>
             console.log(e);
         }
         
+        console.log("ORDEN ID");
         console.log(ordenIDs[0]);
         const data = {
             Orden_ID: ordenIDs[0].Orden_ID,
@@ -93,12 +96,11 @@ const InfoProducto = () =>
                 body : JSON.stringify(data),
                 headers : {
                     "Content-Type" : "application/json",
-                    "Acces-Control-Allow-Origin" : "http://localhost:3000"
                 }
             }
         )
         const dataResp = await resp.json()
-
+        
         if (dataResp.error !== "") {
             // Hubo un error
             console.error(dataResp.error)
@@ -106,7 +108,6 @@ const InfoProducto = () =>
         console.log("Carro add");
         console.log(data);
         httpObtenerCarrito(producto_id)
-
     }
 
     
