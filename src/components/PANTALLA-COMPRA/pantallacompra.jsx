@@ -1,3 +1,4 @@
+
 import Header from '../header_todos';
 import { Link } from "react-router-dom"
 import wire from '../IMAGENES-F/wire.jpg'
@@ -8,6 +9,7 @@ import cooler from '../IMAGENES-F/cooler.jpg'
 import rtx from '../IMAGENES-F/rtx.jpg'
 import windows from '../IMAGENES-F/windows.jpg'
 import liquid from '../IMAGENES-F/liquid.jpg'
+
 import atx from '../IMAGENES-F/700at.jpg'
 import r from '../IMAGENES-F/r.jpg'
 import shop from '../IMAGENES-F/shop.png'
@@ -18,12 +20,21 @@ import './pantalla-compra.css'
 import {useState} from "react";
 import {useEffect} from "react";
 import { RUTA_BACKEND} from '../../conf';
+
   
 
 
 const Pantallacompra = () => {
-  const token = localStorage.getItem("TOKEN")
+ 
+
+  
+  //const token = localStorage.getItem("TOKEN")
+  //VARIABLE QUE GUARDA EL USUARIO ID 
   const UID = localStorage.getItem("USUARIO_ID")
+  //console.log(UID)
+
+  
+
 
   const httpGuardarOrden = async (Direc,Precio, OrdenID, UsuarioID) => {
     const data= {
@@ -47,24 +58,29 @@ const Pantallacompra = () => {
       console.error(dataResp.error)
     }
   }
-  useEffect(() => {
-    console.log(UID)
+
+ 
+  const [ListadoProductos, setListadoProductos] = useState()
+  const [Direc, setDirec] = useState()
+  const [Precio, setPrecio] = useState()
+  const [OrdenID, setOrdenID] = useState()
+  const [UsuarioID, setUsuarioID] = useState()
+  const[ListadoOrdenes, setListadoOrdenes] = useState()
+
+
+
+  
+  const httpObtenerOrden = async () =>{
+    const resp = await fetch(`${RUTA_BACKEND}/Orden`)
+    const data = await resp.json()
+    setListadoOrdenes(data)
+    console.log(ListadoOrdenes)
+    
+}
+useEffect(() => {
+  httpObtenerOrden()
+
 },[])
-  function uuid() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-  }
-  console.log(uuid());
-
-  const[Direc, setDirec] = useState()
-  const[Precio, setPrecio] = useState()
-  const[OrdenID, setOrdenID] = useState()
-  const[UsuarioID, setUsuarioID] = useState()
-
-  //Genero mi id de orden
-  setOrdenID(uuid)
-
   
   const generarOrden = (Direc,Precio, OrdenID, UsuarioID) =>{
 

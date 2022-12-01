@@ -16,22 +16,15 @@ import { useEffect } from 'react';
 import { RUTA_BACKEND} from '../../conf';
 
 const Avanzado = () => {
-    const [listadoUsuarios, setListadoUsuarios] = useState([]);
+
     const [listadoComponentes, setListadoComponentes] = useState([])
     const [listadoProductos, setlistadoProductos] = useState([])
-    const [listadoPiezas, setListadoPiezas] = useState([])
-    const [listadoCarrito, setListadoCarrito] = useState([])
-    const [listadoOrdenes, setListadoOrdenes] = useState([])
-    const token = localStorage.getItem("TOKEN")
+    const [listadoAvanzado, setListadoAvanzado] = useState([])
+    const montoTotal = 0
     const usuarioID = localStorage.getItem("USUARIO_ID")
 
 
-    const httpObtenerUsuarios = async (usuarioCorreo) => {
-        const ruta = `${RUTA_BACKEND}/Usuario?Correo=${usuarioCorreo}`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        setListadoUsuarios(data)
-    }
+
     const httpObtenerComponente = async (componenteTipo = null) => {
         const ruta = componenteTipo == null ?
             `${RUTA_BACKEND}/Producto?Categoria=Grafica`:
@@ -40,38 +33,50 @@ const Avanzado = () => {
         const data = await resp.json()
         setListadoComponentes(data)
     }
-    
-    const httpObtenerTodo = async () => {
-        const ruta = `${RUTA_BACKEND}/Producto`
+    const httpObtenerAvanzado = async (usuarioID) => {
+        const ruta = usuarioID == null ? 
+        `${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`:
+        `${RUTA_BACKEND}/Avanzada?Usuario_ID=${usuarioID}`
         const resp = await fetch(ruta)
         const data = await resp.json()
-        setlistadoProductos(data)
+        setListadoAvanzado(data)
+        console.log(listadoAvanzado)
     }
 
-    const ordenesUsuario = async () => {
-        const ruta = `${RUTA_BACKEND}/Orden?Usuario_ID=${usuarioID}`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        setListadoOrdenes(data)
-        console.log(listadoOrdenes)
+    const anadirAvanzado = async (avanzada_id,nombre,precio,url,usuario_id) => {
+        const data = {
+            Avanzada_ID : avanzada_id,
+            NombreProd : nombre,
+            PrecioProd : precio,
+            URL : url,
+            Usuario_ID : usuario_id
+        }
+        const resp = await fetch(`${RUTA_BACKEND}/Avanzada`, {
+            method : "POST",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        })
+        const dataResp = await resp.json()
+        if(dataResp.error !== ""){
+            console.error(dataResp.error)
+
+        }else{
+
+        }
+        httpObtenerAvanzado(usuario_id)
     }
-    const ordenesProductos = async () => {
-        const ordenID = listadoOrdenes[0]
-        const ruta = `${RUTA_BACKEND}/Orden_producto?Orden_ID=${ordenID}`
-        const resp = await fetch(ruta)
-        const data = await resp.json()
-        setListadoPiezas(data)
-        console.log(data)
-        console.log(listadoOrdenes[0])
+
+    const vaciarAvanzada = async (avanzada_id) =>{
+        console.log(`se eliminaron los productos ${avanzada_id}`)
     }
 
     useEffect(() => {
         httpObtenerComponente()
-        httpObtenerUsuarios(token)
-        ordenesUsuario()
-        ordenesProductos()
-        httpObtenerTodo()
-    }, [])
+        httpObtenerAvanzado(usuarioID)
+    }, [usuarioID])
+    
 
     
 
@@ -79,6 +84,7 @@ const Avanzado = () => {
     const onComponenteSelected = (componenteTipo) => {
         console.log("se selecciono el componente " + componenteTipo)
         httpObtenerComponente(componenteTipo)
+        
     }
 
     return <div>
@@ -90,7 +96,7 @@ const Avanzado = () => {
                     <div id="tituloavanzado">Build your PC!</div>
                 </div>
                 <div className='col'>
-                    <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco'>Back</button></Link>
+                    <Link to={"/"}><button className='mx-auto btn btn-primary' id='botonblanco' onClick={()=>{listadoAvanzado.map((prods)=>{vaciarAvanzada(prods.Avanzada_ID)})}}>Back</button></Link>
                     &nbsp;
                     <Link to={"/Pantallacompra"}><button className='mx-auto btn btn-primary' id='botonrosado'>Checkout</button></Link>
                 </div>
@@ -103,7 +109,7 @@ const Avanzado = () => {
                         <div className='row'>
                             <div className='container rounded-5' id='resumen'>
                                 <div>Components price</div>
-                                <div>{1800}</div>
+                                <div>{montoTotal}</div>
                                 <div>Build fee</div>
                                 <div>$99</div>
                             </div>
@@ -133,41 +139,26 @@ const Avanzado = () => {
                             (()=>{
                                 return listadoComponentes.map((componente) => {
                                     return <div className='row'>
-                                    <div class="card mb-3">
-                                        <div class="row g-0">
-                                            <div class="col-md-3">
-                                                {(()=>{
-                                                    if(componente.Marca === "NVIDIA"){
-                                                        return <img src={nvidialogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "AMD"){
-                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "AORUS"){
-                                                        return <img src={aoruslogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "CORSAIR"){
-                                                        return <img src={corsairlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "GIGABYTE"){
-                                                        return <img src={gigabytelogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "KINGSTON"){
-                                                        return <img src={kingstonlogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "INTEL"){
-                                                        return <img src={intellogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "MSI"){
-                                                        return <img src={msilogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }else if(componente.Marca === "WINDOWS"){
-                                                        return <img src={windowslogo} class="img-fluid rounded-start mt-3 mx-auto" alt="..." />
-                                                    }
-                                                    console.log(listadoOrdenes)
-                                                })()}
+                                    <div className="card mb-3">
+                                        <div className="row g-0">
+                                            <div className="col-md-3">
+                                                <img src={componente.URL} className="img-fluid rounded-start mt-3 mx-auto" alt="..." />
+                                                    
                                                 
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="card-body">
-                                                    <p class="card-text">{componente.Nombre}</p>
-                                                    <p class="card-text"><small class="text-muted">{`${componente.Precio}$`}</small></p>
+                                            <div className="col-md-6">
+                                                <div className="card-body">
+                                                    <p className="card-text">{componente.Nombre}</p>
+                                                    <p className="card-text"><small className="text-muted">{`${componente.Precio}$`}</small></p>
                                                 </div>
                                             </div>
-                                            <div class='col-md-3 mt-4'>
-                                                <button className='mx-auto btn btn-primary' id='botonagregado'>+</button>
+                                            <div className='col-md-3 mt-4'>
+                                                <button className='mx-auto btn btn-primary' id='botonagregado' onClick={()=>{
+                                                    const idnuevo = Math.floor(Math.random()*999999)
+                                                    anadirAvanzado(idnuevo,componente.Nombre,componente.Precio,componente.URL,usuarioID)
+                                                }}>+</button>
+                                                {()=>{montoTotal = montoTotal + componente.Precio
+                                                console.log(montoTotal)}}
                                             </div>
                                         </div>
                                     </div>
@@ -182,46 +173,30 @@ const Avanzado = () => {
                     <div className='col mt-3 ms-3'>
                     {
                             (()=>{
-                                return listadoProductos.map((producto) => {
+                                return listadoAvanzado.map((producto) => {
                                     return <div className='row'>
-                                    <div class="card mb-3" id='listacompra'>
-                                        <div class="row g-0">
-                                            <div class="col-md-3">
-                                            {(()=>{
-                                                    if(producto.Marca === "NVIDIA"){
-                                                        return <img src={nvidialogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "AMD"){
-                                                        return <img src={ryzenlogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "AORUS"){
-                                                        return <img src={aoruslogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "CORSAIR"){
-                                                        return <img src={corsairlogo} class="img-fluid rounded-start mt-2 mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "GIGABYTE"){
-                                                        return <img src={gigabytelogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "KINGSTON"){
-                                                        return <img src={kingstonlogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "INTEL"){
-                                                        return <img src={intellogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "MSI"){
-                                                        return <img src={msilogo} class="img-fluid rounded-start mt-2 mx-auto" alt="..." />
-                                                    }else if(producto.Marca === "WINDOWS"){
-                                                        return <img src={windowslogo} class="img-fluid rounded-start mx-auto" alt="..." />
-                                                    }
-                                                })()}
+                                    <div className="card mb-3" id='listacompra'>
+                                        <div className="row g-0">
+                                            <div className="col-md-3">
+                                           
+                                             <img src={producto.URL} className="img-fluid rounded-start mx-auto" alt="..." />
+                                                    
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="card-body">
-                                                    <p class="card-text">{`${producto.Nombre}`}</p>
+                                            <div className="col-md-6">
+                                                <div className="card-body">
+                                                    <p className="card-text">{`${producto.NombreProd}`}</p>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div className="col-md-3">
                                                 <div>&nbsp;</div>
-                                                {`${producto.Precio}$`}
+                                                {`${producto.PrecioProd}$`}
                                             </div>
 
                                         </div>
                                     </div>
+
                                 </div>
+                                
                                 })
                             })()
                         }

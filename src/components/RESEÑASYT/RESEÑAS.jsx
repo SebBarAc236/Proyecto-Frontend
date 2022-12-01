@@ -7,6 +7,8 @@ import './reseñas.css'
 import {useState} from "react";
 import {useEffect} from "react";
 import { RUTA_BACKEND} from '../../conf';
+import React from 'react';
+import ReactPlayer from 'react-player';
 const Reseñas = () => {
     const[ListadoInfluencers, setListadoInfluencers] = useState([])
 
@@ -39,30 +41,34 @@ const Reseñas = () => {
                 </div> 
             </div>
 
-
+            <div className="row">
             {
               
               (()=>{
                   return ListadoInfluencers.map((Influencer) => {
-                      return <div className="row">
-                      <div className="col" >
-                      <div class="ratio ratio-16x9">
-                      <iframe  id="video" src={Influencer.Link_infl} title="YouTube video" allowFullScreen></iframe>
+                      return <div className="col" >
+                      
+                      <div class="ratio ratio-16x9" id='video'>
+                      <ReactPlayer
+                      url={Influencer.Link_infl}
+                        controls
+                      />
                       </div>
                       </div >
       
                    
-                  </div>
+                  
                   })
               })()
              }
-   
+             </div>
+              <div className="row">
             {
               
               (()=>{
                   return ListadoInfluencers.map((Influencer) => {
-                    return <div className="row">
-                    <div className="col" >
+                   
+                    return <div className="col" >
                         <div id="cuadrado1"  align="center"> 
                          
                            <span>
@@ -75,13 +81,13 @@ const Reseñas = () => {
                             </div>
                         </div>
                     
-                    </div> 
+                    
       
                   })
               })()
             }
 
-
+            </div> 
 
 
            
